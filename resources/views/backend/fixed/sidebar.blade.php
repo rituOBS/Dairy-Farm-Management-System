@@ -5,11 +5,216 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+                            <a class="nav-link" href="{{route('staff.list')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                 Staff Info
+                            </a>
                          
                             <a class="nav-link" href="{{route('category.index')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                               Cow Categories
-                            </a>
+                              </a>
+                              
+                                <div class="accordion" id="myAccordion">
+                            <!-- Collapsible Item 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Brown-Cow Details
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
+                                <div class="accordion-body">
+                                    <a href="{{route('brownCow.index')}}">Total-Cow</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Feeding-Item</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Milk weight</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Gender</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Status</a>
+                                    
+                                </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion" id="myAccordion">
+                            <!-- Collapsible Item 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Bessie-Cow Details
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
+                                <div class="accordion-body">
+                                    <a href="">Total-Cow</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Feeding-Item</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Milk weight</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Gender</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Status</a>
+                                    
+                                </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="accordion" id="myAccordion">
+                            <!-- Collapsible Item 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Indian-Cow Details
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
+                                <div class="accordion-body">
+                                    <a href="">Total-Cow</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Feeding-Item</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Milk weight</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Gender</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Status</a>
+                                    
+                                </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion" id="myAccordion">
+                            <!-- Collapsible Item 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Brown-Swiss Details
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
+                                <div class="accordion-body">
+                                    <a href="">Total-Cow</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Feeding-Item</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Milk weight</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Gender</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Status</a>
+                                    
+                                </div>
+                                </div>
+                            </div>
+
+
+                            
+                            <div class="accordion" id="myAccordion">
+                            <!-- Collapsible Item 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Holstein Friesian Cattle Details
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
+                                <div class="accordion-body">
+                                    <a href="">Total-Cow</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Feeding-Item</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Milk weight</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Gender</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Status</a>
+                                    
+                                </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="accordion" id="myAccordion">
+                            <!-- Collapsible Item 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Australian Cow Details
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
+                                <div class="accordion-body">
+                                    <a href="">Total-Cow</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Feeding-Item</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Milk weight</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Gender</a>
+                                    
+                                </div>
+                                <div class="accordion-body">
+                                    <a href="">Cow Status</a>
+                                    
+                                </div>
+                                </div>
+                            </div>
+                           
+
                             <a class="nav-link" href="{{route('employee.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Employee List
@@ -20,23 +225,32 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Cow List
                             </a>
+
                             <a class="nav-link" href="{{route('feed.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Feed List
                             </a>
+
                             <a class="nav-link" href="{{route('milk.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Milk List
                             </a>
+
+                            <a class="nav-link" href="{{route('vaccine.list')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Vaccine Monitoring
                             </a>
+
                             <a class="nav-link" href="{{route('product.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                  Products
                             </a>
+
                             <a class="nav-link" href="{{route('order.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Order List
                             </a>
+
                             <a class="nav-link" href="{{route('salesreport.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Sales Report List

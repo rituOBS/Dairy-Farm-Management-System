@@ -36,6 +36,7 @@
 
       
       <td>
+      
         <a class="btn btn-danger"  href="{{route('cow.edit',$row->id)}}">Edit</a>
         <a  class="btn btn-success" href="{{route('cow.delete',$row->id)}}">Delete</a>
       </td>

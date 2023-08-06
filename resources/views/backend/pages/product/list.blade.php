@@ -2,7 +2,7 @@
 
 
 @section('content')
-<h2>Products List</h2>
+<h2>Product List</h2>
 <div><a href="{{route('product.create')}}"><button class="btn btn-success ">Create</button></a></div>
 
 <table class="table">

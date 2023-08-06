@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\BrownController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Website\HomeController;
@@ -11,7 +13,9 @@ use App\Http\Controllers\FeedController;
 use App\Http\Controllers\MilkController;
 use App\Http\Controllers\SalesreportController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\VaccineController;
 use App\Http\Controllers\CategoriesController;
 
 use App\Http\Controllers\UserController;
@@ -56,6 +60,11 @@ Route::post('/categoy-store',[CategoriesController::class,'store'])->name('categ
 
 /*end categories controller */
 
+//Brown controller
+Route::get('/brown-cow',[BrownController::class,'index'])->name('brownCow.index');
+Route::get('/brown-cow-create',[BrownController::class,'create'])->name('brownCow.create');
+Route::get('/brown-cow-store',[BrownController::class,'store'])->name('brownCow.store');
+
 
 Route::get('/employee-list',[EmployeeController::class,'list'])->name('employee.list');
 Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('employee.delete');
@@ -97,11 +106,26 @@ Route::post('/orderstore',[OrderController::class,'store'])->name('order.store')
 
 
 
+Route::get('/staff-list',[StaffController::class,'list'])->name('staff.list');
+//Route::get('/staff/delete/{id}',[StaffController::class,'delete'])->name('product.delete');
+//Route::get('/staff/edit/{id}',[StaffController::class,'edit'])->name('product.edit');
+Route::get('/staff-create-form',[StaffController::class,'create'])->name('staff.create');
+Route::post('/staff-store',[StaffController::class,'store'])->name('staff.store');
+
+
+
+
 Route::get('/product-list',[ProductController::class,'list'])->name('product.list');
 Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
 Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
 Route::get('/product-create-form',[ProductController::class,'create'])->name('product.create');
 Route::post('/product-store',[ProductController::class,'store'])->name('product.store');
+
+
+
+
+Route::get('/vaccine-list',[VaccineController::class,'list'])->name('vaccine.list');
+Route::get('/vaccine-create-form',[VaccineController::class,'create'])->name('vaccine.create');
 
 
 
