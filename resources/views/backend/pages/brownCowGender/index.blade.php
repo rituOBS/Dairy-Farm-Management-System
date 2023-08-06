@@ -1,25 +1,27 @@
 @extends('backend.master')
 @section('content')
 
-<h1> Brown Cow (Total)</h1>
-<div><a href="{{route('brownCow.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<h1> Brown Cow Gender</h1>
+<div><a href="{{route('brownCowGender.create')}}"><button class="btn btn-success ">Create</button></a></div>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Cow Name</th>
-      <th scope="col">Cow Number</th>
+      <th scope="col">Cow Weight</th>
+      <th scope="col">Cow Gender</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
   
-  @foreach($brownCow as $row)
+  @foreach($brownCowGender as $row)
     <tr>
       <th scope="row">{{$loop->iteration}}</th>
       <td>{{$row->name}}</td>
-      <td>{{$row->number}}</td>
+      <td>{{$row->weight}}</td>
+      <td>{{$row->gender}}</td>
       
     
     

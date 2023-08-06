@@ -1,9 +1,9 @@
 @extends('backend.master')
 @section('content')
 <div class="container">
-<h2>Total Brown Cow</h2>
+<h2>Total Bessie Cow</h2>
 
-  <form class="from" action="{{route('brownCow.store')}}" method="post">
+  <form class="from" action="{{route('bessieCow.store')}}" method="post">
   @csrf
   <div class="form-group">
            <label for="">Enter Cow Name <span style="color:red">*</span></label>

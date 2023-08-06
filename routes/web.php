@@ -1,6 +1,11 @@
 <?php
 
 use App\Http\Controllers\BrownController;
+use App\Http\Controllers\FeedingController;
+use App\Http\Controllers\MilkWeightController;
+use App\Http\Controllers\BrownCowGenderController;
+
+use App\Http\Controllers\BessieController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Website\HomeController;
@@ -63,7 +68,29 @@ Route::post('/categoy-store',[CategoriesController::class,'store'])->name('categ
 //Brown controller
 Route::get('/brown-cow',[BrownController::class,'index'])->name('brownCow.index');
 Route::get('/brown-cow-create',[BrownController::class,'create'])->name('brownCow.create');
-Route::get('/brown-cow-store',[BrownController::class,'store'])->name('brownCow.store');
+Route::post('/brown-cow-store',[BrownController::class,'store'])->name('brownCow.store');
+
+
+
+//feeding Item
+Route::get('/feeding-item',[FeedingController::class,'index'])->name('feeding.index');
+Route::get('/feeding-item-create',[FeedingController::class,'create'])->name('feeding.create');
+Route::post('/feeding-item-store',[FeedingController::class,'store'])->name('feeding.store');
+
+
+Route::get('/milk-weight',[MilkWeightController::class,'index'])->name('milkWeight.index');
+Route::get('/milk-weight-create',[MilkWeightController::class,'create'])->name('milkWeight.create');
+Route::post('/milk-weight-store',[MilkWeightController::class,'store'])->name('milkWeight.store');
+
+
+Route::get('/brownCow-gender',[BrownCowGenderController::class,'index'])->name('brownCowGender.index');
+Route::get('/brownCow-gender-create',[BrownCowGenderController::class,'create'])->name('brownCowGender.create');
+Route::post('/brownCow-gender-store',[BrownCowGenderController::class,'store'])->name('brownCowGender.store');
+
+//Bessie-cow
+Route::get('/bessie-cow',[BessieController::class,'index'])->name('bessieCow.index');
+Route::get('/bessie-cow-create',[BessieController::class,'create'])->name('bessieCow.create');
+Route::post('/bessie-cow-store',[BessieController::class,'store'])->name('bessieCow.store');
 
 
 Route::get('/employee-list',[EmployeeController::class,'list'])->name('employee.list');
@@ -100,7 +127,6 @@ Route::post('/milkstore',[MilkController::class,'store'])->name('milk.store');
 
 
 Route::get('/order-list',[OrderController::class,'list'])->name('order.list');
-Route::get('/order/delete/{id}',[OrderController::class,'delete'])->name('order.delete');
 Route::get('/order-create-form',[OrderController::class,'create'])->name('order.create');
 Route::post('/orderstore',[OrderController::class,'store'])->name('order.store');
 

@@ -29,15 +29,15 @@
                                     
                                 </div>
                                 <div class="accordion-body">
-                                    <a href="">Feeding-Item</a>
+                                    <a href="{{route('feeding.index')}}">Feeding-Item</a>
                                     
                                 </div>
                                 <div class="accordion-body">
-                                    <a href="">Milk weight</a>
+                                    <a href="{{route('milkWeight.index')}}">Milk weight</a>
                                     
                                 </div>
                                 <div class="accordion-body">
-                                    <a href="">Cow Gender</a>
+                                    <a href="{{route('brownCowGender.index')}}">Cow Gender</a>
                                     
                                 </div>
                                 <div class="accordion-body">
@@ -58,7 +58,7 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
                                 <div class="accordion-body">
-                                    <a href="">Total-Cow</a>
+                                    <a href="{{route('bessieCow.index')}}">Total-Cow</a>
                                     
                                 </div>
                                 <div class="accordion-body">
@@ -66,15 +66,7 @@
                                     
                                 </div>
                                 <div class="accordion-body">
-                                    <a href="">Milk weight</a>
-                                    
-                                </div>
-                                <div class="accordion-body">
                                     <a href="">Cow Gender</a>
-                                    
-                                </div>
-                                <div class="accordion-body">
-                                    <a href="">Cow Status</a>
                                     
                                 </div>
                                 </div>
