@@ -1,8 +1,8 @@
 @extends('backend.master')
 @section('content')
 
-<h1> Brown Cow (Feeding-item)</h1>
-<div><a href="{{route('feeding.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<h1> Bessie Cow (Feeding-item)</h1>
+<div><a href="{{route('indianFeeding.create')}}"><button class="btn btn-success ">Create</button></a></div>
 
 <table class="table">
   <thead>
@@ -15,7 +15,7 @@
   </thead>
   <tbody>
   
-  @foreach($feeding as $row)
+  @foreach($indianFeeding as $row)
     <tr>
       <th scope="row">{{$loop->iteration}}</th>
       <td>{{$row->name}}</td>
@@ -24,13 +24,12 @@
     <td>
         <a class="btn btn-warning"  href="">View</a>
         <a class="btn btn-danger"  href="">Edit</a>
-        <a class="btn btn-success" href="{{route('feeding.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-success" href="">Delete</a>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
 
-{{$feeding->links()}}
 
 @endsection

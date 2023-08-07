@@ -6,6 +6,11 @@ use App\Http\Controllers\MilkWeightController;
 use App\Http\Controllers\BrownCowGenderController;
 
 use App\Http\Controllers\BessieController;
+use App\Http\Controllers\BessieFeedingController;
+use App\Http\Controllers\BessieCowGenderController;
+
+use App\Http\Controllers\IndianController;
+use App\Http\Controllers\IndianFeedingController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Website\HomeController;
@@ -74,6 +79,7 @@ Route::post('/brown-cow-store',[BrownController::class,'store'])->name('brownCow
 
 //feeding Item
 Route::get('/feeding-item',[FeedingController::class,'index'])->name('feeding.index');
+Route::get('/feeding/delete/{id}',[FeedingController::class,'delete'])->name('feeding.delete');
 Route::get('/feeding-item-create',[FeedingController::class,'create'])->name('feeding.create');
 Route::post('/feeding-item-store',[FeedingController::class,'store'])->name('feeding.store');
 
@@ -91,6 +97,26 @@ Route::post('/brownCow-gender-store',[BrownCowGenderController::class,'store'])-
 Route::get('/bessie-cow',[BessieController::class,'index'])->name('bessieCow.index');
 Route::get('/bessie-cow-create',[BessieController::class,'create'])->name('bessieCow.create');
 Route::post('/bessie-cow-store',[BessieController::class,'store'])->name('bessieCow.store');
+
+
+Route::get('/bessie-feeding-item',[BessieFeedingController::class,'index'])->name('bessieFeeding.index');
+Route::get('/bessie-feeding/delete/{id}',[BessieFeedingController::class,'delete'])->name('bessieFeeding.delete');
+Route::get('/bessie-feeding-item-create',[BessieFeedingController::class,'create'])->name('bessieFeeding.create');
+Route::post('/bessie-feeding-item-store',[BessieFeedingController::class,'store'])->name('bessieFeeding.store');
+
+Route::get('/bessieCow-gender',[BessieCowGenderController::class,'index'])->name('bessieCowGender.index');
+Route::get('/bessieCow-gender-create',[BessieCowGenderController::class,'create'])->name('bessieCowGender.create');
+Route::post('/bessieCow-gender-store',[BessieCowGenderController::class,'store'])->name('bessieCowGender.store');
+
+
+Route::get('/indian-cow',[IndianController::class,'index'])->name('indianCow.index');
+Route::get('/indian-cow-create',[IndianController::class,'create'])->name('indianCow.create');
+Route::post('/indian-cow-store',[IndianController::class,'store'])->name('indianCow.store');
+
+Route::get('/indian-feeding-item',[IndianFeedingController::class,'index'])->name('indianFeeding.index');
+//Route::get('/bessie-feeding/delete/{id}',[BessieFeedingController::class,'delete'])->name('bessieFeeding.delete');
+Route::get('/indian-feeding-item-create',[IndianFeedingController::class,'create'])->name('indianFeeding.create');
+Route::post('/indian-feeding-item-store',[IndianFeedingController::class,'store'])->name('indianFeeding.store');
 
 
 Route::get('/employee-list',[EmployeeController::class,'list'])->name('employee.list');

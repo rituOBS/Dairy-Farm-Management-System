@@ -1,34 +1,32 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\BrownCow;
+use App\Models\IndianCow;
 use Illuminate\Http\Request;
 
-class BrownController extends Controller
+class IndianController extends Controller
 {
     public function index()
     {
-        $brownCow=BrownCow::all();
+        $indianCow=IndianCow::all();
         //$cow=CowList::paginate(4);
-        return view('backend.pages.brownCows.index',compact('brownCow'));
+        return view('backend.pages.indianCow.index',compact('indianCow'));
     }
     public function create()
     {
-        return view('backend.pages.brownCows.create');
+        return view('backend.pages.indianCow.create');
     }
-
-
 
     public function store(Request $request)
     {
-        BrownCow::create([
+        IndianCow::create([
             'name'=>$request->cow_name,
             'number'=>$request->cow_number,
             //'image'=>$fileName
             //'Description'=>$request->feed_description,
             
         ]);
-        return redirect()->back()->with('msg','BrownCow Created successfully.');
+        return redirect()->back()->with('msg','IndianCow Created successfully.');
    
        //return to_route('feed.list');
 

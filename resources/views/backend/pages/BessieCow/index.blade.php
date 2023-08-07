@@ -9,7 +9,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Cow Name</th>
-      <th scope="col">Cow Number</th>
+      <th scope="col">Total Cow Number</th>
       <th scope="col">Action</th>
     </tr>
   </thead>

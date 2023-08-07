@@ -9,13 +9,23 @@ class FeedingController extends Controller
     public function index()
     {
         $feeding=FeedingDetaile::all();
-        //$cow=CowList::paginate(4);
+        $feeding=FeedingDetaile::paginate(4);
         return view('backend.pages.feeding.index',compact('feeding'));
     }
     public function create()
     {
         return view('backend.pages.feeding.create');
     }
+
+    public function delete($id)
+    {
+       $feeding=FeedingDetaile::find($id);
+
+       $feeding->delete();
+
+       return redirect()->back()->with('msg','FeedingDetaile Deleted Successfully');
+    }
+    
     public function store(Request $request)
     {
         FeedingDetaile::create([
