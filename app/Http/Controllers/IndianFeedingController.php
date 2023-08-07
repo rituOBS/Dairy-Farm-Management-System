@@ -10,8 +10,8 @@ class IndianFeedingController extends Controller
     public function index()
     {
         $indianFeeding=IndianFeeding::all();
-       // $bessieFeeding=BessieFeeding::paginate(4);
-        return view('backend.pages.indianFeeding.index');
+        $indianFeeding=IndianFeeding::paginate(4);
+        return view('backend.pages.indianFeeding.index',compact('indianFeeding'));
     }
     public function create()
     {

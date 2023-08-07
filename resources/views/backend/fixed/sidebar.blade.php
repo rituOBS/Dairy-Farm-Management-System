@@ -99,11 +99,7 @@
                                     
                                 </div>
                                 <div class="accordion-body">
-                                    <a href="">Milk weight</a>
-                                    
-                                </div>
-                                <div class="accordion-body">
-                                    <a href="">Cow Gender</a>
+                                    <a href="{{route('indianCowGender.index')}}">Cow Gender</a>
                                     
                                 </div>
                                 <div class="accordion-body">
@@ -147,13 +143,7 @@
                                 </div>
                             </div>
 
-                         
-                           
-
-                            <a class="nav-link" href="{{route('employee.list')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Employee List
-                            </a>
+        
 
                             <a class="nav-link" href="{{route('feed.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -173,16 +163,6 @@
                             <a class="nav-link" href="{{route('product.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                  Products
-                            </a>
-
-                            <a class="nav-link" href="{{route('order.list')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Order List
-                            </a>
-
-                            <a class="nav-link" href="{{route('salesreport.list')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Sales Report List
                             </a>
                          
                             <a class="nav-link" href="{{route('report')}}">

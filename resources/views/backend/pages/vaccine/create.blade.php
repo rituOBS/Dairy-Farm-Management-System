@@ -17,13 +17,9 @@
        </div>    
        
        <div class="form-group">
-           <label for="">Remark<span style="color:red">*</span></label>
-           <input  type="text" class="form-control" required name="vaccine_remark" placeholder="Remark">
+           <label for="">Enter Vaccine Remark<span style="color:red">*</span></label>
+           <input  type="text" class="form-control" required name="vaccine_remark" placeholder="Enter Vaccine Remark">
        </div>
-       <div class="form-group">
-            <label for="">Image</label>
-            <input type="file" class="form-control" name="staff_image" placeholder="image">
-        </div>
   <button type="submit" class="btn btn-success">Submit</button>
 </form>
 @endsection

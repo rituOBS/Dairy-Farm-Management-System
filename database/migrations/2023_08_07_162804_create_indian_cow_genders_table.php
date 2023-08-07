@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order_lists', function (Blueprint $table) {
+        Schema::create('indian_cow_genders', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
-            $table ->string('quantity')->nullable();
-            $table->double('total_price',10,2)->default(0,0);
-            $table->date('date');
+            $table ->string('name',length:120);
+            $table ->double('weight');
+            $table ->string('gender',length:120);
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order_lists');
+        Schema::dropIfExists('indian_cow_genders');
     }
 };

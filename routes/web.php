@@ -11,18 +11,17 @@ use App\Http\Controllers\BessieCowGenderController;
 
 use App\Http\Controllers\IndianController;
 use App\Http\Controllers\IndianFeedingController;
+use App\Http\Controllers\IndianCowGenderController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\ProductController as WebsiteProductController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EmployeeController;
+
 use App\Http\Controllers\CowController;
 use App\Http\Controllers\FeedController;
 use App\Http\Controllers\MilkController;
-use App\Http\Controllers\SalesreportController;
-use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VaccineController;
@@ -118,13 +117,9 @@ Route::get('/indian-feeding-item',[IndianFeedingController::class,'index'])->nam
 Route::get('/indian-feeding-item-create',[IndianFeedingController::class,'create'])->name('indianFeeding.create');
 Route::post('/indian-feeding-item-store',[IndianFeedingController::class,'store'])->name('indianFeeding.store');
 
-
-Route::get('/employee-list',[EmployeeController::class,'list'])->name('employee.list');
-Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('employee.delete');
-Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('employee.edit');
-Route::put('/employee/update/{id}',[EmployeeController::class,'update'])->name('employee.update');
-Route::get('/employee-create-form',[EmployeeController::class,'create'])->name('employee.create');
-Route::post('/employee-store',[EmployeeController::class,'store'])->name('employee.store'); 
+Route::get('/indianCow-gender',[IndianCowGenderController::class,'index'])->name('indianCowGender.index');
+Route::get('/indianCow-gender-create',[IndianCowGenderController::class,'create'])->name('indianCowGender.create');
+Route::post('/indianCow-gender-store',[IndianCowGenderController::class,'store'])->name('indianCowGender.store');
 
 
 Route::get('/cow-list',[CowController::class,'list'])->name('cow.list');
@@ -152,12 +147,6 @@ Route::post('/milkstore',[MilkController::class,'store'])->name('milk.store');
 
 
 
-Route::get('/order-list',[OrderController::class,'list'])->name('order.list');
-Route::get('/order-create-form',[OrderController::class,'create'])->name('order.create');
-Route::post('/orderstore',[OrderController::class,'store'])->name('order.store');
-
-
-
 Route::get('/staff-list',[StaffController::class,'list'])->name('staff.list');
 //Route::get('/staff/delete/{id}',[StaffController::class,'delete'])->name('product.delete');
 //Route::get('/staff/edit/{id}',[StaffController::class,'edit'])->name('product.edit');
@@ -178,14 +167,7 @@ Route::post('/product-store',[ProductController::class,'store'])->name('product.
 
 Route::get('/vaccine-list',[VaccineController::class,'list'])->name('vaccine.list');
 Route::get('/vaccine-create-form',[VaccineController::class,'create'])->name('vaccine.create');
-
-
-
-
-Route::get('/salesreport-list',[SalesreportController::class,'list'])->name('salesreport.list');
-Route::get('/salesreport-create-form',[SalesreportController::class,'create'])->name('salesreport.create');
-Route::post('/salesreportstore',[SalesreportController::class,'store'])->name('salesreport.store');
-
+Route::post('/vaccine-store',[VaccineController::class,'store'])->name('vaccine.store');
 
 
 Route::get('/report',[ProductController::class,'report'])->name('report');

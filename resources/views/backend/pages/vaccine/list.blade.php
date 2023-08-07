@@ -10,30 +10,28 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Cow Name</th>
+      <th scope="col">Vaccine Date for (July - 2023)</th>
+      <th scope="col">Remark</th>
+      <th scope="col">Action</th>
+     
     </tr>
   </thead>
   <tbody>
+  @foreach($vaccine as $row)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$loop->iteration}}</th>
+      <td>{{$row->name}}</td>
+      <td>{{$row->date}}</td>
+      <td>{{$row->remark}}</td>
+      
+    <td>
+        <a class="btn btn-warning"  href="">View</a>
+        <a class="btn btn-danger"  href="">Edit</a>
+        <a class="btn btn-success" href="">Delete</a>
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 
