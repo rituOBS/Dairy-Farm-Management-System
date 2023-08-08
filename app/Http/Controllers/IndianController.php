@@ -17,6 +17,7 @@ class IndianController extends Controller
         return view('backend.pages.indianCow.create');
     }
 
+
     public function store(Request $request)
     {
         IndianCow::create([

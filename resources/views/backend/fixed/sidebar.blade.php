@@ -121,15 +121,15 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
                                 <div class="accordion-body">
-                                    <a href="">Total-Cow</a>
+                                    <a href="{{route('holsteinCow.index')}}">Total-Cow</a>
                                     
                                 </div>
                                 <div class="accordion-body">
-                                    <a href="">Feeding-Item</a>
+                                    <a href="{{route('holsteinFeeding.index')}}">Feeding-Item</a>
                                     
                                 </div>
                                 <div class="accordion-body">
-                                    <a href="">Milk weight</a>
+                                    <a href="{{route('holsteinmilkWeight.index')}}">Milk weight</a>
                                     
                                 </div>
                                 <div class="accordion-body">

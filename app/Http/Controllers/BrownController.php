@@ -17,7 +17,15 @@ class BrownController extends Controller
         return view('backend.pages.brownCows.create');
     }
 
+    public function delete($id)
+    {
+       
+       $brown=BrownCow::find($id);
 
+       $brown->delete();
+
+       return redirect()->back()->with('msg','BrownCow Deleted Successfully');
+    }
 
     public function store(Request $request)
     {
