@@ -25,20 +25,21 @@
       <th scope="row">{{$loop->iteration}}</th>
       <td>{{$row->name}}</td>
       <td>{{$row->designation}}</td>
-      <td>{{$row->quantity}}</td>
       <td>{{$row->email}}</td>
       <td>
-        <img style="weight:60px; height:60px;" src="{{url('/uploads/staff/'.$row->image)}}" alt="image">
+        <img style="weight:60px; height:60px;" src="{{url('/uploads/staffs/'.$row->image)}}" alt="image">
       </td>
    
     
       <td>
         <a class="btn btn-danger"  href="">Edit</a>
-        <a  class="btn btn-success" href="">Delete</a>
+        <a  class="btn btn-success" href="{{route('staff.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
+
+{{$staff->links()}}
 
 @endsection

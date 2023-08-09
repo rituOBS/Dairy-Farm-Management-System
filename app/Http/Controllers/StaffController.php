@@ -9,12 +9,21 @@ class StaffController extends Controller
     public function list()
     {
         $staff=StaffList::all();
-        //$staff=StaffList::paginate(4);
+        $staff=StaffList::paginate(4);
         return view('backend.pages.staff.list',compact('staff'));
     }
     public function create()
     {
         return view('backend.pages.staff.create');
+    }
+
+    public function delete($id)
+    {
+       $staff=StaffList::find($id);
+
+       $staff->delete();
+
+       return redirect()->back()->with('msg','StaffList Deleted Successfully');
     }
     public function store(Request $request)
     {
@@ -35,7 +44,8 @@ if($request->hasFile('staff_image'))
 {
     $image=$request->file('staff_image');
     $fileName=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
-    $image->storeAs('/staff',$fileName);
+    $image->storeAs('/staffs',$fileName);
+    // dd($fileName);
 
 }
 // dd($fileName);

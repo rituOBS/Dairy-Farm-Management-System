@@ -1,11 +1,9 @@
 @extends('backend.master')
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="card mt-3 p3">
-                <div class="card-body">
-                <h1 class="text-center"><strong>Cow List</strong></h1>
+    
+       
+ <h1 class="text-center"><strong>Cow List</strong></h1>
 
 
 <div><a href="{{route('cow.create')}}"><button class="btn btn-success ">Create</button></a></div>
@@ -46,10 +44,7 @@
     </tbody>
 </table>
 </div>
-            </div>
-        </div>
-    </div>
-</div>
+  
 
 
 {{$cow->links()}}

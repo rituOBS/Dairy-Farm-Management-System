@@ -16,6 +16,7 @@ use App\Http\Controllers\IndianCowGenderController;
 use App\Http\Controllers\HolsteinController;
 use App\Http\Controllers\HolsteinFeedingController;
 use App\Http\Controllers\HolsteinMilkWeightController;
+use App\Http\Controllers\HolsteinCowGenderController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Website\HomeController;
@@ -143,6 +144,10 @@ Route::get('/holsteinmilk-weight-create',[HolsteinMilkWeightController::class,'c
 Route::post('/holsteinmilk-weight-store',[HolsteinMilkWeightController::class,'store'])->name('holsteinmilkWeight.store');
 
 
+Route::get('/holsteinCow-gender',[HolsteinCowGenderController::class,'index'])->name('holsteinCowGender.index');
+Route::get('/holsteinCow-gender-create',[HolsteinCowGenderController::class,'create'])->name('holsteinCowGender.create');
+Route::post('/holsteinCow-gender-store',[HolsteinCowGenderController::class,'store'])->name('holsteinCowGender.store');
+
 Route::get('/cow-list',[CowController::class,'list'])->name('cow.list');
 Route::get('/cow/delete/{id}',[CowController::class,'delete'])->name('cow.delete');
 Route::get('/cow/edit/{id}',[CowController::class,'edit'])->name('cow.edit');
@@ -169,7 +174,7 @@ Route::post('/milkstore',[MilkController::class,'store'])->name('milk.store');
 
 
 Route::get('/staff-list',[StaffController::class,'list'])->name('staff.list');
-//Route::get('/staff/delete/{id}',[StaffController::class,'delete'])->name('product.delete');
+Route::get('/staff/delete/{id}',[StaffController::class,'delete'])->name('staff.delete');
 //Route::get('/staff/edit/{id}',[StaffController::class,'edit'])->name('product.edit');
 Route::get('/staff-create-form',[StaffController::class,'create'])->name('staff.create');
 Route::post('/staff-store',[StaffController::class,'store'])->name('staff.store');

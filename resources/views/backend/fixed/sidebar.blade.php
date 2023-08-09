@@ -22,7 +22,7 @@
 
                            
                               
-                                <div class="accordion" id="myAccordion">
+                            <!-- <div class="accordion" id="myAccordion"> -->
                                      <!-- Collapsible Item 1 -->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -84,12 +84,12 @@
                             <div class="accordion" id="myAccordion">
                             <!-- Collapsible Item 1 -->
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                     Indian-Cow Details
                                 </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
+                                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#myAccordion">
                                 <div class="accordion-body">
                                     <a href="{{route('indianCow.index')}}">Total-Cow</a>
                                     
@@ -114,12 +114,12 @@
                             <div class="accordion" id="myAccordion">
                             <!-- Collapsible Item 1 -->
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                 Holstein Friesian Cattle Details
                                 </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#myAccordion">
+                                <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#myAccordion">
                                 <div class="accordion-body">
                                     <a href="{{route('holsteinCow.index')}}">Total-Cow</a>
                                     
@@ -133,7 +133,7 @@
                                     
                                 </div>
                                 <div class="accordion-body">
-                                    <a href="">Cow Gender</a>
+                                    <a href="{{route('holsteinCowGender.index')}}">Cow Gender</a>
                                     
                                 </div>
                                 <div class="accordion-body">

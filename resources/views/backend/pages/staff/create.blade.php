@@ -4,7 +4,14 @@
 @section('content')
 <h2>Staff Information</h2>
 
-        
+@if($errors->any())
+       @foreach ($errors->all() as $error)
+       <div>
+        <p class="alert alert-danger"> {{$error}}</p>
+        </div>
+        @endforeach
+        @endif
+              
 <form action="{{route('staff.store')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
