@@ -30,6 +30,7 @@ use App\Http\Controllers\MilkController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VaccineController;
+use App\Http\Controllers\VaccineScheduleController;
 use App\Http\Controllers\CategoriesController;
 
 use App\Http\Controllers\UserController;
@@ -189,11 +190,15 @@ Route::get('/product-create-form',[ProductController::class,'create'])->name('pr
 Route::post('/product-store',[ProductController::class,'store'])->name('product.store');
 
 
-
-
 Route::get('/vaccine-list',[VaccineController::class,'list'])->name('vaccine.list');
 Route::get('/vaccine-create-form',[VaccineController::class,'create'])->name('vaccine.create');
 Route::post('/vaccine-store',[VaccineController::class,'store'])->name('vaccine.store');
+
+
+Route::get('/vaccineSchedule-list',[VaccineScheduleController::class,'list'])->name('vaccineSchedule.list');
+Route::get('/vaccineSchedule-create-form',[VaccineScheduleController::class,'create'])->name('vaccineSchedule.create');
+Route::post('/vaccineSchedule-store',[VaccineScheduleController::class,'store'])->name('vaccineSchedule.store');
+
 
 
 Route::get('/report',[ProductController::class,'report'])->name('report');

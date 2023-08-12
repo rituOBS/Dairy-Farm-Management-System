@@ -26,9 +26,9 @@
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">MilkList</div>
+                                    <div class="card-body">Feedist</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                    {{$milks}}
+                                  
                                     </div>
                                 </div>
                             </div>
