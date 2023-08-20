@@ -1,26 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Vaccine;
+use App\Models\VaccineMonitor;
 use Illuminate\Http\Request;
 
-class VaccineController extends Controller
+class VaccineMonitorController extends Controller
 {
     public function list()
     {
-       $vaccine=Vaccine::all();
-        //$staff=StaffList::paginate(4);
-        return view('backend.pages.vaccine.list',compact('vaccine'));
+       $vaccineMonitor=VaccineMonitor::all();
+       //$vaccineSchedule=VaccineSchedule::paginate(4);
+        return view('backend.pages.vaccineMonitor.list',compact('vaccineMonitor'));
     }
     public function create()
     {
-        return view('backend.pages.vaccine.create');
+        return view('backend.pages.vaccineMonitor.create');
     }
 
     
     public function store(Request $request)
     {
-        Vaccine::create([
+        VaccineMonitor::create([
             'name'=>$request->cow_name,
             'date'=>$request->vaccine_date,
             'remark'=>$request->vaccine_remark,
@@ -28,7 +28,7 @@ class VaccineController extends Controller
             //'Description'=>$request->feed_description,
             
         ]);
-        return redirect()->back()->with('msg','Vaccine Created successfully.');
+        return redirect()->back()->with('msg','Employee Created successfully.');
    
        //return to_route('feed.list');
 

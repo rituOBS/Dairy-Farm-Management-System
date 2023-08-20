@@ -1,6 +1,7 @@
 @extends('backend.master')
 @section('content')
-<h2>Feed list</h2>
+<h1 class="text-center"><strong>Feed List</strong></h1>
+
 <div><a href="{{route('feed.create')}}"><button class="btn btn-success ">Create</button></a></div>
 <table class="table">
   <thead>
@@ -8,7 +9,7 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">feed Item</th>
-      <th scope="col">Daily Consumption</th>
+      <th scope="col">Daily Consumption (Litre)</th>
       <th scope="col">Action</th>
 
     </tr>
@@ -23,8 +24,8 @@
     
     
       <td>
-        <a class="btn btn-danger"  href="{{route('feed.edit',$row->id)}}">Edit</a>
-        <a class="btn btn-success" href="{{route('feed.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-info"  href="{{route('feed.edit',$row->id)}}">Edit</a>
+        <a class="btn btn-warning" href="{{route('feed.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

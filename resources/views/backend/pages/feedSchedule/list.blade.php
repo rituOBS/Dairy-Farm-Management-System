@@ -2,8 +2,8 @@
 
 
 @section('content')
-<h1 class="text-center"><strong>Vaccine Schedule</strong></h1>
-<div><a href="{{route('vaccineSchedule.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<h1 class="text-center"><strong>Feed Schedule</strong></h1>
+<div><a href="{{route('feedSchedule.create')}}"><button class="btn btn-success ">Create</button></a></div>
 
 
 <table class="table">
@@ -21,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-  @foreach($vaccineSchedule as $row)
+  @foreach($feedSchedule as $row)
     <tr>
       <th scope="row">{{$loop->iteration}}</th>
       <td>{{$row->disease}}</td>
@@ -34,11 +34,11 @@
     <td>
       
         <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-warning" href="">Delete</a>
+        <a class="btn btn-success" href="">Delete</a>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
-{{$vaccineSchedule->links()}}
+
 @endsection

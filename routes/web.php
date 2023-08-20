@@ -25,12 +25,14 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 
 use App\Http\Controllers\CowController;
+use App\Http\Controllers\CowShadeController;
 use App\Http\Controllers\FeedController;
 use App\Http\Controllers\MilkController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\VaccineController;
+use App\Http\Controllers\VaccineMonitorController;
 use App\Http\Controllers\VaccineScheduleController;
+use App\Http\Controllers\FeedScheduleController;
 use App\Http\Controllers\CategoriesController;
 
 use App\Http\Controllers\UserController;
@@ -77,7 +79,7 @@ Route::post('/categoy-store',[CategoriesController::class,'store'])->name('categ
 
 //Brown controller
 Route::get('/brown-cow',[BrownController::class,'index'])->name('brownCow.index');
-//Route::get('/brown/delete/{id}',[BrownController::class,'delete'])->name('browncow.delete');
+Route::get('/brown/delete/{id}',[BrownController::class,'delete'])->name('browncow.delete');
 Route::get('/brown-cow-create',[BrownController::class,'create'])->name('brownCow.create');
 Route::post('/brown-cow-store',[BrownController::class,'store'])->name('brownCow.store');
 
@@ -157,6 +159,12 @@ Route::get('/cow-create-form',[CowController::class,'create'])->name('cow.create
 Route::post('/cow-store',[CowController::class,'store'])->name('cow.store');
 
 
+Route::get('/cowShade-list',[CowShadeController::class,'list'])->name('cowShade.list');
+Route::get('/cowShade/delete/{id}',[CowShadeController::class,'delete'])->name('cowShade.delete');
+Route::get('/cowShade-create-form',[CowShadeController::class,'create'])->name('cowShade.create');
+Route::post('/cowShade-store',[CowShadeController::class,'store'])->name('cowShade.store');
+
+
 Route::get('/feed-list',[FeedController::class,'list'])->name('feed.list');
 Route::get('/feed/delete/{id}',[FeedController::class,'delete'])->name('feed.delete');
 Route::get('/feed/edit/{id}',[FeedController::class,'edit'])->name('feed.edit');
@@ -190,22 +198,24 @@ Route::get('/product-create-form',[ProductController::class,'create'])->name('pr
 Route::post('/product-store',[ProductController::class,'store'])->name('product.store');
 
 
-Route::get('/vaccine-list',[VaccineController::class,'list'])->name('vaccine.list');
-Route::get('/vaccine-create-form',[VaccineController::class,'create'])->name('vaccine.create');
-Route::post('/vaccine-store',[VaccineController::class,'store'])->name('vaccine.store');
+Route::get('/vaccineMonitor-list',[VaccineMonitorController::class,'list'])->name('vaccineMonitor.list');
+Route::get('/vaccineMonitor-create-form',[VaccineMonitorController::class,'create'])->name('vaccineMonitor.create');
+Route::post('/vaccineMonitor-store',[VaccineMonitorController::class,'store'])->name('vaccineMonitor.store');
 
 
 Route::get('/vaccineSchedule-list',[VaccineScheduleController::class,'list'])->name('vaccineSchedule.list');
 Route::get('/vaccineSchedule-create-form',[VaccineScheduleController::class,'create'])->name('vaccineSchedule.create');
 Route::post('/vaccineSchedule-store',[VaccineScheduleController::class,'store'])->name('vaccineSchedule.store');
 
-
+Route::get('/feedSchedule-list',[FeedScheduleController::class,'list'])->name('feedSchedule.list');
+Route::get('/feedSchedule-create-form',[FeedScheduleController::class,'create'])->name('feedSchedule.create');
+Route::post('/feedSchedule-store',[FeedScheduleController::class,'store'])->name('feedSchedule.store');
 
 Route::get('/report',[ProductController::class,'report'])->name('report');
 Route::post('/report/search',[ProductController::class,'reportSearch'])->name('report.search');
 
 
-
+Route::get('/profile',[UserController::class,'profile'])->name('admin.profile');
 
 
 });

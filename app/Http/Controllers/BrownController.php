@@ -20,9 +20,9 @@ class BrownController extends Controller
     public function delete($id)
     {
        
-       $brown=BrownCow::find($id);
+       $brownCow=BrownCow::find($id);
 
-       $brown->delete();
+       $brownCow->delete();
 
        return redirect()->back()->with('msg','BrownCow Deleted Successfully');
     }

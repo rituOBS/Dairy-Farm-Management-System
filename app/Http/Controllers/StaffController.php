@@ -9,7 +9,7 @@ class StaffController extends Controller
     public function list()
     {
         $staff=StaffList::all();
-        $staff=StaffList::paginate(4);
+        $staff=StaffList::paginate(6);
         return view('backend.pages.staff.list',compact('staff'));
     }
     public function create()

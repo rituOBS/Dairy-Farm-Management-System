@@ -1,7 +1,6 @@
 @extends('backend.master')
 @section('content')
-
-<h1> Brown Cow (Total)</h1>
+<h1 class="text-center"><strong>Total Brown Cow</strong></h1>
 <div><a href="{{route('brownCow.create')}}"><button class="btn btn-success ">Create</button></a></div>
 
 <table class="table">
@@ -25,8 +24,8 @@
     
       <td>
         <a class="btn btn-warning"  href="">View</a>
-        <a class="btn btn-danger"  href="">Edit</a>
-        <a class="btn btn-success" href="">Delete</a>
+        <a class="btn btn-info"  href="">Edit</a>
+        <a class="btn btn-success" href="{{route('brownCow.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

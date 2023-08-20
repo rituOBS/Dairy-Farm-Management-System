@@ -1,8 +1,8 @@
 @extends('backend.master')
 @section('content')
+<h1 class="text-center"><strong>Cow Categories</strong></h1>
 
- <h1> Cow Categories</h1>
-<div><a href="{{route('category.create')}}"><button class="btn btn-primary ">Create</button></a></div>
+<div><a href="{{route('category.create')}}"><button class="btn btn-success ">Create</button></a></div>
 
 <table class="table">
   <thead>
@@ -32,9 +32,9 @@
 
       
       <td>
-        <a class="btn btn-warning"  href="">View</a>
-        <a class="btn btn-danger"  href="{{route('categories.edit',$row->id)}}">Edit</a>
-        <a  class="btn btn-success" href="{{route('categories.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-success"  href="">View</a>
+        <a class="btn btn-info"  href="{{route('categories.edit',$row->id)}}">Edit</a>
+        <a  class="btn btn-warning" href="{{route('categories.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

@@ -1,7 +1,7 @@
 @extends('backend.master')
 @section('content')
 
-<h1> Holstein Cow (Feeding-item)</h1>
+<h1 class="text-center"><strong>Holstein Feeding Item</strong></h1>
 <div><a href="{{route('holsteinFeeding.create')}}"><button class="btn btn-success ">Create</button></a></div>
 
 <table class="table">
@@ -23,7 +23,7 @@
       
     <td>
         <a class="btn btn-warning"  href="">View</a>
-        <a class="btn btn-danger"  href="">Edit</a>
+        <a class="btn btn-info"  href="">Edit</a>
         <a class="btn btn-success" href="{{route('holsteinFeeding.delete',$row->id)}}">Delete</a>
       </td>
     </tr>

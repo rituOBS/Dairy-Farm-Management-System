@@ -47,10 +47,6 @@
                                     <a href="{{route('brownCowGender.index')}}">Cow Gender</a>
                                     
                                 </div>
-                                <div class="accordion-body">
-                                    <a href="">Cow Status</a>
-                                    
-                                </div>
                                 </div>
                             </div>
 
@@ -73,8 +69,7 @@
                                     
                                 </div>
                                 <div class="accordion-body">
-                                    <a href="{{route('bessieCowGender.index')}}">Cow Gender</a>
-                                    
+                                    <a href="{{route('bessieCowGender.index')}}">Cow Gender</a>     
                                 </div>
                                 </div>
                             </div>
@@ -100,10 +95,6 @@
                                 </div>
                                 <div class="accordion-body">
                                     <a href="{{route('indianCowGender.index')}}">Cow Gender</a>
-                                    
-                                </div>
-                                <div class="accordion-body">
-                                    <a href="">Cow Status</a>
                                     
                                 </div>
                                 </div>
@@ -136,18 +127,22 @@
                                     <a href="{{route('holsteinCowGender.index')}}">Cow Gender</a>
                                     
                                 </div>
-                                <div class="accordion-body">
-                                    <a href="">Cow Status</a>
-                                    
-                                </div>
                                 </div>
                             </div>
 
         
-
+                            <a class="nav-link" href="{{route('cowShade.list')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                 Cow Shade
+                            </a>
                             <a class="nav-link" href="{{route('feed.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Feed List
+                            </a>
+
+                            <a class="nav-link" href="{{route('feedSchedule.list')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Feed Schedule
                             </a>
 
                             <a class="nav-link" href="{{route('milk.list')}}">
@@ -155,7 +150,7 @@
                                 Milk List
                             </a>
 
-                            <a class="nav-link" href="{{route('vaccine.list')}}">
+                            <a class="nav-link" href="{{route('vaccineMonitor.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Vaccine Monitoring
                             </a>

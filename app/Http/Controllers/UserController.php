@@ -42,6 +42,13 @@ class UserController extends Controller
    }
 
 
+   public function profile()
+   {
+
+    return view('backend.pages.profile');
+   }
+
+
     }
 
 
