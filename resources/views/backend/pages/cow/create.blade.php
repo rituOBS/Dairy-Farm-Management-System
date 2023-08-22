@@ -1,18 +1,23 @@
 @extends('backend.master')
 @section('content')
 <div class="container">
-<h2>Create Cow Lists</h2>
+<h2>Cow Lists</h2>
 
-@if($errors->any())
-       @foreach ($errors->all() as $error)
-       <div>
-        <p class="alert alert-danger"> {{$error}}</p>
-        </div>
-        @endforeach
-        @endif
+
 
   <form class="from" action="{{route('cow.store')}}" method="post">
   @csrf
+
+
+  <div class="form-group">
+           <label for="">Enter Cow Shade<span style="color:red">*</span></label>
+           <select name="shade_id" class="form-control" id="">
+            @foreach($shades as $shade)
+                <option value="{{$shade->id}}">{{$shade->name}}</option>
+            @endforeach
+           </select>
+       </div> 
+
   <div class="form-group">
            <label for="">Enter Cow Name <span style="color:red">*</span></label>
            <input  type="text" class="form-control" required name="cow_name" placeholder="Enter Cow Name">

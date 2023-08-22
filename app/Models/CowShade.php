@@ -9,4 +9,7 @@ class CowShade extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+
+   
 }

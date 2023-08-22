@@ -9,6 +9,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                  Staff Info
                             </a>
+                            <a class="nav-link" href="{{route('cowShade.list')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                 Cow Shade
+                            </a>
 
                             <a class="nav-link" href="{{route('cow.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -22,7 +26,7 @@
 
                            
                               
-                            <!-- <div class="accordion" id="myAccordion"> -->
+                            <div class="accordion" id="myAccordion"> 
                                      <!-- Collapsible Item 1 -->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -131,10 +135,7 @@
                             </div>
 
         
-                            <a class="nav-link" href="{{route('cowShade.list')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                 Cow Shade
-                            </a>
+                          
                             <a class="nav-link" href="{{route('feed.list')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Feed List
@@ -159,19 +160,8 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Vaccine Schedule
                             </a>
-
-                            <a class="nav-link" href="{{route('product.list')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                 Products
-                            </a>
                          
-                            <a class="nav-link" href="{{route('report')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                 Product Report 
-                            </a>
-                        
-                          
-                         
+                           
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="layout-static.html">Static Navigation</a>

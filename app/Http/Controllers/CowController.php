@@ -4,19 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CowList;
-
+use App\Models\CowShade;
 
 class CowController extends Controller
 {
     public function list()
     {
-        $cow=CowList::all();
-        $cow=CowList::paginate(4);
-        return view('backend.pages.cow.list',compact('cow'));
+       
+       $cowData=CowList::with('shade')->paginate(4);
+    //    dd($cowData);
+        return view('backend.pages.cow.list',compact('cowData'));
     }
     public function create()
     {
-        return view('backend.pages.cow.create');
+        $shades= CowShade::all();
+        return view('backend.pages.cow.create',compact('shades'));
     }
 
     public function delete($id)
@@ -40,21 +42,24 @@ class CowController extends Controller
     }
     public function store(Request $request)
     {
-    //    dd($request);
+
+        // dd($request->all());
 
         $request->validate([
+            'shade_id'=>'required',
              'cow_name'=>'required',
              'cow_weight'=>'required',
              'cow_color'=>'required',
              'cow_price'=>'required|gt:10'
          ]);
-//dd($request->all());
+        //dd($request->all());
             CowList::create([
+                'shade_id'=>$request->shade_id,
                 'name'=>$request->cow_name,
-                'color'=>$request->cow_color,
                 'weight'=>$request->cow_weight,
+                'color'=>$request->cow_color,
                 'price'=>$request->cow_price,
-                'Description'=>$request->cow_description,
+               
                 
             ]);
        
@@ -66,9 +71,9 @@ class CowController extends Controller
         
                  $request->validate([
                      'cow_name'=>'required',
-                     'cow_color'=>'required',
                      'cow_weight'=>'required|gt:100',
-                     'cow_price'=>'required|gt:10'
+                     'cow_color'=>'required',
+                     'cow_price'=>'required|gt:100'
                  ]);
 
                  
@@ -76,10 +81,10 @@ class CowController extends Controller
 
             $cow->update([
                 'name'=>$request->cow_name,
-                'color'=>$request->cow_color,
                 'weight'=>$request->cow_weight,
+                'color'=>$request->cow_color,
                 'price'=>$request->cow_price,
-                'Description'=>$request->cow_description,
+             
                 
             ]);
             return redirect()->back()->with('msg','Cow Updated successfully.');

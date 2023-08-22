@@ -12,10 +12,11 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th>Cow Shade</th>
       <th scope="col">Name</th>
-      <th scope="col">Weight</th>
-      <th scope="col">Price</th> 
-      <th scope="col">Color</th>    
+      <th scope="col">Weight (kg)</th>
+      <th scope="col">Color</th>  
+      <th scope="col">Price</th>  
       <th scope="col">Action</th>
 
       
@@ -23,15 +24,14 @@
   </thead>
   <tbody>
 
-  @foreach($cow as $row)
+  @foreach($cowData as $row)
     <tr>
       <th scope="row">{{$loop->iteration}}</th>
+      <td>{{$row->shade->name}}</td>
       <td>{{$row->name}}</td>
       <td>{{$row->weight}}</td>
-      <td>{{$row->price}}</td>
       <td>{{$row->color}}</td>
-    
-
+      <td>{{$row->price}}</td>
       
       <td>
       
@@ -47,12 +47,7 @@
   
 
 
-{{$cow->links()}}
+{{$cowData->links()}}
 
 
 @endsection
-
-
-
-   
-

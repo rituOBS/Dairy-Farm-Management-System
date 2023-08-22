@@ -36,7 +36,7 @@ use App\Http\Controllers\FeedScheduleController;
 use App\Http\Controllers\CategoriesController;
 
 use App\Http\Controllers\UserController;
-
+use App\Models\CowShade;
 
 Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/all-products',[WebsiteProductController::class,'allProducts'])->name('website.all-products');
@@ -191,11 +191,11 @@ Route::post('/staff-store',[StaffController::class,'store'])->name('staff.store'
 
 
 
-Route::get('/product-list',[ProductController::class,'list'])->name('product.list');
-Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
-Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
-Route::get('/product-create-form',[ProductController::class,'create'])->name('product.create');
-Route::post('/product-store',[ProductController::class,'store'])->name('product.store');
+//Route::get('/product-list',[ProductController::class,'list'])->name('product.list');
+//Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+//Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+//Route::get('/product-create-form',[ProductController::class,'create'])->name('product.create');
+//Route::post('/product-store',[ProductController::class,'store'])->name('product.store');
 
 
 Route::get('/vaccineMonitor-list',[VaccineMonitorController::class,'list'])->name('vaccineMonitor.list');
@@ -211,11 +211,48 @@ Route::get('/feedSchedule-list',[FeedScheduleController::class,'list'])->name('f
 Route::get('/feedSchedule-create-form',[FeedScheduleController::class,'create'])->name('feedSchedule.create');
 Route::post('/feedSchedule-store',[FeedScheduleController::class,'store'])->name('feedSchedule.store');
 
-Route::get('/report',[ProductController::class,'report'])->name('report');
-Route::post('/report/search',[ProductController::class,'reportSearch'])->name('report.search');
 
 
 Route::get('/profile',[UserController::class,'profile'])->name('admin.profile');
 
 
+/* Report section
+--/ Staff Report--*/
+ Route::get('/staff-report',[StaffController::class,'staffReport'])->name('staff.report');
+ Route::get('/staff-search-report',[StaffController::class,'staffReportSearch'])->name('staff.report.search');    
+
+//  --/ CowShade Report--*/
+ Route::get('/cowShade-report',[CowShadeController::class,'cowShadeReport'])->name('cowShade.report');
+ Route::get('/cowShade-search-report',[StaffController::class,'cowShadeReportSearch'])->name('cowShade.report.search');  
+
+
+ //  --/ CowList Report--*/
+ Route::get('/cowList-report',[CowListController::class,'cowListReport'])->name('cowList.report');
+ Route::get('/cowList-search-report',[CowListController::class,'cowListReportSearch'])->name('cowList.report.search'); 
+
+ //  --/ Category Report--*/
+ Route::get('/category-report',[CategoriesController::class,'categoryReport'])->name('category.report');
+ Route::get('/category-search-report',[CategoriesController::class,'categoryReportSearch'])->name('category.report.search'); 
+
+ //  --/ FeedList Report--*/
+ Route::get('/feed-report',[FeedController::class,'feedReport'])->name('feed.report');
+ Route::get('/feed-search-report',[FeedController::class,'feedReportSearch'])->name('feed.report.search'); 
+
+ //  --/ FeedSchedule Report--*/
+ Route::get('/feedSchedule-report',[FeedScheduleController::class,'feedScheduleReport'])->name('feedSchedule.report');
+ Route::get('/feed-search-report',[FeedScheduleController::class,'feedScheduleReportSearch'])->name('feedSchedule.report.search'); 
+
+ //  --/ MilkList Report--*/
+ Route::get('/milk-report',[MilkController::class,'milkReport'])->name('milk.report');
+ Route::get('/milk-search-report',[MilkController::class,'milkReportSearch'])->name('milk.report.search'); 
+
+ //  --/ Vaccine Monitor Report--*/
+ Route::get('/vaccineMonitor-report',[VaccineMonitorController::class,'vaccineMonitorReport'])->name('vaccineMonitor.report');
+ Route::get('/vaccineMonitor-search-report',[VaccineMonitorControlle::class,'cvaccineMonitorReportSearch'])->name('vaccineMonitor.report.search'); 
+
+ //  --/ Vaccine Schedule Report--*/
+ Route::get('/vaccineSchedule-report',[VaccineScheduleController::class,'vaccineScheduleReport'])->name('vaccineSchedule.report');
+ Route::get('/vaccineSchedule-search-report',[VaccineScheduleControlle::class,'vaccineScheduleReportSearch'])->name('vaccineSchedule.report.search'); 
+
 });
+

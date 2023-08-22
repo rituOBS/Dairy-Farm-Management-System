@@ -24,10 +24,6 @@
            <label for="">Enter Cow Name <span style="color:red">*</span></label>
            <input value="{{$cow->name}}" type="text" class="form-control" required name="cow_name" placeholder="Enter Cow Name">
        </div>
-       <div class="form-group">
-            <label for="">Enter Employee Description</label>
-            <textarea name="cow_description" class="form-control" placeholder="Enter Description"></textarea>
-        </div>
         <div class="form-group">
            <label for="">Enter Cow Weight<span style="color:red">*</span></label>
            <input  value="{{$cow->weighr}}" type="number" class="form-control" required name="cow_weight" placeholder="Enter Cow Weight">
