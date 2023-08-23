@@ -60,7 +60,7 @@
         </tbody>
     </table>
 </div>
-<button onclick="printDiv('vaccineMonitor_report')" class="btn btn-info">Print</button>
+<button onclick="printDiv('vaccineMonitor_eport')" class="btn btn-info">Print</button>
 
 
 <script>

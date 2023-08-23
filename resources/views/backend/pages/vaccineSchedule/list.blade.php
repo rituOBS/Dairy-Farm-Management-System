@@ -3,7 +3,8 @@
 
 @section('content')
 <h1 class="text-center"><strong>Vaccine Schedule</strong></h1>
-<div><a href="{{route('vaccineSchedule.create')}}"><button class="btn btn-info ">Add New</button></a></div>
+<hr>
+<div><a href="{{route('vaccineSchedule.create')}}"><button class="btn btn-info ">+Add New</button></a></div>
 
 
 <table class="table">
@@ -17,8 +18,7 @@
       <th scope="col">Vaccine Dose (ml)</th>
       <th scope="col">Remark</th>
       <th scope="col">Action</th>
-     
-    </tr>
+      </tr>
   </thead>
   <tbody>
   @foreach($vaccineSchedule as $row)
@@ -30,8 +30,7 @@
       <td>{{$row->immunity}}</td>
       <td>{{$row->dose}}</td>
       <td>{{$row->remark}}</td>
-      
-    <td>
+      <td>
       
         <a class="btn btn-info"  href="">Edit</a>
         <a class="btn btn-warning" href="">Delete</a>

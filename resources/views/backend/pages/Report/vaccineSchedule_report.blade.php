@@ -1,11 +1,10 @@
-Israt Era
 @extends('backend.master')
-@section('session')
+@section('content')
 
-<h2>Attendance Report</h2>
+<h2>VaccineSchedule Report</h2>
 
 @if(session()->has('msg'))
-<p class="alert alert-success"> {{session()->get('msg')}}</p>
+<p class="alert alert-info"> {{session()->get('msg')}}</p>
 @endif
 
 @if ($errors->any())
@@ -15,7 +14,7 @@ Israt Era
   </div>
   @endforeach
   @endif
-<form action="{{route('attendence_report_search')}}" method="get">
+<form action="{{route('vaccineSchedule.report.search')}}" method="get">
 
 <div class="row">
     <div class="col-md-3">
@@ -28,42 +27,45 @@ Israt Era
         <input value="{{request()->to_date}}" name="to_date" type="date" class="form-control">
     </div>
     <div class="col-md-3">
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="btn btn-info">Search</button>
     </div>
 </div>
 
 </form>
-<div id="attendence_report">
+<div id="feedSchedule_report">
 
 <h2>Report of - {{request()->from_date}} to  {{request()->to_date}}</h2>
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Date</th>
-            <th scope="col">Sign In</th>
-            <th scope="col">Sign Out</th>
-            
-
-        </tr>
+      <th scope="col">#</th>
+      <th scope="col">Cow Disease</th>
+      <th scope="col">Vaccine Name</th>
+      <th scope="col">Time of Vaccination</th>
+      <th scope="col">Immunity</th>
+      <th scope="col">Vaccine Dose (ml)</th>
+      <th scope="col">Remark</th>
+      <th scope="col">Action</th>
+      </tr>
         </thead>
         <tbody>
-        @if(isset($attendence))
-        @foreach($attendence as $key=>$value)
-        <tr>
-        <td>{{++$key}}</td>
-      <td>{{$value->name}}</td>
-      <td>{{$value->date}}</td>
-      <td>{{$value->sign_in}}</td>
-      <td>{{$value->sign_out}}</td>
-        </tr>
+        @if(isset($vaccineSchedule))
+        @foreach($vaccineSchedule as $row)
+    <tr>
+      <th scope="row">{{$loop->iteration}}</th>
+      <td>{{$row->disease}}</td>
+      <td>{{$row->name}}</td>
+      <td>{{$row->time}}</td>
+      <td>{{$row->immunity}}</td>
+      <td>{{$row->dose}}</td>
+      <td>{{$row->remark}}</td>
+      <td>
         @endforeach
         @endif
         </tbody>
     </table>
 </div>
-<button onclick="printDiv('attendence_report')" class="btn btn-danger">Print</button>
+<button onclick="printDiv('vaccineSchedule_report')" class="btn btn-info">Print</button>
 
 
 <script>

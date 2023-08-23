@@ -12,7 +12,7 @@
         @endforeach
         @endif
         
-<a href="{{route('feed.create')}}"><button class="btn btn-success ">Create</button></a>
+<a href="{{route('feed.create')}}"><button class="btn btn-info ">Create</button></a>
 <form action="{{route('feed.store')}}" method="post">
     @csrf
     <div class="form-group">
@@ -28,6 +28,6 @@
            <label for="">Enter Daily Consumption<span style="color:red">*</span></label>
            <input  type="text" class="form-control" required name="feed_daily_consumption" placeholder="Enter Daily Consumption">
        </div>
-  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="submit" class="btn btn-info">Submit</button>
 </form>
 @endsection

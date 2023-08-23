@@ -4,7 +4,7 @@
     
        
  <h1 class="text-center"><strong>Cow Shade</strong></h1>
-
+<hr>
 
 <div><a href="{{route('cowShade.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
@@ -32,8 +32,8 @@
       <td>{{$row->alley}}</td>
       <td>
       
-        <a class="btn btn-info"  href="">Edit</a>
-        <a  class="btn btn-warning" href="{{route('cowShade.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-info"  href="{{route('cowShade.edit',$row->id)}}">Edit</a>
+        <a class="btn btn-warning" href="{{route('cowShade.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

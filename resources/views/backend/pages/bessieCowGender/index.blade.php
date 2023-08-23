@@ -2,7 +2,8 @@
 @section('content')
 
 <h1 class="text-center"><strong>Bessie Cow Gender</strong></h1>
-<div><a href="{{route('bessieCowGender.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<hr>
+<div><a href="{{route('bessieCowGender.create')}}"><button class="btn btn-info">Add New</button></a></div>
 
 <table class="table">
   <thead>

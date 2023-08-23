@@ -2,9 +2,9 @@
 
 
 @section('content')
-<h1 class="text-center"><strong>Staff Info</strong></h1>
-<div><a href="{{route('staff.create')}}"><button class="btn btn-info ">Add New Staff</button></a></div>
-
+<h1 class="text-center"><strong>Staff Information</strong></h1>
+<hr>
+     <div><a href="{{route('staff.create')}}"><button class="btn btn-info ">Add New Staff</button></a></div>
 
 <table class="table">
   <thead>
@@ -32,7 +32,7 @@
    
     
       <td>
-        <a class="btn btn-info"  href="">Edit</a>
+        <a class="btn btn-info"  href="{{route('staff.edit',$row->id)}}">Edit</a>
         <a  class="btn btn-warning" href="{{route('staff.delete',$row->id)}}">Delete</a>
       </td>
     </tr>

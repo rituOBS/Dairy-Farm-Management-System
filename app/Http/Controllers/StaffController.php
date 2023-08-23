@@ -25,6 +25,16 @@ class StaffController extends Controller
 
        return redirect()->back()->with('msg','StaffList Deleted Successfully');
     }
+
+    public function edit($id)
+    {
+        $staff=StaffList::find($id);
+        $staffs=StaffList::all();
+
+        return view('backend.pages.staff.edit',compact('staff','staffs'));
+
+
+     }
     public function store(Request $request)
     {
       //dd($request->all());
@@ -66,6 +76,29 @@ if($request->hasFile('staff_image'))
             return view('backend.pages.report.staff_report');
         }
     
+    
+        public function update(Request $request,$id)
+        {
+                   $request->validate([
+                     'staff_name'=>'required',
+                     'staff_designation'=>'required',
+                     'staff_email'=>'required',
+                 ]);
+
+                 
+            $staff=StaffList::find($id);
+
+            $staff->update([
+                'name'=>$request->staff_name,
+                'designation'=>$request->staff_designation,
+                'email'=>$request->staff_email,
+             
+                
+            ]);
+            return redirect()->back()->with('msg','StaffList Updated successfully.');
+
+        }
+
         public function staff_report_search(Request $request){
     
             $request->validate([

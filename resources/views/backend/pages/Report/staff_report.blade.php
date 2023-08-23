@@ -60,7 +60,7 @@
         </tbody>
     </table>
 </div>
-<button onclick="printDiv('staff_report')" class="btn btn-info">Print</button>
+<div><button onclick ="printDiv('staff_report')" class="btn btn-info">Print</button></div>
 
 
 <script>

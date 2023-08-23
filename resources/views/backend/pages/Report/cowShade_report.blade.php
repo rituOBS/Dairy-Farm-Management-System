@@ -65,7 +65,7 @@
 </div>
 <!-- <button onclick="printDiv('cowShade.report')" class="btn btn-info">Print</button> -->
 
-<a class="btn btn-info" href="{{route('cowShade.report')}}" role="button">Print</a>
+<div><button onclick ="printDiv('cowShade_report')" class="btn btn-info">Print</button></div>
 <script>
     function printDiv(divId){
         var printContents = document.getElementById(divId).innerHTML;

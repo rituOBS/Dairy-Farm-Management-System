@@ -25,6 +25,15 @@ class CowShadeController extends Controller
 
        return redirect()->back()->with('msg','CowShade Deleted Successfully');
     }
+    public function edit($id)
+    {
+        $cowShade=CowShade::find($id);
+        $cowShades=CowShade::all();
+
+        return view('backend.pages.staff.edit',compact('cowShade','cowShades'));
+
+
+     }
 
    
     public function store(Request $request)

@@ -41,7 +41,7 @@ use App\Http\Controllers\UserController;
 use App\Models\CowShade;
 
 Route::get('/',[HomeController::class,'home'])->name('home');
-Route::get('/all-products',[WebsiteProductController::class,'allProducts'])->name('website.all-products');
+//Route::get('/all-products',[WebsiteProductController::class,'allProducts'])->name('website.all-products');
 
 //Route::get('/customer-login',[HomeController::class,'login'])->name('customer.login');
 //Route::post('/customer-dologin',[CustomerController::class,'dologin'])->name('customer.dologin');
@@ -81,7 +81,7 @@ Route::post('/categoy-store',[CategoriesController::class,'store'])->name('categ
 
 //Brown controller
 Route::get('/brown-cow',[BrownController::class,'index'])->name('brownCow.index');
-Route::get('/brown/delete/{id}',[BrownController::class,'delete'])->name('browncow.delete');
+//Route::get('/brown/delete/{id}',[BrownController::class,'delete'])->name('browncow.delete');
 Route::get('/brown-cow-create',[BrownController::class,'create'])->name('brownCow.create');
 Route::post('/brown-cow-store',[BrownController::class,'store'])->name('brownCow.store');
 
@@ -163,6 +163,9 @@ Route::post('/cow-store',[CowController::class,'store'])->name('cow.store');
 
 Route::get('/cowShade-list',[CowShadeController::class,'list'])->name('cowShade.list');
 Route::get('/cowShade/delete/{id}',[CowShadeController::class,'delete'])->name('cowShade.delete');
+Route::get('/cowShade/edit/{id}',[CowShadeController::class,'edit'])->name('cowShade.edit');
+Route::put('/cowShade/update/{id}',[CowShadeController::class,'update'])->name('cowShade.update');
+Route::get('/cowShade/delete/{id}',[CowShadeController::class,'delete'])->name('cowShade.delete');
 Route::get('/cowShade-create-form',[CowShadeController::class,'create'])->name('cowShade.create');
 Route::post('/cowShade-store',[CowShadeController::class,'store'])->name('cowShade.store');
 
@@ -186,18 +189,12 @@ Route::post('/milkstore',[MilkController::class,'store'])->name('milk.store');
 
 Route::get('/staff-list',[StaffController::class,'list'])->name('staff.list');
 Route::get('/staff/delete/{id}',[StaffController::class,'delete'])->name('staff.delete');
-//Route::get('/staff/edit/{id}',[StaffController::class,'edit'])->name('product.edit');
+Route::get('/staff/edit/{id}',[StaffController::class,'edit'])->name('staff.edit');
+Route::put('/staff/update/{id}',[StaffController::class,'update'])->name('staff.update');
 Route::get('/staff-create-form',[StaffController::class,'create'])->name('staff.create');
 Route::post('/staff-store',[StaffController::class,'store'])->name('staff.store');
 
 
-
-
-//Route::get('/product-list',[ProductController::class,'list'])->name('product.list');
-//Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
-//Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
-//Route::get('/product-create-form',[ProductController::class,'create'])->name('product.create');
-//Route::post('/product-store',[ProductController::class,'store'])->name('product.store');
 
 
 Route::get('/vaccineMonitor-list',[VaccineMonitorController::class,'list'])->name('vaccineMonitor.list');
@@ -211,6 +208,8 @@ Route::post('/vaccineSchedule-store',[VaccineScheduleController::class,'store'])
 
 Route::get('/feedSchedule-list',[FeedScheduleController::class,'list'])->name('feedSchedule.list');
 Route::get('/feedSchedule/delete/{id}',[FeedScheduleController::class,'delete'])->name('feedSchedule.delete');
+Route::get('/feedSchedule/edit/{id}',[FeedScheduleController::class,'edit'])->name('feedSchedule.edit');
+Route::put('/feedSchedule/update/{id}',[FeedScheduleController::class,'update'])->name('feedSchedule.update');
 Route::get('/feedSchedule-create-form',[FeedScheduleController::class,'create'])->name('feedSchedule.create');
 Route::post('/feedSchedule-store',[FeedScheduleController::class,'store'])->name('feedSchedule.store');
 
@@ -224,7 +223,7 @@ Route::get('/profile',[UserController::class,'profile'])->name('admin.profile');
 
 
 Route::get('/allreport',[ReportController::class,'all_Report'])->name('all.report');
-
+//  --/ Staff Report--*/
  Route::get('/staff-report',[StaffController::class,'staff_Report'])->name('staff.report');
  Route::get('/staffreport/search',[StaffController::class,'staff_Report_Search'])->name('staff.report.search');    
 
@@ -234,8 +233,8 @@ Route::get('/allreport',[ReportController::class,'all_Report'])->name('all.repor
 
 
  //  --/ CowList Report--*/
- Route::get('/cowList-report',[CowController::class,'cowList_Report'])->name('cowList.report');
- Route::get('/cowListreport/search',[CowController::class,'cowList_Report_Search'])->name('cowList.report.search'); 
+ Route::get('/cow-report',[CowController::class,'cow_Report'])->name('cow.report');
+ Route::get('/cowreport/search',[CowController::class,'cow_Report_Search'])->name('cow.report.search'); 
 
  //  --/ Category Report--*/
  Route::get('/category-report',[CategoriesController::class,'category_Report'])->name('category.report');
@@ -251,12 +250,12 @@ Route::get('/allreport',[ReportController::class,'all_Report'])->name('all.repor
 
 
  //  --/ Vaccine Monitor Report--*/
- Route::get('/vaccineMonitor-report',[VaccineMonitorController::class,'vaccineMonitor_Report'])->name('vaccineMonitor_report');
+ Route::get('/vaccineMonitor-report',[VaccineMonitorController::class,'vaccineMonitor_Report'])->name('vaccineMonitor.report');
  Route::get('/vaccineMonitorreport/search',[VaccineMonitorController::class,'vaccineMonitor_Report_Search'])->name('vaccineMonitor.report.search'); 
 
  //  --/ Vaccine Schedule Report--*/
- Route::get('/vaccineSchedule-report',[VaccineScheduleController::class,'vaccineScheduleReport'])->name('vaccineSchedule.report');
- Route::get('/vaccineSchedule-search-report',[VaccineScheduleControlle::class,'vaccineScheduleReportSearch'])->name('vaccineSchedule.report.search'); 
+ Route::get('/vaccineSchedule-report',[VaccineScheduleController::class,'vaccineSchedule_Report'])->name('vaccineSchedule_report');
+ Route::get('/vaccineSchedulereport/search',[VaccineScheduleController::class,'vaccineSchedule_Report_Search'])->name('vaccineSchedule_report_search'); 
 
 });
 

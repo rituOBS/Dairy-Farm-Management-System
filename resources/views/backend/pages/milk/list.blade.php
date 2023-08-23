@@ -3,6 +3,7 @@
 
 @section('content')
 <h1 class="text-center"><strong>Milk Collection Record</strong></h1>
+<hr>
 <div><a href="{{route('milk.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 <table class="table">
   <thead>

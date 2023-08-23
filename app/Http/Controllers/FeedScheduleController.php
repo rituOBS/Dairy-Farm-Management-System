@@ -26,6 +26,17 @@ class FeedScheduleController extends Controller
        return redirect()->back()->with('msg','$FeedSchedule Deleted Successfully');
     }
 
+    public function edit($id)
+    {
+        $feedSchedule=FeedSchedule::find($id);
+        $feedSchedules=FeedSchedule::all();
+
+        return view('backend.pages.feedSchedule.edit',compact('feedSchedule','feedSchedules'));
+
+
+     }
+
+    
     
     public function store(Request $request)
     {
@@ -48,6 +59,38 @@ class FeedScheduleController extends Controller
        //return to_route('feed.list');
 
    }
+
+   public function update(Request $request,$id)
+   {
+              $request->validate([
+                'animal_type'=>'required',
+                'feeding_during'=>'required',
+                'green_grass'=>'required',
+                'dry_fooder'=>'required',
+                'soybean_meal'=>'required',
+                'paddy_straw'=>'required',
+                'concentrate_mixture'=>'required',
+                'wheat_bran'=>'required',
+            ]);
+
+            
+       $feedSchedule=FeedSchedule::find($id);
+
+       $feedSchedule->update([
+        'animal'=>$request->animal_type,
+        'during'=>$request->feeding_during,
+        'grass'=>$request->green_grass,
+        'fooder'=>$request->dry_fooder,
+        'meal'=>$request->soybean_meal,
+        'straw'=>$request->paddy_straw,
+        'mixture'=>$request->concentrate_mixture,
+        'bran'=>$request->wheat_bran,
+           
+       ]);
+       return redirect()->back()->with('msg',' $FeedSchedule Updated successfully.');
+
+   }
+
 
    public function feedSchedule_report(){
     return view('backend.pages.report.feedSchedule_report');

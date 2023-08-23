@@ -2,14 +2,15 @@
 @section('content')
 
 <h1 class="text-center"><strong>Brown Cow Gender</strong></h1>
-<div><a href="{{route('brownCowGender.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<hr>
+<div><a href="{{route('brownCowGender.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Cow Name</th>
-      <th scope="col">Cow Weight</th>
+      <th scope="col">Cow Weight (kg)</th>
       <th scope="col">Cow Gender</th>
       <th scope="col">Action</th>
     </tr>

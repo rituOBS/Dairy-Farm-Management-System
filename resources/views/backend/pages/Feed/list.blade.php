@@ -1,7 +1,7 @@
 @extends('backend.master')
 @section('content')
 <h1 class="text-center"><strong>Feed List</strong></h1>
-
+<hr>
 <div><a href="{{route('feed.create')}}"><button class="btn btn-info ">Add New Feed</button></a></div>
 <table class="table">
   <thead>
@@ -9,7 +9,7 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">feed Item</th>
-      <th scope="col">Daily Consumption (Litre)</th>
+      <th scope="col">Daily Consumption (kg)</th>
       <th scope="col">Action</th>
 
     </tr>

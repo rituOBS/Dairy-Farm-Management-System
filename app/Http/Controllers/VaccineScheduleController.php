@@ -34,6 +34,21 @@ class VaccineScheduleController extends Controller
         return redirect()->back()->with('msg','VaccineSchedule Created successfully.');
    
        //return to_route('feed.list');
+   }
+
+   public function vaccineSchedule_report_search(Request $request){
+
+    $request->validate([
+        'from_date'=>'required|date',
+        'to_date'=>'required|date|after:from_date'
+    ]);
+
+    $from=$request->from_date;
+    $to=$request->to_date;
+
+    $vaccineSchedule=VaccineSchedule::whereBetween('created_at', [$from , $to])->get();
+    return view('backend.pages.report.vaccineSchedule_report',compact('vaccineSchedule'));
 
    }
+
 }

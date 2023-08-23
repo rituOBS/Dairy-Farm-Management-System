@@ -1,15 +1,16 @@
 @extends('backend.master')
 @section('content')
 
-<h1> Brown Cow (Feeding-item)</h1>
-<div><a href="{{route('feeding.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<h1 class="text-center"><strong>Brown Cow Daily Feeding Consumption</strong></h1>
+<hr>
+<div><a href="{{route('feeding.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Feed Name</th>
-      <th scope="col">Feed Quantity (litre)</th>
+      <th scope="col">Feed Quantity (kg)</th>
       <th scope="col">Action</th>
     </tr>
   </thead>

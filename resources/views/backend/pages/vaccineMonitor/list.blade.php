@@ -3,6 +3,7 @@
 
 @section('content')
 <h1 class="text-center"><strong>Vaccine Monitoring</strong></h1>
+<hr>
 <div><a href="{{route('vaccineMonitor.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
 

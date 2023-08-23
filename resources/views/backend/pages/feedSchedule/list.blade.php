@@ -3,6 +3,7 @@
 
 @section('content')
 <h1 class="text-center"><strong>Feed Schedule</strong></h1>
+<hr>
 <div><a href="{{route('feedSchedule.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
 
@@ -36,8 +37,8 @@
       <td>{{$row->bran}}</td>
     <td>
       
-        <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="{{route('feedSchedule.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-info"  href="{{route('feedSchedule.edit',$row->id)}}">Edit</a>
+        <a class="btn btn-warning" href="{{route('feedSchedule.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

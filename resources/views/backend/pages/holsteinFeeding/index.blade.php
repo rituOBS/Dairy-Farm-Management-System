@@ -2,14 +2,15 @@
 @section('content')
 
 <h1 class="text-center"><strong>Holstein Feeding Item</strong></h1>
-<div><a href="{{route('holsteinFeeding.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<hr>
+<div><a href="{{route('holsteinFeeding.create')}}"><button class="btn btn-info">Add New</button></a></div>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Feed Name</th>
-      <th scope="col">Feed Quantity (litre)</th>
+      <th scope="col">Feed Quantity (kg)</th>
       <th scope="col">Action</th>
     </tr>
   </thead>

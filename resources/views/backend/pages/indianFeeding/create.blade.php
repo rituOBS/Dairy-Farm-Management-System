@@ -23,7 +23,7 @@
            <input  type="number" class="form-control" required name="feeding_quantity" placeholder="Enter Feed Quantity">
        </div> 
   <br>
-  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="submit" class="btn btn-info">Submit</button>
 </form>
 </div>
 

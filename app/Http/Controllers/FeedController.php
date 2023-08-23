@@ -71,7 +71,6 @@ class FeedController extends Controller
                 'name'=>$request->feed_name,
                 'item'=>$request->feed_item,
                 'daily_consumption'=>$request->feed_daily_consumption,
-                'Description'=>$request->feed_description,
                 
             ]);
             return redirect()->back()->with('msg','FeedList Updated successfully.');

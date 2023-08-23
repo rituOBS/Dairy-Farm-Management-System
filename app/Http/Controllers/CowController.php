@@ -67,9 +67,7 @@ class CowController extends Controller
         }
         public function update(Request $request,$id)
         {
-            //    dd($request);
-        
-                 $request->validate([
+                   $request->validate([
                      'cow_name'=>'required',
                      'cow_weight'=>'required|gt:100',
                      'cow_color'=>'required',
@@ -115,7 +113,7 @@ class CowController extends Controller
         return view('backend.pages.report.cowList_report');
     }
 
-    public function cowList_report_search(Request $request){
+    public function cow_report_search(Request $request){
 
         $request->validate([
             'from_date'=>'required|date',
@@ -126,7 +124,7 @@ class CowController extends Controller
         $to=$request->to_date;
 
         $cow=CowList::whereBetween('created_at', [$from , $to])->get();
-        return view('backend.pages.report.cowList_report',compact('cow'));
+        return view('backend.pages.report.cow_report',compact('cow'));
 
     }
 }

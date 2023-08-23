@@ -14,7 +14,7 @@
   </div>
   @endforeach
   @endif
-<form action="{{route('cowList.report.search')}}" method="get">
+<form action="{{route('cow.report.search')}}" method="get">
 
 <div class="row">
     <div class="col-md-3">
@@ -32,7 +32,7 @@
 </div>
 
 </form>
-<div id="cowList_report">
+<div id="cow_report">
 
 <h2>Report of - {{request()->from_date}} to  {{request()->to_date}}</h2>
     <table class="table table-striped">
@@ -64,7 +64,7 @@
         </tbody>
     </table>
 </div>
-<button onclick="printDiv('cowList.report')" class="btn btn-success">Print</button>
+<button onclick="printDiv('cow_report')" class="btn btn-success">Print</button>
 
 
 <script>

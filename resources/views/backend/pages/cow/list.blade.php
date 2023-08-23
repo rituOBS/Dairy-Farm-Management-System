@@ -4,7 +4,7 @@
     
        
  <h1 class="text-center"><strong>Cow List</strong></h1>
-
+<hr>
 
 <div><a href="{{route('cow.create')}}"><button class="btn btn-info ">Add New Cow</button></a></div>
 
@@ -16,7 +16,7 @@
       <th scope="col">Name</th>
       <th scope="col">Weight (kg)</th>
       <th scope="col">Color</th>  
-      <th scope="col">Price</th>  
+      <th scope="col">Price (Tk)</th>  
       <th scope="col">Action</th>
 
       

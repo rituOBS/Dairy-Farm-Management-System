@@ -2,7 +2,8 @@
 @section('content')
 
 <h1 class="text-center"><strong>Holstein Cow (Milk Per Day)</strong></h1>
-<div><a href="{{route('holsteinmilkWeight.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<hr>
+<div><a href="{{route('holsteinmilkWeight.create')}}"><button class="btn btn-info">Add New</button></a></div>
 
 <table class="table">
   <thead>
@@ -10,7 +11,7 @@
       <th scope="col">#</th>
       <th scope="col">Cow Name</th>
       <th scope="col">Milk Category</th>
-      <th scope="col">Daily Milk Weight</th>
+      <th scope="col">Daily Milk Weight (kg)</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
