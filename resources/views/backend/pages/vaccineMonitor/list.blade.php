@@ -3,7 +3,7 @@
 
 @section('content')
 <h1 class="text-center"><strong>Vaccine Monitoring</strong></h1>
-<div><a href="{{route('vaccineMonitor.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<div><a href="{{route('vaccineMonitor.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
 
 <table class="table">
@@ -24,7 +24,6 @@
       <td>{{$row->name}}</td>
       <td>{{$row->date}}</td>
       <td>{{$row->remark}}</td>
-      
     <td>
         <a class="btn btn-warning"  href="">View</a>
         <a class="btn btn-info"  href="">Edit</a>
@@ -34,5 +33,7 @@
     @endforeach
   </tbody>
 </table>
+
+{{$vaccineMonitor->links()}}
 
 @endsection

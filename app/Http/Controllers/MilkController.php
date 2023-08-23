@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MilkCollection;
 use Illuminate\Http\Request;
 use App\Models\MilkList;
 
@@ -9,8 +10,8 @@ class MilkController extends Controller
 {
     public function list()
     {
-        $milk=MilkList::all();
-        $milk=MilkList::paginate(4);
+        $milk=MilkCollection::all();
+        $milk=MilkCollection::paginate(4);
         return view('backend.pages.milk.list',compact('milk'));
     }
     public function create()
@@ -20,16 +21,16 @@ class MilkController extends Controller
 
     public function delete($id)
     {
-       $milk=MilkList::find($id);
+       $milk=MilkCollection::find($id);
 
        $milk->delete();
 
-       return redirect()->back()->with('msg','MilkList Deleted Successfully.');
+       return redirect()->back()->with('msg','MilkCollection Deleted Successfully.');
     }
     public function edit($id)
     {
-        $milk=MilkList::find($id);
-        $milks=MilkList::all();
+        $milk=MilkCollection::find($id);
+        $milks=MilkCollection::all();
 
         return view('backend.pages.milk.edit',compact('milk','milks'));
 
@@ -40,17 +41,19 @@ class MilkController extends Controller
         //    dd($request);
 
             $request->validate([
+                'cow_name'=>'required',
                 'milk_quality'=>'required',
                 'milk_quantity'=>'required',
                 'milk_price'=>'required|gt:100',
                 // 'employee_designation'=>'required|gt:10'
             ]);
     //dd($request->all());
-                MilkList::create([
+                MilkCollection::create([
+                    'name'=>$request->cow_name,
                     'quality'=>$request->milk_quality,
                     'quantity'=>$request->milk_quantity,
                     'price'=>$request->milk_price,
-                    'Description'=>$request->milk_description,
+                   
                     
                 ]);
                 return redirect()->back()->with('msg','Employee Created successfully.');
@@ -61,14 +64,16 @@ class MilkController extends Controller
         {
             
             $request->validate([
+                'cow_name'=>'required',
                 'milk_quality'=>'required',
                 'milk_quantity'=>'required',
                 'milk_price'=>'required|gt:100',
                 // 'employee_designation'=>'required|gt:10'
             ]);
-            $milk=MilkList::find($id);
+            $milk=MilkCollection::find($id);
 
             $milk->update([
+                'name'=>$request->cow_name,
                 'quality'=>$request->milk_quality,
                 'quantity'=>$request->milk_quantity,
                 'price'=>$request->milk_price,
@@ -77,5 +82,6 @@ class MilkController extends Controller
             ]);
             return redirect()->back()->with('msg','Milk Updated successfully.');
         }
+
         
 }

@@ -110,6 +110,25 @@ class CowController extends Controller
         return view('backend.pages.report.productReport',compact('cows'));
 
     }
+
+    public function cowList_report(){
+        return view('backend.pages.report.cowList_report');
+    }
+
+    public function cowList_report_search(Request $request){
+
+        $request->validate([
+            'from_date'=>'required|date',
+            'to_date'=>'required|date|after:from_date'
+        ]);
+
+        $from=$request->from_date;
+        $to=$request->to_date;
+
+        $cow=CowList::whereBetween('created_at', [$from , $to])->get();
+        return view('backend.pages.report.cowList_report',compact('cow'));
+
+    }
 }
     
 

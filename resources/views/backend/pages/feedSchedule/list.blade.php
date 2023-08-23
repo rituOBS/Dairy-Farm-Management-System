@@ -3,19 +3,21 @@
 
 @section('content')
 <h1 class="text-center"><strong>Feed Schedule</strong></h1>
-<div><a href="{{route('feedSchedule.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<div><a href="{{route('feedSchedule.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Cow Disease</th>
-      <th scope="col">Vaccine Name</th>
-      <th scope="col">Time of Vaccination</th>
-      <th scope="col">Immunity</th>
-      <th scope="col">Vaccine Dose (ml)</th>
-      <th scope="col">Remark</th>
+      <th scope="col">Type of Animal</th>
+      <th scope="col">Feeding During</th>
+      <th scope="col">Green Grass (kg)</th>
+      <th scope="col">Dry Fooder(kg)</th>
+      <th scope="col">Soybean Meal(kg)</th>
+      <th scope="col">Paddy Straw(kg)</th>
+      <th scope="col">Concentrate Mixture (kg)</th>
+      <th scope="col">Wheat Bran(kg)</th>
       <th scope="col">Action</th>
      
     </tr>
@@ -24,21 +26,24 @@
   @foreach($feedSchedule as $row)
     <tr>
       <th scope="row">{{$loop->iteration}}</th>
-      <td>{{$row->disease}}</td>
-      <td>{{$row->name}}</td>
-      <td>{{$row->time}}</td>
-      <td>{{$row->immunity}}</td>
-      <td>{{$row->dose}}</td>
-      <td>{{$row->remark}}</td>
-      
+      <td>{{$row->animal}}</td>
+      <td>{{$row->during}}</td>
+      <td>{{$row->grass}}</td>
+      <td>{{$row->fooder}}</td>
+      <td>{{$row->meal}}</td>
+      <td>{{$row->straw}}</td>
+      <td>{{$row->mixture}}</td>
+      <td>{{$row->bran}}</td>
     <td>
       
         <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="">Delete</a>
+        <a class="btn btn-success" href="{{route('feedSchedule.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
+
+{{$feedSchedule->links()}}
 
 @endsection

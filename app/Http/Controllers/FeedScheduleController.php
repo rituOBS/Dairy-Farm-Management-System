@@ -9,7 +9,7 @@ class FeedScheduleController extends Controller
     public function list()
     {
        $feedSchedule=FeedSchedule::all();
-       //$vaccineSchedule=VaccineSchedule::paginate(4);
+       $feedSchedule=FeedSchedule::paginate(4);
         return view('backend.pages.feedSchedule.list',compact('feedSchedule'));
     }
     public function create()
@@ -17,23 +17,55 @@ class FeedScheduleController extends Controller
         return view('backend.pages.feedSchedule.create');
     }
 
+    public function delete($id)
+    {
+        $feedSchedule=FeedSchedule::find($id);
+
+       $feedSchedule->delete();
+
+       return redirect()->back()->with('msg','$FeedSchedule Deleted Successfully');
+    }
+
     
     public function store(Request $request)
     {
+        // dd($request->all());
         FeedSchedule::create([
-            'disease'=>$request->cow_disease,
-            'name'=>$request->vaccine_name,
-            'time'=>$request->vaccine_time,
-            'immunity'=>$request->vaccine_immunity,
-            'dose'=>$request->vaccine_dose,
-            'remark'=>$request->vaccine_remark,
+            'animal'=>$request->animal_type,
+            'during'=>$request->feeding_during,
+            'grass'=>$request->green_grass,
+            'fooder'=>$request->dry_fooder,
+            'meal'=>$request->soybean_meal,
+            'straw'=>$request->paddy_straw,
+            'mixture'=>$request->concentrate_mixture,
+            'bran'=>$request->wheat_bran,
             //'image'=>$fileName
             //'Description'=>$request->feed_description,
             
         ]);
-        return redirect()->back()->with('msg','FeedSchedule Created successfully.');
+        return redirect()->back()->with('FeedSchedule Created successfully.');
    
        //return to_route('feed.list');
 
    }
+
+   public function feedSchedule_report(){
+    return view('backend.pages.report.feedSchedule_report');
+}
+
+public function feedSchedule_report_search(Request $request){
+
+    $request->validate([
+        'from_date'=>'required|date',
+        'to_date'=>'required|date|after:from_date'
+    ]);
+
+    $from=$request->from_date;
+    $to=$request->to_date;
+
+    $feedSchedule=FeedSchedule::whereBetween('created_at', [$from , $to])->get();
+    return view('backend.pages.report.feedSchedule_report',compact('feedSchedule'));
+
+   }
+
 }

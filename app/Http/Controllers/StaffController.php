@@ -9,7 +9,7 @@ class StaffController extends Controller
     public function list()
     {
         $staff=StaffList::all();
-        $staff=StaffList::paginate(6);
+        $staff=StaffList::paginate(4);
         return view('backend.pages.staff.list',compact('staff'));
     }
     public function create()
@@ -61,5 +61,23 @@ if($request->hasFile('staff_image'))
        
            //return to_route('feed.list');
 
+        }
+        public function staff_report(){
+            return view('backend.pages.report.staff_report');
+        }
+    
+        public function staff_report_search(Request $request){
+    
+            $request->validate([
+                'from_date'=>'required|date',
+                'to_date'=>'required|date|after:from_date'
+            ]);
+    
+            $from=$request->from_date;
+            $to=$request->to_date;
+    
+            $staff=StaffList::whereBetween('created_at', [$from , $to])->get();
+            return view('backend.pages.report.staff_report',compact('staff'));
+    
         }
 }

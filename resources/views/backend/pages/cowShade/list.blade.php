@@ -6,7 +6,7 @@
  <h1 class="text-center"><strong>Cow Shade</strong></h1>
 
 
-<div><a href="{{route('cowShade.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<div><a href="{{route('cowShade.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
 <table class="table">
   <thead>
@@ -18,9 +18,7 @@
       <th scope="col">Central Passage Width</th>  
       <th scope="col">Feed Alley Width</th>   
       <th scope="col">Action</th>
-
-      
-    </tr>
+ </tr>
   </thead>
   <tbody>
 
@@ -32,9 +30,6 @@
       <td>{{$row->width}}</td>
       <td>{{$row->passage}}</td>
       <td>{{$row->alley}}</td>
-    
-
-      
       <td>
       
         <a class="btn btn-info"  href="">Edit</a>
@@ -49,7 +44,7 @@
   
 
 
-
+{{$cowShade->links()}}
 
 
 @endsection

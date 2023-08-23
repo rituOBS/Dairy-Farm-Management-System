@@ -9,7 +9,7 @@ class VaccineMonitorController extends Controller
     public function list()
     {
        $vaccineMonitor=VaccineMonitor::all();
-       //$vaccineSchedule=VaccineSchedule::paginate(4);
+       $vaccineMonitor=VaccineMonitor::paginate(4);
         return view('backend.pages.vaccineMonitor.list',compact('vaccineMonitor'));
     }
     public function create()
@@ -31,6 +31,21 @@ class VaccineMonitorController extends Controller
         return redirect()->back()->with('msg','Employee Created successfully.');
    
        //return to_route('feed.list');
+
+   }
+
+   public function vaccineMonitor_report_search(Request $request){
+
+    $request->validate([
+        'from_date'=>'required|date',
+        'to_date'=>'required|date|after:from_date'
+    ]);
+
+    $from=$request->from_date;
+    $to=$request->to_date;
+
+    $vaccineMonitor=VaccineMonitor::whereBetween('created_at', [$from , $to])->get();
+    return view('backend.pages.report.vaccineMonitor_report',compact('vaccineMonitor'));
 
    }
 }

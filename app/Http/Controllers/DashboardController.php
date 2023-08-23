@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\StaffList;
 use App\Models\VaccineMonitor;
 use App\Models\FeedList;
+use App\Models\MilkCollection;
+use App\Models\FeedSchedule;
 use App\Models\MilkList;
 
 class DashboardController extends Controller
@@ -19,8 +21,11 @@ class DashboardController extends Controller
         $vaccines=VaccineMonitor::all()->count();
                
         $feedList=FeedList::all()->count();
-        $milkList=MilkList::all()->count();
-        return view('backend.pages.home',compact('categories','staffs','milkList','feedList','vaccines'));
+        $milkList=MilkCollection::all()->count();
+        $feedSchedule=FeedSchedule::all()->count();
+
+
+        return view('backend.pages.home',compact('categories','staffs','milkList','feedList','vaccines','feedSchedule'));
     }
 
     

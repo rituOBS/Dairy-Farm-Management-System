@@ -3,7 +3,7 @@
 
 @section('content')
 <h1 class="text-center"><strong>Staff Info</strong></h1>
-<div><a href="{{route('staff.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<div><a href="{{route('staff.create')}}"><button class="btn btn-info ">Add New Staff</button></a></div>
 
 
 <table class="table">

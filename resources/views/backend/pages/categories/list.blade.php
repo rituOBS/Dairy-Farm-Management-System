@@ -2,7 +2,7 @@
 @section('content')
 <h1 class="text-center"><strong>Cow Categories</strong></h1>
 
-<div><a href="{{route('category.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<div><a href="{{route('category.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
 <table class="table">
   <thead>

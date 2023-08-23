@@ -80,6 +80,25 @@ class CategoriesController extends Controller
                 ]);
                 return redirect()->back()->with('msg','Category Updated successfully.');
             }
+
+            public function category_report(){
+                return view('backend.pages.report.category_report');
+            }
+        
+            public function category_report_search(Request $request){
+        
+                $request->validate([
+                    'from_date'=>'required|date',
+                    'to_date'=>'required|date|after:from_date'
+                ]);
+        
+                $from=$request->from_date;
+                $to=$request->to_date;
+        
+                $category=Category::whereBetween('created_at', [$from , $to])->get();
+                return view('backend.pages.report.category_report',compact('category'));
+        
+            }
                  
                 
 }

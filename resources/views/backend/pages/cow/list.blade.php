@@ -6,7 +6,7 @@
  <h1 class="text-center"><strong>Cow List</strong></h1>
 
 
-<div><a href="{{route('cow.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<div><a href="{{route('cow.create')}}"><button class="btn btn-info ">Add New Cow</button></a></div>
 
 <table class="table">
   <thead>

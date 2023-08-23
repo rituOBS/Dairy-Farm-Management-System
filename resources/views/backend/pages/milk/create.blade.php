@@ -14,6 +14,10 @@
   <form class="from" action="{{route('milk.store')}}" method="post">
   @csrf
   <div class="form-group">
+           <label for="">Enter Cow Name <span style="color:red">*</span></label>
+           <input  type="text" class="form-control" required name="cow_name" placeholder="Enter Cow Name">
+       </div>
+  <div class="form-group">
            <label for="">Enter Milk Quality <span style="color:red">*</span></label>
            <input  type="text" class="form-control" required name="milk_quality" placeholder="Enter Milk Quality">
        </div>

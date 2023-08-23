@@ -3,7 +3,7 @@
 
 @section('content')
 <h1 class="text-center"><strong>Vaccine Schedule</strong></h1>
-<div><a href="{{route('vaccineSchedule.create')}}"><button class="btn btn-success ">Create</button></a></div>
+<div><a href="{{route('vaccineSchedule.create')}}"><button class="btn btn-info ">Add New</button></a></div>
 
 
 <table class="table">
@@ -40,5 +40,7 @@
     @endforeach
   </tbody>
 </table>
+
 {{$vaccineSchedule->links()}}
+
 @endsection

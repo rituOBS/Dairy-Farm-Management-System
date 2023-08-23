@@ -42,7 +42,7 @@ class FeedController extends Controller
          $request->validate([
              'feed_name'=>'required',
              'feed_item'=>'required',
-             'feed_daily_consumption'=>'required|gt:100',
+             'feed_daily_consumption'=>'required',
              //'employee_designation'=>'required|gt:10'
          ]);
 //dd($request->all());
@@ -75,6 +75,25 @@ class FeedController extends Controller
                 
             ]);
             return redirect()->back()->with('msg','FeedList Updated successfully.');
+        }
+
+        public function feed_report(){
+            return view('backend.pages.report.feed_report');
+        }
+    
+        public function feed_report_search(Request $request){
+    
+            $request->validate([
+                'from_date'=>'required|date',
+                'to_date'=>'required|date|after:from_date'
+            ]);
+    
+            $from=$request->from_date;
+            $to=$request->to_date;
+    
+            $feed=FeedList::whereBetween('created_at', [$from , $to])->get();
+            return view('backend.pages.report.feed_report',compact('feed'));
+    
         }
     }
 

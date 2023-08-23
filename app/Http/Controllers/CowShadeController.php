@@ -9,7 +9,7 @@ class CowShadeController extends Controller
     public function list()
     {
         $cowShade=CowShade::all();
-       // $staff=StaffList::paginate(6);
+        $cowShade=CowShade::paginate(4);
         return view('backend.pages.cowShade.list',compact('cowShade'));
     }
     public function create()
@@ -55,5 +55,24 @@ class CowShadeController extends Controller
        
            //return to_route('feed.list');
 
+        }
+
+        public function cowShade_report(){
+            return view('backend.pages.report.cowShade_report');
+        }
+    
+        public function cowShade_report_search(Request $request){
+    
+            $request->validate([
+                'from_date'=>'required|date',
+                'to_date'=>'required|date|after:from_date'
+            ]);
+    
+            $from=$request->from_date;
+            $to=$request->to_date;
+    
+            $cowShade=CowShade::whereBetween('created_at', [$from , $to])->get();
+            return view('backend.pages.report.cowShade_report',compact('cowShade'));
+    
         }
 }
