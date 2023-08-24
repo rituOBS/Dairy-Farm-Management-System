@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\FeedingDetaile;
 use Illuminate\Http\Request;
 
@@ -28,9 +29,10 @@ class FeedingController extends Controller
     {
         $feeding=FeedingDetaile::find($id);
 
-        return view('backend.pages.cowShade.edit',compact('cowShade'));
+        return view('backend.pages.feeding.edit',compact('feeding'));
 
      }
+
     
     public function store(Request $request)
     {
@@ -39,6 +41,10 @@ class FeedingController extends Controller
             'quantity'=>$request->feed_quantity,
             
         ]);
+
+        Toastr::success('Created Successfully', 'FeedingDetaile', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','FeedingDetaile Created successfully.');
    
        //return to_route('feed.list');
@@ -57,11 +63,11 @@ class FeedingController extends Controller
 
              $feeding->update([
                 'name'=>$request->feed_name,
-            'quantity'=>$request->feed_quantity,
+                'quantity'=>$request->feed_quantity,
          
             
         ]);
-        return redirect()->back()->with('msg','CowShade Updated successfully.');
+        return redirect()->back()->with('msg','FeedingDetaile Updated successfully.');
 
     }
 }

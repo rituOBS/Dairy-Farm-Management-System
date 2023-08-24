@@ -41,19 +41,7 @@ use App\Http\Controllers\UserController;
 use App\Models\CowShade;
 
 Route::get('/',[HomeController::class,'home'])->name('home');
-//Route::get('/all-products',[WebsiteProductController::class,'allProducts'])->name('website.all-products');
-
-//Route::get('/customer-login',[HomeController::class,'login'])->name('customer.login');
-//Route::post('/customer-dologin',[CustomerController::class,'dologin'])->name('customer.dologin');
-
-
-//Route::get('/products-under-category/{categoryId}',[WebsiteProductController::class,'categoryWiseProducts'])->name('category.products');
-
 Route::get('/search',[HomeController::class,'search'])->name('search');
-
-
-//Route::get('/customer-registration',[HomeController::class,'registration'])->name('customer.registration');
-//Route::post('/customer-store',[CustomerController::class,'store'])->name('customer.store');
 
 
 //show login form
@@ -63,11 +51,9 @@ Route::post('/admin/do-login',[UserController::class,'doLogin'])->name('admin.do
 
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
-
-
 Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
-
 Route::get('/',[DashboardController::class,'dashboard'])->name('dashboard');
+
 
 /*start categories controller */
 Route::get('/categoy-index',[CategoriesController::class,'index'])->name('category.index');
@@ -76,8 +62,8 @@ Route::get('/categories/edit/{id}',[CategoriesController::class,'edit'])->name('
 Route::put('/categories/update/{id}',[CategoriesController::class,'update'])->name('categories.update');
 Route::get('/categoy-create',[CategoriesController::class,'create'])->name('category.create');
 Route::post('/categoy-store',[CategoriesController::class,'store'])->name('category.store');
-
 /*end categories controller */
+
 
 //Brown controller
 Route::get('/brown-cow',[BrownController::class,'index'])->name('brownCow.index');
@@ -214,14 +200,14 @@ Route::post('/vaccineMonitor-store',[VaccineMonitorController::class,'store'])->
 Route::get('/vaccineSchedule-list',[VaccineScheduleController::class,'list'])->name('vaccineSchedule.list');
 Route::get('/vaccineSchedule-create-form',[VaccineScheduleController::class,'create'])->name('vaccineSchedule.create');
 Route::post('/vaccineSchedule-store',[VaccineScheduleController::class,'store'])->name('vaccineSchedule.store');
-Route::get('/vaccineSchedule-delete/{id}',[VaccineScheduleController::class,'delete'])->name('vaccineSchedule.destroy');
+//Route::get('/vaccineSchedule-delete/{id}',[VaccineScheduleController::class,'delete'])->name('vaccineSchedule.destroy');
 
 
 
 Route::get('/feedSchedule-list',[FeedScheduleController::class,'list'])->name('feedSchedule.list');
-Route::get('/feedSchedule/delete/{id}',[FeedScheduleController::class,'delete'])->name('feedSchedule.delete');
-Route::get('/feedSchedule/edit/{id}',[FeedScheduleController::class,'edit'])->name('feedSchedule.edit');
-Route::put('/feedSchedule/update/{id}',[FeedScheduleController::class,'update'])->name('feedSchedule.update');
+//Route::get('/feedSchedule/delete/{id}',[FeedScheduleController::class,'delete'])->name('feedSchedule.delete');
+//Route::get('/feedSchedule/edit/{id}',[FeedScheduleController::class,'edit'])->name('feedSchedule.edit');
+//Route::put('/feedSchedule/update/{id}',[FeedScheduleController::class,'update'])->name('feedSchedule.update');
 Route::get('/feedSchedule-create-form',[FeedScheduleController::class,'create'])->name('feedSchedule.create');
 Route::post('/feedSchedule-store',[FeedScheduleController::class,'store'])->name('feedSchedule.store');
 

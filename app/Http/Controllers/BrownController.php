@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\BrownCow;
 use Illuminate\Http\Request;
 
@@ -42,14 +43,14 @@ class BrownController extends Controller
         BrownCow::create([
             'name'=>$request->cow_name,
             'number'=>$request->cow_number,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
             
         ]);
+
+        Toastr::success('Created Successfully', 'BrownCow', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','BrownCow Created successfully.');
    
-       //return to_route('feed.list');
-
     }
     public function update(Request $request,$id)
     {

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\VaccineMonitor;
 use Illuminate\Http\Request;
 
@@ -17,14 +18,14 @@ class VaccineMonitorController extends Controller
         return view('backend.pages.vaccineMonitor.create');
     }
 
-    public function delete($id)
-    {
-        $vaccineMonitor=VaccineMonitor::find($id);
+    // public function delete($id)
+    // {
+    //     $vaccineMonitor=VaccineMonitor::find($id);
 
-        $vaccineMonitor->delete();
+    //     $vaccineMonitor->delete();
 
-       return redirect()->back()->with('msg','VaccineMonitor Deleted Successfully.');
-    }
+    //    return redirect()->back()->with('msg','VaccineMonitor Deleted Successfully.');
+    // }
 
     
     public function store(Request $request)
@@ -32,14 +33,13 @@ class VaccineMonitorController extends Controller
         VaccineMonitor::create([
             'name'=>$request->cow_name,
             'date'=>$request->vaccine_date,
-            'remark'=>$request->vaccine_remark,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
-            
+            'remark'=>$request->vaccine_remark,   
         ]);
+
+        Toastr::success('Created Successfully', 'VaccineMonitor', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','Employee Created successfully.');
-   
-       //return to_route('feed.list');
 
    }
         public function vaccineMonitor_report(){

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\FeedList;
 use Illuminate\Http\Request;
 
@@ -53,6 +53,9 @@ class FeedController extends Controller
                 'Description'=>$request->feed_description,
                 
             ]);
+            Toastr::success('Created Successfully', 'FeedList', ['options']);
+            return redirect()->back();
+            
             return redirect()->back()->with('msg','Employee Created successfully.');
        
            //return to_route('feed.list');

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\HolsteinMilkWeight;
 use Illuminate\Http\Request;
 
@@ -21,15 +22,12 @@ class HolsteinMilkWeightController extends Controller
         HolsteinMilkWeight::create([
             'name'=>$request->cow_name,
             'category'=>$request->milk_category,
-            'weight'=>$request->milk_weight,
-           // 'quantity'=>$request->feed_quantity,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
-            
+            'weight'=>$request->milk_weight,  
         ]);
-        return redirect()->back()->with('msg','HolsteinMilkWeight Created successfully.');
-   
-       //return to_route('feed.list');
 
+        Toastr::success('Created Successfully', 'HolsteinMilkWeight', ['options']);
+        return redirect()->back();
+
+        return redirect()->back()->with('msg','HolsteinMilkWeight Created successfully.');
     }
 }

@@ -1,7 +1,14 @@
 @extends('backend.master')
 
 @section('content')
-<h1>edit cow</h1>
+<div class="row">
+  <div class="col-md-8 offset-md-2 ">
+    <div class="card mt-5 ">
+      <div class="card-header">
+        <div class="card-body">
+        <div class="container">
+<h1 class="text-center"><strong>Edit Cow List</strong></h1>
+<hr>
 
     @if(session()->has('msg'))
     <p class="alert alert-success"> {{session()->get('msg')}}</p>
@@ -37,6 +44,13 @@
            <label for="">Enter Price<span style="color:red">*</span></label>
            <input  value="{{$cow->price}}" type="number" class="form-control" required name="cow_price" placeholder="Enter Cow Price">
        </div>
-       <div><button type="submit" class="btn btn-primary">Submit</button></div>
-</form>
+       <br>
+       <div><button type="submit" class="btn btn-dark">Update</button></div>
+     </form>
+     </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 @endsection

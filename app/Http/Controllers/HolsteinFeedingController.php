@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\HolsteinFeeding;
 use Illuminate\Http\Request;
 
@@ -32,13 +32,13 @@ class HolsteinFeedingController extends Controller
         HolsteinFeeding::create([
             'name'=>$request->feeding_name,
             'quantity'=>$request->feeding_quantity,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
-            
+ 
         ]);
+
+        Toastr::success('Created Successfully', 'HolsteinFeeding', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','holsteinFeeding Created successfully.');
    
-       //return to_route('feed.list');
-
    }
 }

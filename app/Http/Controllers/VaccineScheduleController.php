@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\VaccineSchedule;
 use Illuminate\Http\Request;
 
@@ -8,7 +9,6 @@ class VaccineScheduleController extends Controller
 {
     public function list()
     {
-    //    $vaccineSchedule=VaccineSchedule::all();
        $vaccineSchedule=VaccineSchedule::paginate(4);
         return view('backend.pages.vaccineSchedule.list',compact('vaccineSchedule'));
     }
@@ -18,8 +18,6 @@ class VaccineScheduleController extends Controller
     }
 
 
-
-    
     public function store(Request $request)
     {
         VaccineSchedule::create([
@@ -28,14 +26,14 @@ class VaccineScheduleController extends Controller
             'time'=>$request->vaccine_time,
             'immunity'=>$request->vaccine_immunity,
             'dose'=>$request->vaccine_dose,
-            'remark'=>$request->vaccine_remark,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
-            
+            'remark'=>$request->vaccine_remark,  
         ]);
+
+        Toastr::success('Created Successfully', 'VaccineSchedule', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','VaccineSchedule Created successfully.');
-   
-       //return to_route('feed.list');
+
    }
 
    public function destroy($id){

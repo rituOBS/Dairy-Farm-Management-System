@@ -2,6 +2,7 @@
 
 
 @section('content')
+<div class="container">
 <h1 class="text-center"><strong>Feed Schedule</strong></h1>
 <hr>
 <div><a href="{{route('feedSchedule.create')}}"><button class="btn btn-info ">Add New</button></a></div>
@@ -38,12 +39,13 @@
     <td>
       
         <a class="btn btn-info"  href="{{route('feedSchedule.edit',$row->id)}}">Edit</a>
-        <a class="btn btn-warning" href="{{route('feedSchedule.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-danger" href="{{route('feedSchedule.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
+</div>
 
 {{$feedSchedule->links()}}
 

@@ -2,6 +2,7 @@
 
 
 @section('content')
+<div class="container">
 <h1 class="text-center"><strong>Vaccine Monitoring</strong></h1>
 <hr>
 <div><a href="{{route('vaccineMonitor.create')}}"><button class="btn btn-info ">Add New</button></a></div>
@@ -27,12 +28,13 @@
       <td>{{$row->remark}}</td>
     <td>
         <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="{{route('vaccineMonitor.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-danger" href="">Delete</a>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
+</div>
 
 {{$vaccineMonitor->links()}}
 

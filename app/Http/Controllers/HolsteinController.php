@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\HolsteinCow;
 use Illuminate\Http\Request;
 
@@ -22,13 +23,12 @@ class HolsteinController extends Controller
         HolsteinCow::create([
             'name'=>$request->cow_name,
             'number'=>$request->cow_number,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
             
         ]);
-        return redirect()->back()->with('msg',' HolsteinCow Created successfully.');
-   
-       //return to_route('feed.list');
 
+        Toastr::success('Created Successfully', 'HolsteinCow', ['options']);
+        return redirect()->back();
+
+        return redirect()->back()->with('msg',' HolsteinCow Created successfully.');
     }
 }

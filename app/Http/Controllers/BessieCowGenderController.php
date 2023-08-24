@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\BessieCowGender;
 use Illuminate\Http\Request;
 
@@ -23,13 +24,13 @@ class BessieCowGenderController extends Controller
             'name'=>$request->cow_name,
             'weight'=>$request->cow_weight,
             'gender'=>$request->cow_gender,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
-            
+           
         ]);
+
+        Toastr::success('Created Successfully', 'BessieCowGender', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','BessieCowGender Created successfully.');
-   
-       //return to_route('feed.list');
 
     }
 }

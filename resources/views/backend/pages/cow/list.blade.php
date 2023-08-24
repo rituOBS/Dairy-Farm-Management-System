@@ -36,7 +36,7 @@
       <td>
       
         <a class="btn btn-info"  href="{{route('cow.edit',$row->id)}}">Edit</a>
-        <a  class="btn btn-warning" href="{{route('cow.delete',$row->id)}}">Delete</a>
+        <a  class="btn btn-danger" href="{{route('cow.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

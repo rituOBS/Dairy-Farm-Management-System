@@ -6,7 +6,7 @@
       <div class="card-header">
         <div class="card-body">
         <div class="container">
-<h1 class="text-center"><strong>Create New Feed List</strong></h1>
+<h1 class="text-center"><strong>Edit Feed List</strong></h1>
 <hr>
 
 @if($errors->any())
@@ -17,15 +17,16 @@
         @endforeach
         @endif
 
-  <form class="from" action="{{route('feeding.store')}}" method="post">
-  @csrf
+        <form action="{{route('feed.update',$feed->id)}}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('put')
   <div class="form-group">
            <label for="">Enter Feed Name </label>
-           <input  type="text" class="form-control" required name="feed_name" placeholder="Enter Feed Name">
+           <input value="{{$feeding->name}} type="text" class="form-control" required name="feed_name" placeholder="Enter Feed Name">
        </div>
         <div class="form-group">
            <label for="">Enter Feed Quantity </label>
-           <input  type="number" class="form-control" required name="feed_quantity" placeholder="Enter Feed Quantity">
+           <input value="{{$feeding->quality}} type="number" class="form-control" required name="feed_quantity" placeholder="Enter Feed Quantity">
        </div> 
       <br>
        <button type="submit" class="btn btn-dark">Submit</button>

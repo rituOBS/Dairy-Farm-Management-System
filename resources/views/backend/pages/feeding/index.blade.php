@@ -1,9 +1,9 @@
 @extends('backend.master')
 @section('content')
-
+<div class="container">
 <h1 class="text-center"><strong>Brown Cow Daily Feeding Consumption</strong></h1>
 <hr>
-<div><a href="{{route('feeding.create')}}"><button class="btn btn-info ">Add New</button></a></div>
+<div><a href="{{route('feeding.create')}}"><button class="btn btn-info ">+Add New</button></a></div>
 
 <table class="table">
   <thead>
@@ -23,15 +23,15 @@
       <td>{{$row->quantity}}</td>
       
     <td>
-        <a class="btn btn-warning"  href="">View</a>
-        <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="{{route('feeding.delete',$row->id)}}">Delete</a>
+       
+        <a class="btn btn-info"  href="{{route('feeding.edit',$row->id)}}">Edit</a>
+        <a class="btn btn-danger" href="{{route('feeding.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
+</div>
 
 {{$feeding->links()}}
-
 @endsection

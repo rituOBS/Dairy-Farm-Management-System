@@ -2,7 +2,14 @@
 
 
 @section('content')
-<h2>Feed Schedule</h2>
+<div class="row">
+  <div class="col-md-8 offset-md-2 ">
+    <div class="card mt-5 ">
+      <div class="card-header">
+        <div class="card-body">
+        <div class="container">
+<h1 class="text-center"><strong>Create New Feed List</strong></h1>
+<hr>
 
 
             
@@ -42,6 +49,13 @@
            <label for="">Enter Wheat Bran<span style="color:red">*</span></label>
            <input value="{{$wheat->bran}}" type="text" class="form-control" required name="wheat_bran" placeholder="Enter Wheat Bran">
        </div>
-  <button type="submit" class="btn btn-success">Submit</button>
-</form>
+       <br>
+     <button type="submit" class="btn btn-dark">Update</button>
+       </form>
+       </div>
+      </div>
+      </div>
+    </div>
+  </div>
+ </div>
 @endsection

@@ -1,7 +1,14 @@
 @extends('backend.master')
 @section('content')
 
-<h2>FeedSchedule Report</h2>
+<div class="row">
+  <div class="col-md-8 offset-md-2 ">
+    <div class="card mt-5 ">
+      <div class="card-header">
+        <div class="card-body">
+        <div class="container">
+<h1 class="text-center"><strong>Feed Schedule Report</strong></h1>
+<hr>
 
 @if(session()->has('msg'))
 <p class="alert alert-info"> {{session()->get('msg')}}</p>
@@ -27,7 +34,7 @@
         <input value="{{request()->to_date}}" name="to_date" type="date" class="form-control">
     </div>
     <div class="col-md-3">
-        <button type="submit" class="btn btn-info">Search</button>
+        <button type="submit" class="btn btn-danger">Search</button>
     </div>
 </div>
 
@@ -70,7 +77,7 @@
         </tbody>
     </table>
 </div>
-<button onclick="printDiv('feedSchedule_report')" class="btn btn-info">Print</button>
+<button onclick="printDiv('feedSchedule_report')" class="btn btn-danger">Print</button>
 
 
 <script>
@@ -82,6 +89,11 @@
         document.body.innerHTML = originalContents;
     }
 </script>
-
+       </div>
+      </div>
+     </div>
+    </div>
+  </div>
+ </div>
 
 @endsection

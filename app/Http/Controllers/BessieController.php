@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\BessieCow;
 use Illuminate\Http\Request;
 
@@ -25,13 +26,13 @@ class BessieController extends Controller
         BessieCow::create([
             'name'=>$request->cow_name,
             'number'=>$request->cow_number,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
             
         ]);
+
+        Toastr::success('Created Successfully', 'BessieCow', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','BessieCow Created successfully.');
-   
-       //return to_route('feed.list');
 
     }
 }

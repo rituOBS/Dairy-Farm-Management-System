@@ -15,11 +15,11 @@
   <form class="from" action="{{route('indianFeeding.store')}}" method="post">
   @csrf
   <div class="form-group">
-           <label for="">Enter Feeding Name <span style="color:red">*</span></label>
+           <label for="">Enter Feeding Name </label>
            <input  type="text" class="form-control" required name="feeding_name" placeholder="Enter Feeding Name">
        </div>
         <div class="form-group">
-           <label for="">Enter Feeding Quantity<span style="color:red">*</span></label>
+           <label for="">Enter Feeding Quantity </label>
            <input  type="number" class="form-control" required name="feeding_quantity" placeholder="Enter Feed Quantity">
        </div> 
   <br>

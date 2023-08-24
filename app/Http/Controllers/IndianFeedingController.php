@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\IndianFeeding;
 use Illuminate\Http\Request;
 
@@ -22,14 +23,13 @@ class IndianFeedingController extends Controller
     {
         IndianFeeding::create([
             'name'=>$request->feeding_name,
-            'quantity'=>$request->feeding_quantity,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
-            
+            'quantity'=>$request->feeding_quantity, 
         ]);
+
+        Toastr::success('Created Successfully', 'IndianFeeding', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','IndianFeeding Created successfully.');
    
-       //return to_route('feed.list');
-
    }
 }

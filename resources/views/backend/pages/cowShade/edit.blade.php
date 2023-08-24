@@ -1,7 +1,13 @@
 @extends('backend.master')
 @section('content')
-<div class="container">
-<h2>Cow Shades</h2>
+<div class="row">
+  <div class="col-md-8 offset-md-2 ">
+    <div class="card mt-5 ">
+      <div class="card-header">
+        <div class="card-body">
+        <div class="container">
+<h1 class="text-center"><strong>Edit Cow Shades</strong></h1>
+<hr>
 
 
 @if($errors->any())
@@ -35,9 +41,15 @@
            <label for="">Enter Feed Alley <span style="color:red">*</span></label>
            <input value="{{$cowShade->alley}}" type="text" class="form-control" required name="feed_alley" placeholder="Enter Feed Alley">
        </div>
-  <br>
-  <button type="submit" class="btn btn-success">Submit</button>
-</form>
+      <br>
+     <button type="submit" class="btn btn-dark">Update</button>
+       </form>
+      </div>
+     </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 @endsection

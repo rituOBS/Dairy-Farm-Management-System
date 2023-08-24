@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\BrownCowGender;
 use Illuminate\Http\Request;
 
@@ -21,14 +22,13 @@ class BrownCowGenderController extends Controller
         BrownCowGender::create([
             'name'=>$request->cow_name,
             'weight'=>$request->cow_weight,
-            'gender'=>$request->cow_gender,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
-            
+            'gender'=>$request->cow_gender,  
         ]);
+
+        Toastr::success('Created Successfully', 'BrownCowGender', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','BrownCowGender Created successfully.');
    
-       //return to_route('feed.list');
-
     }
 }

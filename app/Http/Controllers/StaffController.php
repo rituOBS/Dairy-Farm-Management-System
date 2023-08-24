@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\StaffList;
 use Illuminate\Http\Request;
 
@@ -36,14 +37,13 @@ class StaffController extends Controller
                 'name'=>$request->staff_name,
                 'designation'=>$request->staff_designation,
                 'email'=>$request->staff_email,
-                'image'=>$fileName
-                //'Description'=>$request->feed_description,
-                
+                'image'=>$fileName     
             ]);
-            return redirect()->back()->with('msg','Employee Created successfully.');
-       
-           //return to_route('feed.list');
 
+            Toastr::success('Created Successfully', 'StaffList', ['options']);
+            return redirect()->back();
+
+            return redirect()->back()->with('msg','Employee Created successfully.');
         }
 
 

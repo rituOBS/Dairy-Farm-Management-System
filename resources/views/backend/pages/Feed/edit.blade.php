@@ -1,7 +1,14 @@
 @extends('backend.master')
 
 @section('content')
-<h1>edit feed</h1>
+<div class="row">
+  <div class="col-md-8 offset-md-2 ">
+    <div class="card mt-5 ">
+      <div class="card-header">
+        <div class="card-body">
+        <div class="container">
+<h1 class="text-center"><strong>Edit Feed List</strong></h1>
+<hr>
 
     @if(session()->has('msg'))
     <p class="alert alert-success"> {{session()->get('msg')}}</p>
@@ -32,6 +39,14 @@
            <label for="">Enter Feed Daily Consumption<span style="color:red">*</span></label>
            <input value="{{$feed->daily_consumption}}" type="text" class="form-control" required name="feed_daily_consumption" placeholder="Enter Daily Consumption">
        </div>
-       <div><button type="submit" class="btn btn-success">Submit</button></div>
-</form>
+       <br>
+      <div><button type="submit" class="btn btn-dark">Update</button></div> 
+      
+     </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 @endsection

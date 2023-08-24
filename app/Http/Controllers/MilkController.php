@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MilkCollection;
 use Illuminate\Http\Request;
-use App\Models\MilkList;
+use Brian2694\Toastr\Facades\Toastr;
 
 class MilkController extends Controller
 {
@@ -52,13 +52,13 @@ class MilkController extends Controller
                     'name'=>$request->cow_name,
                     'quality'=>$request->milk_quality,
                     'quantity'=>$request->milk_quantity,
-                    'price'=>$request->milk_price,
-                   
-                    
+                    'price'=>$request->milk_price,  
                 ]);
+
+                Toastr::success('Created Successfully', 'MilkCollection', ['options']);
+                return redirect()->back();
+
                 return redirect()->back()->with('msg','Employee Created successfully.');
-        
-            //return to_route('milk.list');
             }
             public function update(Request $request,$id)
         {

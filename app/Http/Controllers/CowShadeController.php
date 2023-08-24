@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\CowShade;
 use Illuminate\Http\Request;
 
@@ -46,6 +47,9 @@ class CowShadeController extends Controller
               
                 
             ]);
+            Toastr::success('Created Successfully', 'CowShade', ['options']);
+            return redirect()->back();
+            
             return redirect()->back()->with('msg','Employee Created successfully.');
        
            //return to_route('feed.list');

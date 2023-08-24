@@ -1,5 +1,7 @@
 @extends('backend.master')
 @section('content')
+
+<div class="container">
 <h1 class="text-center"><strong>Feed List</strong></h1>
 <hr>
 <div><a href="{{route('feed.create')}}"><button class="btn btn-info ">Add New Feed</button></a></div>
@@ -23,13 +25,14 @@
       <td>{{$row->daily_consumption}}</td>
     <td>
         <a class="btn btn-info"  href="{{route('feed.edit',$row->id)}}">Edit</a>
-        <a class="btn btn-warning" href="{{route('feed.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-danger" href="{{route('feed.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach
 
     </tbody>
 </table>
+</div>
 {{$feed->links()}}
 
 @endsection

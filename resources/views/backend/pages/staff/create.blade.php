@@ -3,8 +3,13 @@
 
 @section('content')
 
-<div class="container">
-<h2 class="text-center"><strong>Staff Information</strong></h2>
+<div class="row">
+  <div class="col-md-8 offset-md-2 ">
+    <div class="card mt-5 ">
+      <div class="card-header">
+        <div class="card-body">
+        <div class="container">
+<h1 class="text-center"><strong>Create Staff Information</strong></h1>
 <hr>
 
 @if($errors->any())
@@ -34,7 +39,13 @@
             <label for="">Image</label>
             <input type="file" class="form-control" name="staff_image" placeholder="image">
         </div>
-  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="submit" class="btn btn-dark">Submit</button>
 </form>
 </div>
+</div>
+      </div>
+      </div>
+    </div>
+  </div>
+ </div>
 @endsection

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\HolsteinCowGender;
 use Illuminate\Http\Request;
 
@@ -22,14 +23,13 @@ class HolsteinCowGenderController extends Controller
         HolsteinCowGender::create([
             'name'=>$request->cow_name,
             'weight'=>$request->cow_weight,
-            'gender'=>$request->cow_gender,
-            //'image'=>$fileName
-            //'Description'=>$request->feed_description,
-            
+            'gender'=>$request->cow_gender,   
         ]);
+
+        Toastr::success('Created Successfully', 'HolsteinCowGender', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('msg','HolsteinCowGender Created successfully.');
    
-       //return to_route('feed.list');
-
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\FeedSchedule;
 use Illuminate\Http\Request;
 
@@ -54,6 +55,10 @@ class FeedScheduleController extends Controller
             //'Description'=>$request->feed_description,
             
         ]);
+
+        Toastr::success('Created Successfully', 'FeedingDetaile', ['options']);
+        return redirect()->back();
+
         return redirect()->back()->with('FeedSchedule Created successfully.');
    
        //return to_route('feed.list');

@@ -2,6 +2,7 @@
 
 
 @section('content')
+<div class="container">
 <h1 class="text-center"><strong>Vaccine Schedule</strong></h1>
 <hr>
 <div><a href="{{route('vaccineSchedule.create')}}"><button class="btn btn-info ">+Add New</button></a></div>
@@ -33,13 +34,13 @@
       <td>
       
         <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-danger" href="{{route('vaccineSchedule.destroy',$row->id)}}">Delete</a>
+        <a class="btn btn-danger" href="">Delete</a>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
-
+</div>
 {{$vaccineSchedule->links()}}
 
 @endsection

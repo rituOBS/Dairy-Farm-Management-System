@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\CowList;
 use App\Models\CowShade;
 
@@ -62,7 +63,10 @@ class CowController extends Controller
                
                 
             ]);
-       
+
+            Toastr::success('Created Successfully', 'CowList', ['options']);
+            return redirect()->back();
+
             return redirect()->back()->with('msg','Employee Created successfully.');
         }
         public function update(Request $request,$id)
@@ -88,26 +92,6 @@ class CowController extends Controller
             return redirect()->back()->with('msg','Cow Updated successfully.');
 
         }
-
-    // //     public function report()
-    // //     {
-    // //        return view('backend.pages.report.productReport');
-    // //     }
-        
-    // // // public function reportSearch(Request $request){
-
-    // // //     $request->validate([
-    // // //         'from_date'=>'required|date',
-    // // //         'to_date'=>'required|date|after:from_date'
-    // // //     ]);
-
-    // // //     $from=$request->from_date;
-    // // //     $to=$request->to_date;
-
-    // // //     $cows=CowList::whereBetween('created_at', [$from , $to])->get();
-    // // //     return view('backend.pages.report.cow_report',compact('cows'));
-
-    // // // }
 
         public function cow_report(){
          return view('backend.pages.report.cow_report');

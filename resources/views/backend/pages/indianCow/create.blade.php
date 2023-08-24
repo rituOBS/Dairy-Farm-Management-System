@@ -6,11 +6,11 @@
   <form class="from" action="{{route('indianCow.store')}}" method="post">
   @csrf
   <div class="form-group">
-           <label for="">Enter Cow Name <span style="color:red">*</span></label>
+           <label for="">Enter Cow Name </label>
            <input  type="text" class="form-control" required name="cow_name" placeholder="Enter Cow Name">
        </div>
         <div class="form-group">
-           <label for="">Enter Cow Number<span style="color:red">*</span></label>
+           <label for="">Enter Cow Number </label>
            <input  type="number" class="form-control" required name="cow_number" placeholder="Enter Cow Number">
        </div> 
   <br>

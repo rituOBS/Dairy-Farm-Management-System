@@ -23,9 +23,9 @@
       <td>{{$row->quantity}}</td>
       
     <td>
-        <a class="btn btn-warning"  href="">View</a>
+       
         <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="">Delete</a>
+        <a class="btn btn-danger" href="">Delete</a>
       </td>
     </tr>
     @endforeach

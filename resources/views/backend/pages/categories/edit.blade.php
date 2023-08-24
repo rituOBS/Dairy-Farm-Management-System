@@ -7,6 +7,7 @@
             <div class="card mt-3 p3">
                 <div class="card-body">
                 <h1 class="text-center"><strong>Edit categories</strong></h1>
+                <hr>
 
 @if(session()->has('msg'))
 <p class="alert alert-success"> {{session()->get('msg')}}</p>
