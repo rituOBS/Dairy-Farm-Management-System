@@ -89,29 +89,29 @@ class CowController extends Controller
 
         }
 
-        public function report()
-        {
-           return view('backend.pages.report.productReport');
-        }
+    // //     public function report()
+    // //     {
+    // //        return view('backend.pages.report.productReport');
+    // //     }
         
-    public function reportSearch(Request $request){
+    // // // public function reportSearch(Request $request){
 
-        $request->validate([
-            'from_date'=>'required|date',
-            'to_date'=>'required|date|after:from_date'
-        ]);
+    // // //     $request->validate([
+    // // //         'from_date'=>'required|date',
+    // // //         'to_date'=>'required|date|after:from_date'
+    // // //     ]);
 
-        $from=$request->from_date;
-        $to=$request->to_date;
+    // // //     $from=$request->from_date;
+    // // //     $to=$request->to_date;
 
-        $cows=CowList::whereBetween('created_at', [$from , $to])->get();
-        return view('backend.pages.report.productReport',compact('cows'));
+    // // //     $cows=CowList::whereBetween('created_at', [$from , $to])->get();
+    // // //     return view('backend.pages.report.cow_report',compact('cows'));
 
-    }
+    // // // }
 
-    public function cowList_report(){
-        return view('backend.pages.report.cowList_report');
-    }
+        public function cow_report(){
+         return view('backend.pages.report.cow_report');
+     }
 
     public function cow_report_search(Request $request){
 

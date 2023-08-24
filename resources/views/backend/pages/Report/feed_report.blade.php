@@ -32,7 +32,7 @@
 </div>
 
 </form>
-<div id="staff_report">
+<div id="feed_report">
 
 <h2>Report of - {{request()->from_date}} to  {{request()->to_date}}</h2>
     <table class="table table-striped">

@@ -32,7 +32,7 @@
 </div>
 
 </form>
-<div id="feedSchedule_report">
+<div id="vaccineSchedule_report">
 
 <h2>Report of - {{request()->from_date}} to  {{request()->to_date}}</h2>
     <table class="table table-striped">

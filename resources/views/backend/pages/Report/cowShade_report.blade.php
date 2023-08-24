@@ -1,6 +1,7 @@
 @extends('backend.master')
 @section('content')
 
+<div class="container">
 <h2>Cow Shade Report</h2>
 
 @if(session()->has('msg'))
@@ -28,11 +29,12 @@
     </div>
     <div class="col-md-3">
         <button type="submit" class="btn btn-info">Search</button>
+        <div><button onclick ="printDiv('cowShade_report')" class="btn btn-sm btn-info">Print</button></div>
     </div>
 </div>
 
 </form>
-<div id="staff_report">
+<div id="cowShade_report">
 
 <h2>Report of - {{request()->from_date}} to  {{request()->to_date}}</h2>
     <table class="table table-striped">
@@ -65,7 +67,7 @@
 </div>
 <!-- <button onclick="printDiv('cowShade.report')" class="btn btn-info">Print</button> -->
 
-<div><button onclick ="printDiv('cowShade_report')" class="btn btn-info">Print</button></div>
+
 <script>
     function printDiv(divId){
         var printContents = document.getElementById(divId).innerHTML;
@@ -76,5 +78,6 @@
     }
 </script>
 
+</div>
 
 @endsection

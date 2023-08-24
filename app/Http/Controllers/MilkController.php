@@ -83,5 +83,24 @@ class MilkController extends Controller
             return redirect()->back()->with('msg','Milk Updated successfully.');
         }
 
+        public function milk_report(){
+            return view('backend.pages.report.milk_report');
+        }
+    
+        public function milk_report_search(Request $request){
+    
+            $request->validate([
+                'from_date'=>'required|date',
+                'to_date'=>'required|date|after:from_date'
+            ]);
+    
+            $from=$request->from_date;
+            $to=$request->to_date;
+    
+            $milk=MilkCollection::whereBetween('created_at', [$from , $to])->get();
+            return view('backend.pages.report.milk_report',compact('milk'));
+    
+        }
+
         
 }

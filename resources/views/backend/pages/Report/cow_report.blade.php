@@ -1,7 +1,7 @@
 @extends('backend.master')
 @section('content')
 
-<h2>Vaccine Monitor Report</h2>
+<h2>CowList Report</h2>
 
 @if(session()->has('msg'))
 <p class="alert alert-info"> {{session()->get('msg')}}</p>
@@ -14,7 +14,7 @@
   </div>
   @endforeach
   @endif
-<form action="{{route('vaccineMonitor.report.search')}}" method="get">
+<form action="{{route('cow.report.search')}}" method="get">
 
 <div class="row">
     <div class="col-md-3">
@@ -32,35 +32,39 @@
 </div>
 
 </form>
-<div id="vaccineMonitor_report">
+<div id="cow_report">
 
 <h2>Report of - {{request()->from_date}} to  {{request()->to_date}}</h2>
     <table class="table table-striped">
         <thead>
         <tr>
       <th scope="col">#</th>
-      <th scope="col">Cow Name</th>
-      <th scope="col">Vaccine Date</th>
-      <th scope="col">Remark</th>
-      <th scope="col">Action</th>
-     
+      <th>Cow Report</th>
+      <th scope="col">Name</th>
+      <th scope="col">Weight (kg)</th>
+      <th scope="col">Color</th>  
+      <th scope="col">Price</th>  
+      <th scope="col">Action</th>   
     </tr>
         </thead>
         <tbody>
-        @if(isset($vaccineMonitor))
-        @foreach($vaccineMonitor as $row)
+        @if(isset($cowData))
+        @foreach($cowData as $row)
     <tr>
       <th scope="row">{{$loop->iteration}}</th>
+      <td>{{$row->shade->name}}</td>
       <td>{{$row->name}}</td>
-      <td>{{$row->date}}</td>
-      <td>{{$row->remark}}</td>
-    <td>
+      <td>{{$row->weight}}</td>
+      <td>{{$row->color}}</td>
+      <td>{{$row->price}}</td>
+      
+      <td>
         @endforeach
         @endif
         </tbody>
     </table>
 </div>
-<button onclick="printDiv('vaccineMonitor_report')" class="btn btn-info">Print</button>
+<button onclick="printDiv('cow_report')" class="btn btn-info">Print</button>
 
 
 <script>

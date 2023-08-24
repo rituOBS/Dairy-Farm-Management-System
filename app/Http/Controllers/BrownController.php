@@ -17,6 +17,24 @@ class BrownController extends Controller
         return view('backend.pages.brownCows.create');
     }
 
+    public function delete($id)
+    {
+       $brownCow=BrownCow::find($id);
+
+       $brownCow->delete();
+
+       return redirect()->back()->with('msg','BrownCow Deleted Successfully');
+    }
+    public function edit($id)
+    {
+        $brown=BrownCow::find($id);
+        $browns=BrownCow::all();
+
+       return view('backend.pages.brownCows.edit',compact('brown','browns'));
+
+
+    }
+
   
 
     public function store(Request $request)
@@ -33,4 +51,23 @@ class BrownController extends Controller
        //return to_route('feed.list');
 
     }
+    public function update(Request $request,$id)
+    {
+               $request->validate([
+                 'brown_name'=>'required',
+                 'brown_number'=>'required',
+             ]);
+
+             
+        $brownCow=BrownCow::find($id);
+
+        $brownCow->update([
+            'name'=>$request->name,
+            'number'=>$request->number,
+         
+            
+        ]);
+        return redirect()->back()->with('msg','BrownCow Updated successfully.');
+
+  }
 }

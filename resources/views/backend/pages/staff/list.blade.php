@@ -2,6 +2,9 @@
 
 
 @section('content')
+
+
+<div class="container">
 <h1 class="text-center"><strong>Staff Information</strong></h1>
 <hr>
      <div><a href="{{route('staff.create')}}"><button class="btn btn-info ">Add New Staff</button></a></div>
@@ -40,6 +43,7 @@
   </tbody>
 </table>
 
+</div>
 {{$staff->links()}}
 
 @endsection

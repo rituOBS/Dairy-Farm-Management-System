@@ -23,7 +23,7 @@
   <tbody>
   @foreach($vaccineSchedule as $row)
     <tr>
-      <th scope="row">{{$loop->iteration}}</th>
+      <th scope="row">{{$row->id}}</th>
       <td>{{$row->disease}}</td>
       <td>{{$row->name}}</td>
       <td>{{$row->time}}</td>
@@ -33,7 +33,7 @@
       <td>
       
         <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-warning" href="">Delete</a>
+        <a class="btn btn-danger" href="{{route('vaccineSchedule.destroy',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

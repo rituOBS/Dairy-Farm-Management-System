@@ -8,7 +8,7 @@ class StaffController extends Controller
 {
     public function list()
     {
-        $staff=StaffList::all();
+
         $staff=StaffList::paginate(4);
         return view('backend.pages.staff.list',compact('staff'));
     }
@@ -16,46 +16,19 @@ class StaffController extends Controller
     {
         return view('backend.pages.staff.create');
     }
-
-    public function delete($id)
-    {
-       $staff=StaffList::find($id);
-
-       $staff->delete();
-
-       return redirect()->back()->with('msg','StaffList Deleted Successfully');
-    }
-
-    public function edit($id)
-    {
-        $staff=StaffList::find($id);
-        $staffs=StaffList::all();
-
-        return view('backend.pages.staff.edit',compact('staff','staffs'));
-
-
-     }
+    
     public function store(Request $request)
     {
-      //dd($request->all());
-
-        // $request->validate([
-             //'product_name'=>'required',
-             //'product_category'=>'required',
-             //'product_quantity'=>'required',
-             //'total_price'=>'required|gt:100',
-             //'employee_designation'=>'required|gt:10'
-         //]);
-// dd($request->all());
+      
 
 
-$fileName=null;
-if($request->hasFile('staff_image'))
-{
-    $image=$request->file('staff_image');
-    $fileName=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
-    $image->storeAs('/staffs',$fileName);
-    // dd($fileName);
+        $fileName=null;
+        if($request->hasFile('staff_image'))
+        {
+            $image=$request->file('staff_image');
+            $fileName=date('Ymdhsi').'.'.$image->getClientOriginalExtension();
+            $image->storeAs('/staffs',$fileName);
+            // dd($fileName);
 
 }
 // dd($fileName);
@@ -72,6 +45,28 @@ if($request->hasFile('staff_image'))
            //return to_route('feed.list');
 
         }
+
+
+        public function edit($id)
+        {
+            $staff=StaffList::find($id);
+            $staffs=StaffList::all();
+    
+            return view('backend.pages.staff.edit',compact('staff','staffs'));
+    
+    
+         }
+    
+         public function delete($id)
+         {
+            $staff=StaffList::find($id);
+     
+            $staff->delete();
+     
+            return redirect()->back()->with('msg','StaffList Deleted Successfully');
+         }
+
+
         public function staff_report(){
             return view('backend.pages.report.staff_report');
         }

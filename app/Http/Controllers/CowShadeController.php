@@ -8,7 +8,7 @@ class CowShadeController extends Controller
 {
     public function list()
     {
-        $cowShade=CowShade::all();
+       
         $cowShade=CowShade::paginate(4);
         return view('backend.pages.cowShade.list',compact('cowShade'));
     }
@@ -28,41 +28,53 @@ class CowShadeController extends Controller
     public function edit($id)
     {
         $cowShade=CowShade::find($id);
-        $cowShades=CowShade::all();
 
-        return view('backend.pages.staff.edit',compact('cowShade','cowShades'));
-
+        return view('backend.pages.cowShade.edit',compact('cowShade'));
 
      }
-
    
     public function store(Request $request)
     {
       //dd($request->all());
 
-        // $request->validate([
-             //'product_name'=>'required',
-             //'product_category'=>'required',
-             //'product_quantity'=>'required',
-             //'total_price'=>'required|gt:100',
-             //'employee_designation'=>'required|gt:10'
-         //]);
-// dd($request->all());
-
-// dd($fileName);
             CowShade::create([
                 'name'=>$request->shade_name,
                 'space'=>$request->standing_space,
                 'width'=>$request->standing_width,
                 'passage'=>$request->central_passage,
                 'alley'=>$request->feed_alley,
-                //'image'=>$fileName
-                //'Description'=>$request->feed_description,
+              
                 
             ]);
             return redirect()->back()->with('msg','Employee Created successfully.');
        
            //return to_route('feed.list');
+
+        }
+
+        public function update(Request $request,$id)
+        {
+                   $request->validate([
+                     'shade_name'=>'required',
+                     'standing_space'=>'required',
+                     'standing_width'=>'required',
+                     'central_passage'=>'required',
+                     'feed_alley'=>'required',
+                 ]);
+
+                 
+                 $cowShade=CowShade::find($id);
+
+                 $cowShade->update([
+                    'name'=>$request->shade_name,
+                    'space'=>$request->standing_space,
+                    'width'=>$request->standing_width,
+                    'passage'=>$request->central_passage,
+                    'alley'=>$request->feed_alley,
+             
+                
+            ]);
+            return redirect()->back()->with('msg','CowShade Updated successfully.');
 
         }
 

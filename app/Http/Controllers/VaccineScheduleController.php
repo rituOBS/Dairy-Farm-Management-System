@@ -8,7 +8,7 @@ class VaccineScheduleController extends Controller
 {
     public function list()
     {
-       $vaccineSchedule=VaccineSchedule::all();
+    //    $vaccineSchedule=VaccineSchedule::all();
        $vaccineSchedule=VaccineSchedule::paginate(4);
         return view('backend.pages.vaccineSchedule.list',compact('vaccineSchedule'));
     }
@@ -16,6 +16,8 @@ class VaccineScheduleController extends Controller
     {
         return view('backend.pages.vaccineSchedule.create');
     }
+
+
 
     
     public function store(Request $request)
@@ -35,6 +37,16 @@ class VaccineScheduleController extends Controller
    
        //return to_route('feed.list');
    }
+
+   public function destroy($id){
+
+            return $id;
+
+   }
+
+   public function vaccineSchedule_report(){
+    return view('backend.pages.report.vaccineSchedule_report');
+    }
 
    public function vaccineSchedule_report_search(Request $request){
 

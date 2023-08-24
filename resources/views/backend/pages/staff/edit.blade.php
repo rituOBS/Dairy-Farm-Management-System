@@ -16,16 +16,16 @@
     @csrf
     @method('put')
     <div class="form-group">
-           <label for="">Enter Staff Name <span style="color:red">*</span></label>
+           <label for="">Enter Staff Name </label>
            <input value="{{$staff->name}}" type="text" class="form-control" required name="staff_name" placeholder="Enter Staff Name">
     </div>
         <div class="form-group">
-           <label for="">Enter Staff Designation<span style="color:red">*</span></label>
+           <label for="">Enter Staff Designation</label>
            <input value="{{$staff->designation}}" type="text" class="form-control" required name="staff_designation" placeholder="Enter Staff Designation">
        </div>    
        
        <div class="form-group">
-           <label for="">Enter Staff Email<span style="color:red">*</span></label>
+           <label for="">Enter Staff Email</label>
            <input value="{{$staff->email}}" type="email" class="form-control" required name="staff_email" placeholder="Enter Staff Email">
        </div>
        <div class="form-group">

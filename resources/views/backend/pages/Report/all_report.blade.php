@@ -17,19 +17,23 @@
 <a type="button" class="btn btn-warning btn-lg" href="{{route('staff.report')}}">Staff Report</a>
 
 
-<a type="button" class="btn btn-dark btn-lg" href="{{route('cow.report')}}">Cow Report</a>
+<a type="button" class="btn btn-warning btn-lg" href="{{route('cow.report')}}">Cow Report</a>
 
-<a type="button" class="btn btn-dark btn-lg" href="{{route('cowShade.report')}}">CowShade Report</a>
+<a type="button" class="btn btn-warning btn-lg" href="{{route('cowShade.report')}}">CowShade Report</a>
 
-<a type="button" class="btn btn-dark btn-lg" href="{{route('category.report')}}">Category Report</a>
+<a type="button" class="btn btn-warning btn-lg" href="{{route('category.report')}}">Category Report</a>
 
-<a type="button" class="btn btn-dark btn-lg" href="{{route('feed.report')}}">Feed Report</a>
+<a type="button" class="btn btn-warning btn-lg" href="{{route('feed.report')}}">Feed Report</a>
 
-<a type="button" class="btn btn-dark btn-lg" href="{{route('feedSchedule.report')}}">FeedSchedule Report</a>
+<a type="button" class="btn btn-warning btn-lg" href="{{route('feedSchedule.report')}}">FeedSchedule Report</a>
 
 
-<a type="button" class="btn btn-dark btn-lg" href="{{route('vaccineMonitor.report')}}">VaccineMonitor Report</a>
 
-<a type="button" class="btn btn-dark btn-lg" href="{{route('vaccineSchedule_report')}}">VaccineSchedule Report</a> 
+<a type="button" class="btn btn-warning btn-lg" href="{{route('milk.report')}}">Milk Report</a>
+
+
+<a type="button" class="btn btn-warning btn-lg" href="{{route('vaccineMonitor.report')}}">VaccineMonitor Report</a>
+
+<a type="button" class="btn btn-warning btn-lg" href="{{route('vaccineSchedule.report')}}">VaccineSchedule Report</a> 
 
 @endsection

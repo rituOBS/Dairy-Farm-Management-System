@@ -17,6 +17,15 @@ class VaccineMonitorController extends Controller
         return view('backend.pages.vaccineMonitor.create');
     }
 
+    public function delete($id)
+    {
+        $vaccineMonitor=VaccineMonitor::find($id);
+
+        $vaccineMonitor->delete();
+
+       return redirect()->back()->with('msg','VaccineMonitor Deleted Successfully.');
+    }
+
     
     public function store(Request $request)
     {
@@ -33,8 +42,11 @@ class VaccineMonitorController extends Controller
        //return to_route('feed.list');
 
    }
+        public function vaccineMonitor_report(){
+         return view('backend.pages.report.vaccineMonitor_report');
+         }
 
-   public function vaccineMonitor_report_search(Request $request){
+   public function vaccineMonitor_Report_search(Request $request){
 
     $request->validate([
         'from_date'=>'required|date',

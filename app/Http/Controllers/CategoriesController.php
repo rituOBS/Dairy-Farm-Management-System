@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -59,23 +60,23 @@ class CategoriesController extends Controller
                 'image'=>$fileName
                 
             ]);
-         
-            return redirect()->back()->with('msg','Employee Created successfully.');
+
+            Toastr::success('Created Successfully', 'Category', ['options']);
+            return redirect()->back();
         }
         public function update(Request $request,$id)
         {
             //    dd($request);
         
                  $request->validate([
-                     'categories_name'=>'required',
-                     //'employee_status'=>'required',
+                     'name'=>'required',
                     
                  
                  ]);
                  $category=Category::find($id);
 
-                 $category::update([
-                    'name'=>$request->category_name,
+                 $category->update([
+                    'name'=>$request->name,
                     
                 ]);
                 return redirect()->back()->with('msg','Category Updated successfully.');

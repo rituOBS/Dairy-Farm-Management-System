@@ -24,9 +24,8 @@
     
     
       <td>
-        <a class="btn btn-warning"  href="">View</a>
-        <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="">Delete</a>
+        <a class="btn btn-info"  href="{{route('brown.edit',$row->id)}}">Edit</a>
+        <a class="btn btn-success" href="{{route('brown.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach
