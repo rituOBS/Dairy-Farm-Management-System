@@ -64,22 +64,35 @@
 
 
     <!-- Gallery Start -->
+   
+   <!-- cow categiroy start -->
+<section>
+    <div class="container">
+        <h1 class="text-center"><strong>Cow Categories</strong></h1>
+        <hr>
+    <div class="row">
     @foreach($categories as $data)
-    <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{url('/uploads/categories/'.$data->image)}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{$data->name}}</h5>
-    <p class="card-text"></p>
-    <!-- <a href="#" class="btn btn-primary"></a> -->
-  </div>
-</div>
+        <div class="col-md-3">
+            <div class="card p-3 mb-5" style="width: 18rem;">
+                <img style="width: 250px;
+                height:180px;" src="{{url('/uploads/categories/'.$data->image)}}" alt="Card image cap">
 
-@endforeach
-
-
-
-
-
+                <hr class="mb-3">
+                
+             <div class="card-body">
+                <h5 class="card-title"><span>Name: </span>{{$data->name}}</h5>
+                <h5 class="badge bg-danger p-3"> {{$data->status}}</h5>
+                
+                     <p class="card-text"></p>
+            <!-- <a href="#" class="btn btn-primary"></a> -->
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    </div><!-- container -->
+</section>
+<!-- cow category end -->
     
     <!-- Features End -->
 
