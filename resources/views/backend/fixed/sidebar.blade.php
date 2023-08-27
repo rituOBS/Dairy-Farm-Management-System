@@ -24,6 +24,16 @@
                               Cow Categories
                               </a>
 
+
+                              <!-- accordion start style -->
+                              <style>
+                               
+
+                               .accordion-body a{
+                                    text-decoration: none;
+                                    text-align: center;
+                                }
+                              </style>
                            
 
                               <style>
@@ -208,4 +218,4 @@
                             </div>
                           
                         </div>
-                    </div>
+                </div>

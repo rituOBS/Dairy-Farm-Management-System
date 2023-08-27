@@ -64,6 +64,7 @@
 
 
     <!-- Gallery Start -->
+
     <section>
         <h1 class="text-center"><strong>Cow Categories</strong></h1>
         <hr>
@@ -88,6 +89,7 @@
     </section>
 
 
+<!-- cow category end -->
     
     <!-- Features End -->
 
