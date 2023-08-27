@@ -17,6 +17,15 @@ class MilkWeightController extends Controller
     {
         return view('backend.pages.milkWeight.create');
     }
+
+    public function delete($id)
+    {
+        $milkWeight=MilkWeight::find($id);
+
+        $milkWeight->delete();
+
+       return redirect()->back()->with('msg','MilkWeight Deleted Successfully.');
+    }
     public function store(Request $request)
       {
         MilkWeight::create([

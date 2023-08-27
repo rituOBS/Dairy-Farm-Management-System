@@ -21,6 +21,7 @@
         
 
 <form action="{{route('feed.store')}}" method="post"> 
+@csrf
     <div class="form-group">
            <label for="">Enter Feed Name </label>
            <input  type="text" class="form-control" required name="feed_name" placeholder="Enter Feed Name">

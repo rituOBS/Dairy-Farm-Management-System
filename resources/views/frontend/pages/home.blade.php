@@ -64,20 +64,28 @@
 
 
     <!-- Gallery Start -->
-    @foreach($categories as $data)
-    <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{url('/uploads/categories/'.$data->image)}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{$data->name}}</h5>
-    <p class="card-text"></p>
-    <!-- <a href="#" class="btn btn-primary"></a> -->
-  </div>
-</div>
-
-@endforeach
-
-
-
+    <section>
+        <h1 class="text-center"><strong>Cow Categories</strong></h1>
+        <hr>
+        <div class="container">
+            <div class="row">
+                @foreach($categories as $value)
+                <div class="col-md-3">
+                    <div class="card">
+                        <img class="p-3" style="weight:350px;
+                                    height:200px;" src="{{url('uploads/categories/',$value->image)}}" alt="image">
+                        <div class="card-header">
+                            <div class="card-body">
+                              <p><span>Name:</span><strong>{{$value->name}}</strong></p>
+                              <p class="badge p-3 bg-danger"><strong>{{$value->status}}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
 
     

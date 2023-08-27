@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\HolsteinCow;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Models\HolsteinCowGender;
 use Illuminate\Http\Request;
@@ -16,6 +18,10 @@ class HolsteinCowGenderController extends Controller
     public function create()
     {
         return view('backend.pages.holsteinCowGender.create');
+    }
+    public function delete($id)
+    {
+      return $id;
     }
 
     public function store(Request $request)

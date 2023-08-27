@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,14 +42,28 @@ class UserController extends Controller
    }
 
 
-   public function profile()
-   {
+   public function profile(){
+    $profile=User::all();
 
-    return view('backend.pages.profile');
-   }
+    
+     return view('backend.pages.profiles.index',compact('profile'));
+ }
+
+ public function update(Request $request,$id){
+     $user= User::find($id);
+     $user->update([
+         'name'=>$request->user_name,
+         'email'=>$request->user_email,
+         'password'=>$request->change_pass
+     ]);
+
+    //  Toastr::success('Update successfully');
+    //  return redirect()->route('profile.show');
+}
+ }
 
 
-    }
+    
 
 
     

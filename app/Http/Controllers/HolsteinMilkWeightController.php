@@ -17,6 +17,17 @@ class HolsteinMilkWeightController extends Controller
     {
         return view('backend.pages.holsteinmilkWeight.create');
     }
+
+    
+    public function delete($id)
+    {
+        $holsteinMilkWeight=HolsteinMilkWeight::find($id);
+
+        $holsteinMilkWeight->delete();
+ 
+       return redirect()->back()->with('msg','HolsteinMilkWeight Deleted Successfully');
+    }
+
     public function store(Request $request)
       {
         HolsteinMilkWeight::create([

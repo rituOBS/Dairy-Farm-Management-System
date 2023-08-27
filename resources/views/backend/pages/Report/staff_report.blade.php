@@ -49,7 +49,7 @@
       <th scope="col">Designation</th>
       <th scope="col">Email</th>
       <th scope="col">Image</th>
-      <th scope="col">Action</th>
+
     </tr>
         </thead>
         <tbody>

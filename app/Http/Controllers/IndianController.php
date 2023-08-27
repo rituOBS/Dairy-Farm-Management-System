@@ -18,6 +18,15 @@ class IndianController extends Controller
         return view('backend.pages.indianCow.create');
     }
 
+    public function delete($id)
+    {
+        $indianCow=IndianCow::find($id);
+
+        $indianCow->delete();
+
+       return redirect()->back()->with('msg',' $IndianCow Deleted Successfully');
+    }
+
 
     public function store(Request $request)
     {

@@ -83,6 +83,7 @@ Route::post('/feeding-item-store',[FeedingController::class,'store'])->name('fee
 
 
 Route::get('/milk-weight',[MilkWeightController::class,'index'])->name('milkWeight.index');
+Route::get('/milkWeight/delete/{id}',[MilkWeightController::class,'delete'])->name('milkweight.delete');
 Route::get('/milk-weight-create',[MilkWeightController::class,'create'])->name('milkWeight.create');
 Route::post('/milk-weight-store',[MilkWeightController::class,'store'])->name('milkWeight.store');
 
@@ -113,7 +114,7 @@ Route::post('/bessieCow-gender-store',[BessieCowGenderController::class,'store']
 
 // ** Route for Indian cow Details **
 Route::get('/indian-cow',[IndianController::class,'index'])->name('indianCow.index');
-//Route::get('/indian-cow/delete/{id}',[IndianController::class,'delete'])->name('indianCow.delete');
+Route::get('/indianCow/delete/{id}',[IndianController::class,'delete'])->name('indianCow.delete');
 Route::get('/indian-cow-create',[IndianController::class,'create'])->name('indianCow.create');
 Route::post('/indian-cow-store',[IndianController::class,'store'])->name('indianCow.store');
 
@@ -142,11 +143,13 @@ Route::get('/holstein-feeding-item-create',[HolsteinFeedingController::class,'cr
 Route::post('/holstein-feeding-item-store',[HolsteinFeedingController::class,'store'])->name('holsteinFeeding.store');
 
 Route::get('/holsteinmilk-weight',[HolsteinMilkWeightController::class,'index'])->name('holsteinmilkWeight.index');
+Route::get('/holsteinMilk-weight/delete/{id}',[HolsteinMilkWeightController::class,'delete'])->name('holsteinMilkWeight.delete');
 Route::get('/holsteinmilk-weight-create',[HolsteinMilkWeightController::class,'create'])->name('holsteinmilkWeight.create');
 Route::post('/holsteinmilk-weight-store',[HolsteinMilkWeightController::class,'store'])->name('holsteinmilkWeight.store');
 
 
 Route::get('/holsteinCow-gender',[HolsteinCowGenderController::class,'index'])->name('holsteinCowGender.index');
+Route::get('/holsteinCow-gender/delete/{id}',[HolsteinCowGenderController::class,'delete'])->name('holsteinCowGender.delete');
 Route::get('/holsteinCow-gender-create',[HolsteinCowGenderController::class,'create'])->name('holsteinCowGender.create');
 Route::post('/holsteinCow-gender-store',[HolsteinCowGenderController::class,'store'])->name('holsteinCowGender.store');
 
@@ -224,8 +227,10 @@ Route::post('/vaccineSchedule-store',[VaccineScheduleController::class,'store'])
 
 
 
+// Route::get('/profile-show',[UserController::class,'profileShow'])->name('profile.show');
 
 Route::get('/profile',[UserController::class,'profile'])->name('admin.profile');
+Route::put('/profile-update/{id}',[UserController::class,'updateprofile'])->name('updateprofile');
 
 
 /* Report section

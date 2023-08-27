@@ -57,6 +57,7 @@
         </thead>
         <tbody>
         @if(isset($cowData))
+      
         @foreach($cowData as $row)
     <tr>
       <th scope="row">{{$loop->iteration}}</th>
@@ -83,7 +84,7 @@
         window.print();
         document.body.innerHTML = originalContents;
     }
-</script>
+        </script>
 
        </div>
       </div>

@@ -1,9 +1,11 @@
 @extends('backend.master')
+
 @section('content')
 
+<div class="container">
 <h1 class="text-center"><strong>Holstein Cow (Milk Per Day)</strong></h1>
 <hr>
-<div><a href="{{route('holsteinmilkWeight.create')}}"><button class="btn btn-info">Add New</button></a></div>
+<div><a href="{{route('holsteinmilkWeight.create')}}"><button class="btn btn-info">+ Add New</button></a></div>
 
 <table class="table">
   <thead>
@@ -25,14 +27,13 @@
       <td>{{$row->weight}}</td>
       
     <td>
-        <a class="btn btn-warning"  href="">View</a>
         <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="">Delete</a>
+        <a class="btn btn-success" href="{{route('holsteinMilkWeight.delete',$row->id)}}>Delete</a>
       </td>
     </tr>
     @endforeach
 
   </tbody>
 </table>
-
+</div>
 @endsection

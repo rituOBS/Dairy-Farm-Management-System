@@ -23,15 +23,15 @@ class FeedingController extends Controller
 
        $feeding->delete();
 
-       return redirect()->back()->with('msg','FeedingDetaile Deleted Successfully');
+       return redirect()->back()->with('msg','Feeding Deleted Successfully');
     }
-    public function edit($id)
-    {
-        $feeding=FeedingDetaile::find($id);
+        public function edit($id)
+         {
+             $feeding=FeedingDetaile::find($id);
 
-        return view('backend.pages.feeding.edit',compact('feeding'));
+             return view('backend.pages.feeding.edit',compact('feeding'));
 
-     }
+         }
 
     
     public function store(Request $request)
@@ -67,7 +67,7 @@ class FeedingController extends Controller
          
             
         ]);
-        return redirect()->back()->with('msg','FeedingDetaile Updated successfully.');
+        return redirect()->back()->with('msg','Feeding Updated successfully.');
 
     }
 }

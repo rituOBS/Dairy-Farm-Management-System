@@ -107,7 +107,8 @@ class CowController extends Controller
         $from=$request->from_date;
         $to=$request->to_date;
 
-        $cow=CowList::whereBetween('created_at', [$from , $to])->get();
+        $cow::whereBetween('created_at', [$from , $to])->get();
+        dd($cow);
         return view('backend.pages.report.cow_report',compact('cow'));
 
     }

@@ -30,9 +30,9 @@ class HolsteinFeedingController extends Controller
     public function edit($id)
     {
         $holsteinFeeding=HolsteinFeeding::find($id);
-        $holsteinFeedings=HolsteinFeeding::all();
+        //$holsteinFeedings=HolsteinFeeding::all();
 
-        return view('backend.pages.holsteinFeeding.edit',compact('holsteinFeeding','holsteinFeedings'));
+        return view('backend.pages.holsteinFeeding.edit',compact('holsteinFeeding'));
 
 
      }
