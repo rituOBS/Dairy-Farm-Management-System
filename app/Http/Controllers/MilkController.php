@@ -60,8 +60,9 @@ class MilkController extends Controller
 
                 return redirect()->back()->with('msg','Employee Created successfully.');
             }
+
             public function update(Request $request,$id)
-        {
+           {
             
             $request->validate([
                 'cow_name'=>'required',

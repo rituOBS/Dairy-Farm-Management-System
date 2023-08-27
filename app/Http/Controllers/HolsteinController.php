@@ -18,6 +18,15 @@ class HolsteinController extends Controller
         return view('backend.pages.holsteinCow.create');
     }
 
+    public function delete($id)
+    {
+        $holsteinCow=HolsteinCow::find($id);
+
+        $holsteinCow->delete();
+
+       return redirect()->back()->with('msg','HolsteinCow Deleted Successfully');
+    }
+
     public function store(Request $request)
     {
         HolsteinCow::create([

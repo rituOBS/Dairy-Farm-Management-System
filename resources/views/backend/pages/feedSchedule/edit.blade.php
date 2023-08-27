@@ -8,7 +8,7 @@
       <div class="card-header">
         <div class="card-body">
         <div class="container">
-<h1 class="text-center"><strong>Create New Feed List</strong></h1>
+<h1 class="text-center"><strong>Edit Feed Schedule</strong></h1>
 <hr>
 
 
@@ -18,36 +18,36 @@
             @method('put')
     <div class="form-group">
            <label for="">Enter Types of Animal <span style="color:red">*</span></label>
-           <input value="{{$animal->type}}" type="text" class="form-control" required name="animal_type" placeholder="Enter Types of Animal">
+           <input value="{{$feedSchedule->type}}" type="text" class="form-control" required name="animal_type" placeholder="Enter Types of Animal">
     </div>
         <div class="form-group">
            <label for="">Enter Feeding During<span style="color:red">*</span></label>
-           <input value="{{$feeding->during}}" type="text" class="form-control" required name="feeding_during" placeholder="Enter Feeding During">
+           <input value="{{$feedSchedule->during}}" type="text" class="form-control" required name="feeding_during" placeholder="Enter Feeding During">
        </div>   
        <div class="form-group">
            <label for="">Enter Green grass <span style="color:red">*</span></label>
-           <input value="{{$green->grass}}" type="text" class="form-control" required name="green_grass" placeholder="Enter Green grass">
+           <input value="{{$feedSchedule->grass}}" type="text" class="form-control" required name="green_grass" placeholder="Enter Green grass">
     </div>
     <div class="form-group">
            <label for="">Enter Dry Fooder <span style="color:red">*</span></label>
-           <input value="{{$dry->fooder}}" type="text" class="form-control" required name="dry_fooder" placeholder="Enter Dry Fooder">
+           <input value="{{$feedSchedule->fooder}}" type="text" class="form-control" required name="dry_fooder" placeholder="Enter Dry Fooder">
     </div> 
        
     <div class="form-group">
            <label for="">Enter Soybean Meal<span style="color:red">*</span></label>
-           <input value="{{$soybean->meal}}" type="text" class="form-control" required name="soybean_meal" placeholder="Enter Soybean Meal">
+           <input value="{{$feedSchedule->meal}}" type="text" class="form-control" required name="soybean_meal" placeholder="Enter Soybean Meal">
        </div>
        <div class="form-group">
            <label for="">Enter Paddy Straw<span style="color:red">*</span></label>
-           <input value="{{$paddy->straw}}" type="text" class="form-control" required name="paddy_straw" placeholder="Enter Paddy Straw">
+           <input value="{{$feedSchedule->straw}}" type="text" class="form-control" required name="paddy_straw" placeholder="Enter Paddy Straw">
        </div>
        <div class="form-group">
            <label for="">Enter Concentrate Mixture<span style="color:red">*</span></label>
-           <input value="{{$concentrate->mixture}}" type="text" class="form-control" required name="concentrate_mixture" placeholder="Enter Concentrate Meal">
+           <input value="{{$feedSchedule->mixture}}" type="text" class="form-control" required name="concentrate_mixture" placeholder="Enter Concentrate Meal">
        </div>
        <div class="form-group">
            <label for="">Enter Wheat Bran<span style="color:red">*</span></label>
-           <input value="{{$wheat->bran}}" type="text" class="form-control" required name="wheat_bran" placeholder="Enter Wheat Bran">
+           <input value="{{$feedSchedule->bran}}" type="text" class="form-control" required name="wheat_bran" placeholder="Enter Wheat Bran">
        </div>
        <br>
      <button type="submit" class="btn btn-dark">Update</button>

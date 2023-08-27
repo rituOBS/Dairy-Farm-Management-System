@@ -6,7 +6,7 @@
       <div class="card-header">
         <div class="card-body">
         <div class="container">
-<h1 class="text-center"><strong>Create New Feed List</strong></h1>
+<h1 class="text-center"><strong>Create New Milk Collection</strong></h1>
 <hr>
 
 @if($errors->any())

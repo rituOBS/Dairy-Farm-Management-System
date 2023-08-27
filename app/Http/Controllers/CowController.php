@@ -93,9 +93,9 @@ class CowController extends Controller
 
         }
 
-        public function cow_report(){
-         return view('backend.pages.report.cow_report');
-     }
+            public function cow_report(){
+            return view('backend.pages.report.cow_report');
+       }
 
     public function cow_report_search(Request $request){
 

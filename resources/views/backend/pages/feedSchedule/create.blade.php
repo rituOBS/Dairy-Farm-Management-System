@@ -50,9 +50,9 @@
        </div>
        <br>
   <button type="submit" class="btn btn-dark">Submit</button>
-</form>
-</div>
-      </div>
+        </form>
+        </div>
+       </div>
       </div>
     </div>
   </div>

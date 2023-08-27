@@ -27,6 +27,16 @@ class HolsteinFeedingController extends Controller
        return redirect()->back()->with('msg','HolsteinFeeding Deleted Successfully');
     }
 
+    public function edit($id)
+    {
+        $holsteinFeeding=HolsteinFeeding::find($id);
+        $holsteinFeedings=HolsteinFeeding::all();
+
+        return view('backend.pages.holsteinFeeding.edit',compact('holsteinFeeding','holsteinFeedings'));
+
+
+     }
+
     public function store(Request $request)
     {
         HolsteinFeeding::create([
@@ -41,4 +51,23 @@ class HolsteinFeedingController extends Controller
         return redirect()->back()->with('msg','holsteinFeeding Created successfully.');
    
    }
+
+   public function update(Request $request,$id)
+   {
+    
+    $request->validate([
+        'feeding_name'=>'required',
+        'feeding_quantity'=>'required',
+     
+    ]);
+
+    $holsteinFeeding=HolsteinFeeding::find($id);
+
+    $holsteinFeeding->update([
+        'name'=>$request->feeding_name,
+        'quantity'=>$request->feeding_quantity,
+         
+    ]);
+    return redirect()->back()->with('msg','HolsteinFeeding Updated successfully.');
+}
 }

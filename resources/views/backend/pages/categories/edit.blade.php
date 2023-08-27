@@ -31,7 +31,7 @@
                 <input value="{{$categories->name}}" type="text" class="form-control" required name="name" placeholder="Enter Categories Name">
             </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-dark">Update Catrgory</button>
             </form>
             </div>
                 </div>

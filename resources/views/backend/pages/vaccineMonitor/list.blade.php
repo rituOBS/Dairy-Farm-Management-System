@@ -28,7 +28,7 @@
       <td>{{$row->remark}}</td>
     <td>
         <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
+        <a class="btn btn-danger" href="{{route('vaccineMonitor.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

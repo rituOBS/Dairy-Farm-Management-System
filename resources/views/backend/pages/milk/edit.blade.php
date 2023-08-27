@@ -7,7 +7,7 @@
       <div class="card-header">
         <div class="card-body">
         <div class="container">
-<h1 class="text-center"><strong>Create New Feed List</strong></h1>
+<h1 class="text-center"><strong>Edit Milk Collection List</strong></h1>
 <hr>
 
     @if(session()->has('msg'))
@@ -28,7 +28,7 @@
             
        <div class="form-group">
            <label for="">Enter Cow Name <span style="color:red">*</span></label>
-           <input value="{{$cow->name}}" type="text" class="form-control" required name="cow_name" placeholder="Enter Cow Name">
+           <input value="{{$milk->name}}" type="text" class="form-control" required name="cow_name" placeholder="Enter Cow Name">
        </div>
        <div class="form-group">
            <label for="">Enter Milk Quality <span style="color:red">*</span></label>

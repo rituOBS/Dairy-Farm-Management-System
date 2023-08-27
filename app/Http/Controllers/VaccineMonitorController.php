@@ -18,14 +18,14 @@ class VaccineMonitorController extends Controller
         return view('backend.pages.vaccineMonitor.create');
     }
 
-    // public function delete($id)
-    // {
-    //     $vaccineMonitor=VaccineMonitor::find($id);
+        public function delete($id)
+          {
+              $vaccineMonitor=VaccineMonitor::find($id);
 
-    //     $vaccineMonitor->delete();
+              $vaccineMonitor->delete();
 
-    //    return redirect()->back()->with('msg','VaccineMonitor Deleted Successfully.');
-    // }
+             return redirect()->back()->with('msg','VaccineMonitor Deleted Successfully.');
+          }
 
     
     public function store(Request $request)

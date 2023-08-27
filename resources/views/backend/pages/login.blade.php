@@ -82,8 +82,7 @@
 </style>
 <div class="sidenav">
          <div class="login-main-text">
-            <h2>Admin (Meher Afroz Ritu)<br> Login - Page</h2>
-            <p>Login from here to access.</p>
+            <h2>Admin<br> Login - Page</h2>
          </div>
       </div>
       <div class="main">

@@ -1,4 +1,5 @@
 @extends('backend.master')
+
 @section('content')
 <div class="row">
   <div class="col-md-8 offset-md-2 ">
@@ -6,9 +7,8 @@
       <div class="card-header">
         <div class="card-body">
         <div class="container">
-<h1 class="text-center"><strong>Create Holstein Feeding</strong></h1>
+<h1 class="text-center"><strong>Edit Holstein Feeding</strong></h1>
 <hr>
-
 
 @if($errors->any())
        @foreach ($errors->all() as $error)
@@ -18,15 +18,16 @@
         @endforeach
         @endif
         
-  <form class="from" action="{{route('holsteinFeeding.store')}}" method="post">
-  @csrf
+        <form action="{{route('holsteinFeeding.update',$holsteinFeeding->id)}}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('put')
   <div class="form-group">
            <label for="">Enter Feeding Name </label>
-           <input  type="text" class="form-control" required name="feeding_name" placeholder="Enter Feeding Name">
+           <input value="{{$feeding->name}}" type="text" class="form-control" required name="feeding_name" placeholder="Enter Feeding Name">
        </div>
         <div class="form-group">
            <label for="">Enter Feeding Quantity </label>
-           <input  type="number" class="form-control" required name="feeding_quantity" placeholder="Enter Feed Quantity">
+           <input value="{{$feeding->number}}" type="number" class="form-control" required name="feeding_quantity" placeholder="Enter Feed Quantity">
        </div> 
   <br>
   <button type="submit" class="btn btn-info">Submit</button>
@@ -38,6 +39,5 @@
     </div>
   </div>
  </div>
-
 
 @endsection
