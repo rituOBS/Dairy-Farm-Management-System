@@ -5,7 +5,7 @@
 <div class="container">
 <h1 class="text-center"><strong>Vaccine Schedule</strong></h1>
 <hr>
-<div><a href="{{route('vaccineSchedule.create')}}"><button class="btn btn-info ">+Add New</button></a></div>
+<div><a href="{{route('vaccineSchedule.create')}}"><button class="btn btn-info ">+ Add New</button></a></div>
 
 
 <table class="table">
@@ -34,7 +34,7 @@
       <td>
       
         <a class="btn btn-info"  href="{{route('vaccineSchedule.edit',$row->id)}}">Edit</a>
-        <a class="btn btn-warning" href="{{route('vaccineSchedule.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-danger" href="{{route('vaccineSchedule.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

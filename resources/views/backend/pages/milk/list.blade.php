@@ -5,7 +5,7 @@
 <div class="container">
 <h1 class="text-center"><strong>Milk Collection Record</strong></h1>
 <hr>
-<div><a href="{{route('milk.create')}}"><button class="btn btn-info ">Add New</button></a></div>
+<div><a href="{{route('milk.create')}}"><button class="btn btn-info ">+ Add New</button></a></div>
 <table class="table">
   <thead>
     <tr>
@@ -27,7 +27,7 @@
       <td>{{$row->price}}</td>
     <td>
         <a class="btn btn-info"  href="{{route('milk.edit',$row->id)}}">Edit</a>
-        <a  class="btn btn-warning" href="{{route('milk.delete',$row->id)}}">Delete</a>
+        <a  class="btn btn-danger" href="{{route('milk.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

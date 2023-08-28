@@ -5,7 +5,7 @@
 <div class="container">
 <h1 class="text-center"><strong>Holstein Feeding Item</strong></h1>
 <hr>
-<div><a href="{{route('holsteinFeeding.create')}}"><button class="btn btn-info">Add New</button></a></div>
+<div><a href="{{route('holsteinFeeding.create')}}"><button class="btn btn-info">+ Add New</button></a></div>
 
 <table class="table">
   <thead>
@@ -26,7 +26,7 @@
       
     <td>
         <a class="btn btn-info"  href="{{route('holsteinFeeding.edit',$row->id)}}">Edit</a>
-        <a class="btn btn-success" href="{{route('holsteinFeeding.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-danger" href="{{route('holsteinFeeding.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

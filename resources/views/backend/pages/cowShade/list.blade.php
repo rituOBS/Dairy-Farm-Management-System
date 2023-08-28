@@ -6,7 +6,7 @@
  <h1 class="text-center"><strong>Cow Shade</strong></h1>
 <hr>
 
-<div><a href="{{route('cowShade.create')}}"><button class="btn btn-info ">Add New</button></a></div>
+<div><a href="{{route('cowShade.create')}}"><button class="btn btn-info ">+ Add New</button></a></div>
 
 <table class="table">
   <thead>

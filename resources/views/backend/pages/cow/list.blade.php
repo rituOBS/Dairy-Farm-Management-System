@@ -6,13 +6,13 @@
  <h1 class="text-center"><strong>Cow List</strong></h1>
 <hr>
 
-<div><a href="{{route('cow.create')}}"><button class="btn btn-info ">Add New Cow</button></a></div>
+<div><a href="{{route('cow.create')}}"><button class="btn btn-info ">+ Add New Cow</button></a></div>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th>Cow Shade</th>
+      <th>Cow Shade</th>   
       <th scope="col">Name</th>
       <th scope="col">Weight (kg)</th>
       <th scope="col">Color</th>  

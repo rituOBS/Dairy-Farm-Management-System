@@ -7,7 +7,7 @@
 <div class="container">
 <h1 class="text-center"><strong>Staff Information</strong></h1>
 <hr>
-     <div><a href="{{route('staff.create')}}"><button class="btn btn-info ">Add New Staff</button></a></div>
+     <div><a href="{{route('staff.create')}}"><button class="btn btn-info ">+ Add New Staff</button></a></div>
 
 <table class="table">
   <thead>

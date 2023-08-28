@@ -5,7 +5,7 @@
 <div class="container">
 <h1 class="text-center"><strong>Feed Schedule</strong></h1>
 <hr>
-<div><a href="{{route('feedSchedule.create')}}"><button class="btn btn-info ">Add New</button></a></div>
+<div><a href="{{route('feedSchedule.create')}}"><button class="btn btn-info ">+ Add New Schedule</button></a></div>
 
 
 <table class="table">

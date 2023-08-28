@@ -3,7 +3,7 @@
 <div class="container">
 <h1 class="text-center"><strong>Brown Cow Daily Milk Weight</strong></h1>
 <hr>
-<div><a href="{{route('milkWeight.create')}}"><button class="btn btn-info">Add New</button></a></div>
+<div><a href="{{route('milkWeight.create')}}"><button class="btn btn-info">+ Add New</button></a></div>
 
 <table class="table">
   <thead>
@@ -26,7 +26,7 @@
       
     <td>
         <a class="btn btn-info"  href="{{route('milkweight.edit',$row->id)}}">Edit</a>
-        <a class="btn btn-warning" href="{{route('milkweight.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-danger" href="{{route('milkweight.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

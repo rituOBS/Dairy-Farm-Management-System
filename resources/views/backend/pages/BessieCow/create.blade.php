@@ -21,7 +21,7 @@
            <input  type="number" class="form-control" required name="cow_number" placeholder="Enter Cow Number">
        </div> 
   <br>
-  <button type="submit" class="btn btn-info">Submit</button>
+  <button type="submit" class="btn btn-dark">Submit</button>
 </form>
 </div>
 </div>

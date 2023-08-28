@@ -25,7 +25,7 @@
            <input value="{{$milkWeight->weight}}" type="number" class="form-control" required name="milk_weight" placeholder="Enter Milk Weight">
        </div> 
   <br>
-  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="submit" class="btn btn-dark">Update</button>
        </form>
         </div>
        </div>

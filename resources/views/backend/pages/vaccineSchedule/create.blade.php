@@ -47,7 +47,7 @@
            <input  type="text" class="form-control" required name="vaccine_remark" placeholder="Enter Vaccine Remark">
          </div>
          <br>
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button type="submit" class="btn btn-dark">Submit</button>
         </form>
        </div>
       </div>

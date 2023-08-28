@@ -5,7 +5,7 @@
 <div class="container">
 <h1 class="text-center"><strong>Cow Categories</strong></h1>
 <hr>
-<div><a href="{{route('category.create')}}"><button class="btn btn-info ">Add New</button></a></div>
+<div><a href="{{route('category.create')}}"><button class="btn btn-info ">+ Add New</button></a></div>
 
 <table class="table">
   <thead>

@@ -48,7 +48,7 @@
            <input value="{{$vaccineSchedule->remark}}"  type="text" class="form-control" required name="vaccine_remark" placeholder="Enter Vaccine Remark">
          </div>
          <br>
-        <button type="submit" class="btn btn-dark">Submit</button>
+        <button type="submit" class="btn btn-dark">Update</button>
         </form>
        </div>
       </div>

@@ -3,25 +3,19 @@
 use App\Http\Controllers\BrownController;
 use App\Http\Controllers\FeedingController;
 use App\Http\Controllers\MilkWeightController;
-use App\Http\Controllers\BrownCowGenderController;
+
 
 use App\Http\Controllers\BessieController;
 use App\Http\Controllers\BessieFeedingController;
-use App\Http\Controllers\BessieCowGenderController;
-
-use App\Http\Controllers\IndianController;
-use App\Http\Controllers\IndianFeedingController;
-use App\Http\Controllers\IndianCowGenderController;
 
 use App\Http\Controllers\HolsteinController;
 use App\Http\Controllers\HolsteinFeedingController;
 use App\Http\Controllers\HolsteinMilkWeightController;
-use App\Http\Controllers\HolsteinCowGenderController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Website\HomeController;
-use App\Http\Controllers\Website\ProductController as WebsiteProductController;
-use App\Http\Controllers\CustomerController;
+// use App\Http\Controllers\Website\ProductController as WebsiteProductController;
+// use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 
 use App\Http\Controllers\CowController;
@@ -29,7 +23,6 @@ use App\Http\Controllers\CowShadeController;
 use App\Http\Controllers\FeedController;
 use App\Http\Controllers\MilkController;
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VaccineMonitorController;
 use App\Http\Controllers\VaccineScheduleController;
 use App\Http\Controllers\FeedScheduleController;
@@ -194,7 +187,7 @@ Route::post('/staff-store',[StaffController::class,'store'])->name('staff.store'
 
 
 
-
+//vaccine Monitor
 Route::get('/vaccineMonitor-list',[VaccineMonitorController::class,'list'])->name('vaccineMonitor.list');
 Route::get('/vaccineMonitor/delete/{id}',[VaccineMonitorController::class,'delete'])->name('vaccineMonitor.delete');
 Route::get('/vaccineMonitor/edit/{id}',[VaccineMonitorController::class,'edit'])->name('vaccineMonitor.edit');

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('cowlists', function (Blueprint $table) {
             $table->id();
             $table ->string('name',length:120);
+            // ** add new column
             $table->foreignId('shade_id')->constrained('cow_shades')->cascadeOnDelete();
             $table ->string('weight',length:120);
             $table ->string('color',length:120);

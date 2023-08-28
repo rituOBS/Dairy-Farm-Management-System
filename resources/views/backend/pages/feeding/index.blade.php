@@ -3,7 +3,7 @@
 <div class="container">
 <h1 class="text-center"><strong>Brown Cow Daily Feeding Consumption</strong></h1>
 <hr>
-<div><a href="{{route('feeding.create')}}"><button class="btn btn-info ">+Add New</button></a></div>
+<div><a href="{{route('feeding.create')}}"><button class="btn btn-info ">+ Add New</button></a></div>
 
 <table class="table">
   <thead>

@@ -30,7 +30,7 @@
             <input type="file" class="form-control" name="category_image" placeholder="image">
         </div>
         <br>
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button type="submit" class="btn btn-dark">Submit</button>
        </form>
         </div>
        </div>

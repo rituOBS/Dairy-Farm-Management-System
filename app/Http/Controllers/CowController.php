@@ -67,7 +67,7 @@ class CowController extends Controller
             Toastr::success('Created Successfully', 'CowList', ['options']);
             return redirect()->back();
 
-            return redirect()->back()->with('msg','Employee Created successfully.');
+            return redirect()->back()->with('msg','CowList Created successfully.');
         }
         public function update(Request $request,$id)
         {
@@ -93,25 +93,7 @@ class CowController extends Controller
 
         }
 
-    //         public function cow_report(){
-    //         return view('backend.pages.report.cow_report');
-    //    }
 
-    // public function cow_report_search(Request $request){
-
-    //     $request->validate([
-    //         'from_date'=>'required|date',
-    //         'to_date'=>'required|date|after:from_date'
-    //     ]);
-
-    //     $from=$request->from_date;
-    //     $to=$request->to_date;
-
-    //     $cowList::whereBetween('created_at', [$from , $to])->get();
-    //     dd($cowList);
-    //     return view('backend.pages.report.cow_report',compact('cow'));
-
-    // }
 }
     
 

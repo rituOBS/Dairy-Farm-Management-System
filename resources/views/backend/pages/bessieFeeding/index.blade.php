@@ -3,7 +3,7 @@
 <div class="container">
 <h1 class="text-center"><strong>Bessie Cow Feeding Item</strong></h1>
 <hr>
-<div><a href="{{route('bessieFeeding.create')}}"><button class="btn btn-info ">Add New</button></a></div>
+<div><a href="{{route('bessieFeeding.create')}}"><button class="btn btn-info ">+ Add New</button></a></div>
 
 <table class="table">
   <thead>
@@ -24,7 +24,7 @@
       
     <td>
         <a class="btn btn-info"  href="{{route('bessieFeeding.edit',$row->id)}}">Edit</a>
-        <a class="btn btn-warning" href="{{route('bessieFeeding.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-danger" href="{{route('bessieFeeding.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach
