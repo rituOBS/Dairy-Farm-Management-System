@@ -28,6 +28,15 @@ class HolsteinMilkWeightController extends Controller
        return redirect()->back()->with('msg','HolsteinMilkWeight Deleted Successfully');
     }
 
+    public function edit($id)
+    {
+        $holsteinMilkWeight=HolsteinMilkWeight::find($id);
+        //$staffs=StaffList::all();
+
+        return view('backend.pages.holsteinmilkWeight.edit',compact('holsteinMilkWeight'));
+        
+     }
+
     public function store(Request $request)
       {
         HolsteinMilkWeight::create([
@@ -40,5 +49,25 @@ class HolsteinMilkWeightController extends Controller
         return redirect()->back();
 
         return redirect()->back()->with('msg','HolsteinMilkWeight Created successfully.');
+    }
+
+    public function update(Request $request,$id)
+    {
+               $request->validate([
+                 'cow_name'=>'required',
+                 'milk_category'=>'required',
+                 'milk_weight'=>'required',
+             ]);
+             $holsteinMilkWeight=HolsteinMilkWeight::find($id);
+
+              $holsteinMilkWeight->update([
+                'name'=>$request->cow_name,
+                'category'=>$request->milk_category,
+                'weight'=>$request->milk_weight,
+         
+            
+        ]);
+        return redirect()->back()->with('msg','HolsteinMilkWeight Updated successfully.');
+
     }
 }

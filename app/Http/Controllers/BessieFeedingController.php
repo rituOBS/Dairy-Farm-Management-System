@@ -26,6 +26,15 @@ class BessieFeedingController extends Controller
 
        return redirect()->back()->with('msg','BessieFeeding Deleted Successfully');
     }
+
+    public function edit($id)
+    {
+        $bessieFeeding=BessieFeeding::find($id);
+
+        return view('backend.pages.bessieFeeding.edit',compact('bessieFeeding'));
+
+    }
+
     public function store(Request $request)
     {
         BessieFeeding::create([
@@ -39,6 +48,27 @@ class BessieFeedingController extends Controller
         return redirect()->back()->with('msg','BessieFeeding Created successfully.');
    
        //return to_route('feed.list');
+
+   }
+
+   public function update(Request $request,$id)
+   {
+              $request->validate([
+                'feeding_name'=>'required',
+                'feeding_quantity'=>'required',
+               
+            ]);
+
+            
+            $bessieFeeding=BessieFeeding::find($id);
+
+            $bessieFeeding->update([
+                'name'=>$request->feeding_name,
+                'quantity'=>$request->feeding_quantity,  
+        
+           
+       ]);
+       return redirect()->back()->with('msg','BessieFeeding Updated successfully.');
 
    }
 }

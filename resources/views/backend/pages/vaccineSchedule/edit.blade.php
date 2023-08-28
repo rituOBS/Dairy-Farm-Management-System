@@ -19,35 +19,36 @@
         @endforeach
         @endif
             
-<form action="{{route('vaccineSchedule.store')}}" method="post" enctype="multipart/form-data">
-    @csrf
+        <form action="{{route('vaccineSchedule.update',$vaccineSchedule->id)}}" method="post">
+            @csrf
+            @method('put')
     <div class="form-group">
            <label for="">Enter Cow Disease </label>
-           <input  type="text" class="form-control" required name="cow_disease" placeholder="Enter Cow Disease">
+           <input value="{{$vaccineSchedule->diseass}}"  type="text" class="form-control" required name="cow_disease" placeholder="Enter Cow Disease">
     </div>
     <div class="form-group">
            <label for="">Enter Vaccine Name </label>
-           <input  type="text" class="form-control" required name="vaccine_name" placeholder="Enter Vaccine Name">
+           <input value="{{$vaccineSchedule->name}}"  type="text" class="form-control" required name="vaccine_name" placeholder="Enter Vaccine Name">
     </div>
         <div class="form-group">
            <label for="">Enter Vaccine Time </label>
-           <input  type="text" class="form-control" required name="vaccine_time" placeholder="Enter Vaccine Date">
+           <input value="{{$vaccineSchedule->time}}"  type="text" class="form-control" required name="vaccine_time" placeholder="Enter Vaccine Date">
        </div>   
        <div class="form-group">
            <label for="">Enter Vaccine Immunity </label>
-           <input  type="text" class="form-control" required name="vaccine_immunity" placeholder="Enter Vaccine Immunity">
+           <input value="{{$vaccineSchedule->immunity}}"  type="text" class="form-control" required name="vaccine_immunity" placeholder="Enter Vaccine Immunity">
     </div>
     <div class="form-group">
            <label for="">Enter Vaccine Dose </label>
-           <input  type="number" class="form-control" required name="vaccine_dose" placeholder="Enter Vaccine Dose">
+           <input value="{{$vaccineSchedule->dose}}"  type="number" class="form-control" required name="vaccine_dose" placeholder="Enter Vaccine Dose">
     </div> 
        
     <div class="form-group">
            <label for="">Enter Vaccine Remark </label>
-           <input  type="text" class="form-control" required name="vaccine_remark" placeholder="Enter Vaccine Remark">
+           <input value="{{$vaccineSchedule->remark}}"  type="text" class="form-control" required name="vaccine_remark" placeholder="Enter Vaccine Remark">
          </div>
          <br>
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button type="submit" class="btn btn-dark">Submit</button>
         </form>
        </div>
       </div>

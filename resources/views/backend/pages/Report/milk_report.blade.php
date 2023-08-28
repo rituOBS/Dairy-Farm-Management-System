@@ -50,7 +50,6 @@
       <th scope="col">Milk Quality</th>
       <th scope="col">Milk Quantity (Kg)</th>
       <th scope="col">Price (Tk)</th>
-      <th scope="col">Action</th>
     </tr>
         </thead>
         <tbody>

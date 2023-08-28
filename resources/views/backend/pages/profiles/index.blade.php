@@ -73,13 +73,12 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="" alt="image" class="rounded-circle" width="150">
+                    <img style="width: 100px;" src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png" alt="image" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4></h4>
+                      <h4>{{auth()->user()->name}}</h4>
                       <p class="text-secondary mb-1"></p>
-               
-                   
-                    </div>
+  
+                </div>
                   </div>
                 </div>
               </div>
@@ -89,7 +88,7 @@
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
-                    <h2 class="text-center"><strong>Update Profile</strong></h2>
+                    <h2 class="text-center"><strong>User Profile</strong></h2>
                     <hr>
                   <form action="{{route('updateprofile',auth()->user()->id)}}" method='post'>
                  @method('put')
@@ -107,11 +106,11 @@
                             <!-- <label for="">Choose Image</label>
                             <input type="file" class="form-control" name="user_image" >
                             </div> -->
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                             <label for="">Change Password</label>
                             <input type="password" class="form-control" name="change_pass" value="" placeholder="password">
-                            </div>
-                            <button type="submit" class="btn btn-success">Update</button>
+                            </div> -->
+                            <!-- <button type="submit" class="btn btn-success">Update</button> -->
                         </form>
                 </div>
           </div>    

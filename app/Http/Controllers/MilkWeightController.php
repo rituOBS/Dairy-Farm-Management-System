@@ -26,6 +26,15 @@ class MilkWeightController extends Controller
 
        return redirect()->back()->with('msg','MilkWeight Deleted Successfully.');
     }
+
+    public function edit($id)
+    {
+        $milkWeight=MilkWeight::find($id);
+        //$staffs=StaffList::all();
+
+        return view('backend.pages.milkWeight.edit',compact('milkWeight'));
+        
+     }
     public function store(Request $request)
       {
         MilkWeight::create([
@@ -39,5 +48,26 @@ class MilkWeightController extends Controller
 
         return redirect()->back()->with('msg','MilkWeight Created successfully.');
    
+    }
+    
+    public function update(Request $request,$id)
+    {
+               $request->validate([
+                 'cow_name'=>'required',
+                 'milk_category'=>'required',
+                 'milk_weight'=>'required',
+             ]);
+
+             $milkWeight=MilkWeight::find($id);
+
+             $milkWeight->update([
+            'name'=>$request->cow_name,
+            'category'=>$request->milk_category,
+            'weight'=>$request->milk_weight, 
+         
+            
+        ]);
+        return redirect()->back()->with('msg','MilkWeight Updated successfully.');
+
     }
 }

@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('content')
-
+<div class="container">
 <h1 class="text-center"><strong>Brown Cow Daily Milk Weight</strong></h1>
 <hr>
 <div><a href="{{route('milkWeight.create')}}"><button class="btn btn-info">Add New</button></a></div>
@@ -25,13 +25,13 @@
       <td>{{$row->weight}}</td>
       
     <td>
-        <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="{{route('milkWeight.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-info"  href="{{route('milkweight.edit',$row->id)}}">Edit</a>
+        <a class="btn btn-warning" href="{{route('milkweight.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach
 
   </tbody>
 </table>
-
+</div>
 @endsection

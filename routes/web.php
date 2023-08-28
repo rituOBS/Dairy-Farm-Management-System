@@ -77,61 +77,47 @@ Route::post('/brown-cow-store',[BrownController::class,'store'])->name('brownCow
 Route::get('/feeding-item',[FeedingController::class,'index'])->name('feeding.index');
 Route::get('/feeding/delete/{id}',[FeedingController::class,'delete'])->name('feeding.delete');
 Route::get('/feeding/edit/{id}',[FeedingController::class,'edit'])->name('feeding.edit');
-Route::get('/feeding/update/{id}',[FeedingController::class,'update'])->name('feeding.update');
+Route::put('/feeding/update/{id}',[FeedingController::class,'update'])->name('feeding.update');
 Route::get('/feeding-item-create',[FeedingController::class,'create'])->name('feeding.create');
 Route::post('/feeding-item-store',[FeedingController::class,'store'])->name('feeding.store');
 
 
 Route::get('/milk-weight',[MilkWeightController::class,'index'])->name('milkWeight.index');
-Route::get('/milkWeight/delete/{id}',[MilkWeightController::class,'delete'])->name('milkweight.delete');
+Route::get('/milk-weight/delete/{id}',[MilkWeightController::class,'delete'])->name('milkweight.delete');
+Route::get('/milk-weight/edit/{id}',[MilkWeightController::class,'edit'])->name('milkweight.edit');
+Route::put('/milk-weight/update/{id}',[MilkWeightController::class,'update'])->name('milkweight.update');
 Route::get('/milk-weight-create',[MilkWeightController::class,'create'])->name('milkWeight.create');
 Route::post('/milk-weight-store',[MilkWeightController::class,'store'])->name('milkWeight.store');
 
 
-Route::get('/brownCow-gender',[BrownCowGenderController::class,'index'])->name('brownCowGender.index');
-Route::get('/brownCow-gender-create',[BrownCowGenderController::class,'create'])->name('brownCowGender.create');
-Route::post('/brownCow-gender-store',[BrownCowGenderController::class,'store'])->name('brownCowGender.store');
 // ** End Routes **
 
 
 // ** Route for Bessie cow Details **
 Route::get('/bessie-cow',[BessieController::class,'index'])->name('bessieCow.index');
-//Route::get('/bessie/delete/{id}',[BessieController::class,'delete'])->name('bessiecow.delete');
+Route::get('/bessie/delete/{id}',[BessieController::class,'delete'])->name('bessie.delete');
+Route::get('/bessie/edit/{id}',[BessieController::class,'edit'])->name('bessie.edit');
+Route::put('/bessie/update/{id}',[BessieController::class,'update'])->name('bessie.update');
 Route::get('/bessie-cow-create',[BessieController::class,'create'])->name('bessieCow.create');
 Route::post('/bessie-cow-store',[BessieController::class,'store'])->name('bessieCow.store');
 
 
 Route::get('/bessie-feeding-item',[BessieFeedingController::class,'index'])->name('bessieFeeding.index');
 Route::get('/bessie-feeding/delete/{id}',[BessieFeedingController::class,'delete'])->name('bessieFeeding.delete');
+Route::get('/bessie-feeding/edit/{id}',[BessieFeedingController::class,'edit'])->name('bessieFeeding.edit');
+Route::put('/bessie-feeding/update/{id}',[BessieFeedingController::class,'update'])->name('bessieFeeding.update');
 Route::get('/bessie-feeding-item-create',[BessieFeedingController::class,'create'])->name('bessieFeeding.create');
 Route::post('/bessie-feeding-item-store',[BessieFeedingController::class,'store'])->name('bessieFeeding.store');
 
-Route::get('/bessieCow-gender',[BessieCowGenderController::class,'index'])->name('bessieCowGender.index');
-Route::get('/bessieCow-gender-create',[BessieCowGenderController::class,'create'])->name('bessieCowGender.create');
-Route::post('/bessieCow-gender-store',[BessieCowGenderController::class,'store'])->name('bessieCowGender.store');
-// ** End Routes **
 
-
-// ** Route for Indian cow Details **
-Route::get('/indian-cow',[IndianController::class,'index'])->name('indianCow.index');
-Route::get('/indianCow/delete/{id}',[IndianController::class,'delete'])->name('indianCow.delete');
-Route::get('/indian-cow-create',[IndianController::class,'create'])->name('indianCow.create');
-Route::post('/indian-cow-store',[IndianController::class,'store'])->name('indianCow.store');
-
-Route::get('/indian-feeding-item',[IndianFeedingController::class,'index'])->name('indianFeeding.index');
-//Route::get('/bessie-feeding/delete/{id}',[BessieFeedingController::class,'delete'])->name('bessieFeeding.delete');
-Route::get('/indian-feeding-item-create',[IndianFeedingController::class,'create'])->name('indianFeeding.create');
-Route::post('/indian-feeding-item-store',[IndianFeedingController::class,'store'])->name('indianFeeding.store');
-
-Route::get('/indianCow-gender',[IndianCowGenderController::class,'index'])->name('indianCowGender.index');
-Route::get('/indianCow-gender-create',[IndianCowGenderController::class,'create'])->name('indianCowGender.create');
-Route::post('/indianCow-gender-store',[IndianCowGenderController::class,'store'])->name('indianCowGender.store');
 // ** End Routes **
 
 
 // ** Route for Holstein Details **
 Route::get('/holstein-cow',[HolsteinController::class,'index'])->name('holsteinCow.index');
-Route::get('/holsteinCow/delete/{id}',[HolsteinController::class,'delete'])->name('holsteinCow.delete');
+Route::get('/holstein/delete/{id}',[HolsteinController::class,'delete'])->name('holstein.delete');
+Route::get('/holstein/edit/{id}',[HolsteinController::class,'edit'])->name('holstein.edit');
+Route::put('/holstein/update/{id}',[HolsteinController::class,'update'])->name('holstein.update');
 Route::get('/holstein-cow-create',[HolsteinController::class,'create'])->name('holsteinCow.create');
 Route::post('/holstein-cow-store',[HolsteinController::class,'store'])->name('holsteinCow.store');
 
@@ -139,19 +125,18 @@ Route::post('/holstein-cow-store',[HolsteinController::class,'store'])->name('ho
 Route::get('/holstein-feeding-item',[HolsteinFeedingController::class,'index'])->name('holsteinFeeding.index');
 Route::get('/holstein-feeding/delete/{id}',[HolsteinFeedingController::class,'delete'])->name('holsteinFeeding.delete');
 Route::get('/holstein-feeding/edit/{id}',[HolsteinFeedingController::class,'edit'])->name('holsteinFeeding.edit');
+Route::put('/holstein-feeding/update/{id}',[HolsteinFeedingController::class,'update'])->name('holsteinFeeding.update');
+// Route::get('/holstein-feeding/edit/{id}',[HolsteinFeedingController::class,'edit'])->name('holsteinFeeding.edit');
 Route::get('/holstein-feeding-item-create',[HolsteinFeedingController::class,'create'])->name('holsteinFeeding.create');
 Route::post('/holstein-feeding-item-store',[HolsteinFeedingController::class,'store'])->name('holsteinFeeding.store');
 
 Route::get('/holsteinmilk-weight',[HolsteinMilkWeightController::class,'index'])->name('holsteinmilkWeight.index');
 Route::get('/holsteinMilk-weight/delete/{id}',[HolsteinMilkWeightController::class,'delete'])->name('holsteinMilkWeight.delete');
+Route::get('/holsteinMilk-weight/edit/{id}',[HolsteinMilkWeightController::class,'edit'])->name('holsteinMilkWeight.edit');
+Route::put('/holsteinMilk-weight/update/{id}',[HolsteinMilkWeightController::class,'update'])->name('holsteinMilkWeight.update');
 Route::get('/holsteinmilk-weight-create',[HolsteinMilkWeightController::class,'create'])->name('holsteinmilkWeight.create');
 Route::post('/holsteinmilk-weight-store',[HolsteinMilkWeightController::class,'store'])->name('holsteinmilkWeight.store');
 
-
-Route::get('/holsteinCow-gender',[HolsteinCowGenderController::class,'index'])->name('holsteinCowGender.index');
-Route::get('/holsteinCow-gender/delete/{id}',[HolsteinCowGenderController::class,'delete'])->name('holsteinCowGender.delete');
-Route::get('/holsteinCow-gender-create',[HolsteinCowGenderController::class,'create'])->name('holsteinCowGender.create');
-Route::post('/holsteinCow-gender-store',[HolsteinCowGenderController::class,'store'])->name('holsteinCowGender.store');
 
 // ** End Routes **
 
@@ -212,8 +197,8 @@ Route::post('/staff-store',[StaffController::class,'store'])->name('staff.store'
 
 Route::get('/vaccineMonitor-list',[VaccineMonitorController::class,'list'])->name('vaccineMonitor.list');
 Route::get('/vaccineMonitor/delete/{id}',[VaccineMonitorController::class,'delete'])->name('vaccineMonitor.delete');
-//Route::get('/feedSchedule/edit/{id}',[FeedScheduleController::class,'edit'])->name('feedSchedule.edit');
-//Route::put('/feedSchedule/update/{id}',[FeedScheduleController::class,'update'])->name('feedSchedule.update');
+Route::get('/vaccineMonitor/edit/{id}',[VaccineMonitorController::class,'edit'])->name('vaccineMonitor.edit');
+Route::put('/vaccineMonitor/update/{id}',[VaccineMonitorController::class,'update'])->name('vaccineMonitor.update');
 Route::get('/vaccineMonitor-create-form',[VaccineMonitorController::class,'create'])->name('vaccineMonitor.create');
 Route::post('/vaccineMonitor-store',[VaccineMonitorController::class,'store'])->name('vaccineMonitor.store');
 
@@ -223,14 +208,16 @@ Route::post('/vaccineMonitor-store',[VaccineMonitorController::class,'store'])->
 Route::get('/vaccineSchedule-list',[VaccineScheduleController::class,'list'])->name('vaccineSchedule.list');
 Route::get('/vaccineSchedule-create-form',[VaccineScheduleController::class,'create'])->name('vaccineSchedule.create');
 Route::post('/vaccineSchedule-store',[VaccineScheduleController::class,'store'])->name('vaccineSchedule.store');
-//Route::get('/vaccineSchedule-delete/{id}',[VaccineScheduleController::class,'delete'])->name('vaccineSchedule.destroy');
+Route::get('/vaccineSchedule-delete/{id}',[VaccineScheduleController::class,'delete'])->name('vaccineSchedule.delete');
+Route::get('/vaccineSchedule/edit/{id}',[VaccineScheduleController::class,'edit'])->name('vaccineSchedule.edit');
+Route::put('/vaccineSchedule/update/{id}',[VaccineScheduleController::class,'update'])->name('vaccineSchedule.update');;
 
 
 
 // Route::get('/profile-show',[UserController::class,'profileShow'])->name('profile.show');
 
 Route::get('/profile',[UserController::class,'profile'])->name('admin.profile');
-Route::put('/profile-update/{id}',[UserController::class,'updateprofile'])->name('updateprofile');
+Route::put('/profile-update/{id}',[UserController::class,'update'])->name('updateprofile');
 
 
 /* Report section

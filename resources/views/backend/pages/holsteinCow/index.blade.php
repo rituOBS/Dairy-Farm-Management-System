@@ -1,5 +1,7 @@
 @extends('backend.master')
+
 @section('content')
+
 <div class="container">
 <h1 class="text-center"><strong>Total Holstein Cow</strong></h1>
 <hr>
@@ -25,8 +27,8 @@
     
     
       <td>
-        <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="{{route('holsteinCow.delete',$row->id)}}">Delete</a>
+        <a class="btn btn-info"  href="{{route('holstein.edit',$row->id)}}">Edit</a>
+        <a class="btn btn-warning" href="{{route('holstein.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

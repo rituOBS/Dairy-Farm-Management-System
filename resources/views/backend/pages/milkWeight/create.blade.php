@@ -1,7 +1,13 @@
 @extends('backend.master')
 @section('content')
-<div class="container">
-<h2>Brown Cow (Milk-Weight)</h2>
+<div class="row">
+  <div class="col-md-8 offset-md-2 ">
+    <div class="card mt-5 ">
+      <div class="card-header">
+        <div class="card-body">
+        <div class="container">
+<h1 class="text-center"><strong>Brown Cow Milk Weight</strong></h1>
+<hr>
 
   <form class="from" action="{{route('milkWeight.store')}}" method="post">
   @csrf
@@ -18,8 +24,14 @@
            <input  type="number" class="form-control" required name="milk_weight" placeholder="Enter Milk Weight">
        </div> 
   <br>
-  <button type="submit" class="btn btn-success">Submit</button>
-</form>
-</div>
+  <button type="submit" class="btn btn-info">Update</button>
+      </form>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+ </div>
 
 @endsection

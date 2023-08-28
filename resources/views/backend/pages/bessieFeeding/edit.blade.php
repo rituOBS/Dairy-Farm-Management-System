@@ -7,7 +7,7 @@
         <div class="card-body">
 
  <div class="container">
-<h1 class="text-center"><strong>Bessie Feeding Daily Consumption</strong></h1>
+<h1 class="text-center"><strong>Edit Feeding Daily Consumption</strong></h1>
 <hr>
 
 
@@ -19,24 +19,25 @@
         @endforeach
         @endif
         
-  <form class="from" action="{{route('bessieFeeding.store')}}" method="post">
+<form action="{{route('bessieFeeding.update',$bessieFeeding->id)}}" method="post" enctype="multipart/form-data">
   @csrf
+  @method('put')
   <div class="form-group">
            <label for="">Enter Feeding Name </label>
-           <input  type="text" class="form-control" required name="feeding_name" placeholder="Enter Feeding Name">
+           <input value="{{$bessieFeeding->name}}" type="text" class="form-control" required name="feeding_name" placeholder="Enter Feeding Name">
        </div>
         <div class="form-group">
            <label for="">Enter Feeding Quantity</label>
-           <input  type="number" class="form-control" required name="feeding_quantity" placeholder="Enter Feed Quantity">
+           <input value="{{$bessieFeeding->quantity}}" type="number" class="form-control" required name="feeding_quantity" placeholder="Enter Feed Quantity">
        </div> 
   <br>
-  <button type="submit" class="btn btn-info">Submit</button>
-</form>
-</div>
-</div>
-             </div>
-            </div>
+  <button type="submit" class="btn btn-dark">Update</button>
+        </form>
         </div>
+         </div>
+        </div>
+     </div>
+    </div>
     </div>
 </div>
 

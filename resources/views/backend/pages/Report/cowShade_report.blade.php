@@ -53,7 +53,6 @@
       <th scope="col">Standing Width</th> 
       <th scope="col">Central Passage Width</th>  
       <th scope="col">Feed Alley Width</th>   
-      <th scope="col">Action</th>
  </tr>
         </thead>
         <tbody>

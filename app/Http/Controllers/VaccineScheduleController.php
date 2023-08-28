@@ -16,6 +16,23 @@ class VaccineScheduleController extends Controller
     {
         return view('backend.pages.vaccineSchedule.create');
     }
+    public function delete($id)
+    {
+        $vaccineSchedule=VaccineSchedule::find($id);
+
+        $vaccineSchedule->delete();
+
+       return redirect()->back()->with('msg','VaccineSchedule Deleted Successfully.');
+    }
+    public function edit($id)
+    {
+        $vaccineSchedule=VaccineSchedule::find($id);
+     // $vaccineMonitors=VaccineMonitor::all();
+
+        return view('backend.pages.vaccineSchedule.edit',compact('vaccineSchedule'));
+
+
+     }
 
 
     public function store(Request $request)
@@ -33,6 +50,33 @@ class VaccineScheduleController extends Controller
         return redirect()->back();
 
         return redirect()->back()->with('msg','VaccineSchedule Created successfully.');
+
+   }
+
+   public function update(Request $request,$id)
+   {
+              $request->validate([
+                'cow_disease'=>'required',
+                'vaccine_name'=>'required',
+                'vaccine_time'=>'required',
+                'vaccine_immunity'=>'required',
+                'vaccine_dose'=>'required',
+                'vaccine_remark'=>'required',
+            ]);
+
+            
+     $vaccineSchedule=VaccineSchedule::find($id);
+     $vaccineSchedule->update([
+        'disease'=>$request->cow_disease,
+        'name'=>$request->vaccine_name,
+        'time'=>$request->vaccine_time,
+        'immunity'=>$request->vaccine_immunity,
+        'dose'=>$request->vaccine_dose,
+        'remark'=>$request->vaccine_remark,  
+        
+           
+       ]);
+       return redirect()->back()->with('msg','VaccineSchedule Updated successfully.');
 
    }
 

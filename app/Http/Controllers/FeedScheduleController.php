@@ -9,7 +9,7 @@ class FeedScheduleController extends Controller
 {
     public function list()
     {
-       $feedSchedule=FeedSchedule::all();
+       //$feedSchedule=FeedSchedule::all();
        $feedSchedule=FeedSchedule::paginate(4);
         return view('backend.pages.feedSchedule.list',compact('feedSchedule'));
     }
@@ -30,9 +30,9 @@ class FeedScheduleController extends Controller
     public function edit($id)
     {
         $feedSchedule=FeedSchedule::find($id);
-        $feedSchedules=FeedSchedule::all();
+        //$feedSchedules=FeedSchedule::all();
 
-        return view('backend.pages.feedSchedule.edit',compact('feedSchedule','feedSchedules'));
+        return view('backend.pages.feedSchedule.edit',compact('feedSchedule'));
 
 
      }

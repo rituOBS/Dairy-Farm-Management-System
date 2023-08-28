@@ -23,11 +23,11 @@
             @method('put')
   <div class="form-group">
            <label for="">Enter Feeding Name </label>
-           <input value="{{$feeding->name}}" type="text" class="form-control" required name="feeding_name" placeholder="Enter Feeding Name">
+           <input value="{{$holsteinFeeding->name}}" type="text" class="form-control" required name="feeding_name" placeholder="Enter Feeding Name">
        </div>
         <div class="form-group">
            <label for="">Enter Feeding Quantity </label>
-           <input value="{{$feeding->number}}" type="number" class="form-control" required name="feeding_quantity" placeholder="Enter Feed Quantity">
+           <input value="{{$holsteinFeeding->quantity}}" type="number" class="form-control" required name="feeding_quantity" placeholder="Enter Feed Quantity">
        </div> 
   <br>
   <button type="submit" class="btn btn-info">Submit</button>

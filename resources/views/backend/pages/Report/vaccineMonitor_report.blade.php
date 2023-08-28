@@ -49,8 +49,6 @@
       <th scope="col">Cow Name</th>
       <th scope="col">Vaccine Date</th>
       <th scope="col">Remark</th>
-      <th scope="col">Action</th>
-     
     </tr>
         </thead>
         <tbody>

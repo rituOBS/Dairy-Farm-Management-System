@@ -24,7 +24,7 @@
 
 <!-- 
 ***route for staffs*** -->
-<a type="button" class="btn btn-success btn-lg" href="{{route('cow.report')}}">Cow Report</a>
+<!-- <a type="button" class="btn btn-success btn-lg" href="{{route('cow.report')}}">Cow Report</a> -->
 
 
 <!-- 

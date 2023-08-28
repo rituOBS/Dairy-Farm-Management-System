@@ -19,6 +19,8 @@
         </div>
         @endforeach
         @endif
+
+      
               
 <form action="{{route('staff.store')}}" method="post" enctype="multipart/form-data">
     @csrf

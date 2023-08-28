@@ -27,7 +27,7 @@
       <td>{{$row->price}}</td>
     <td>
         <a class="btn btn-info"  href="{{route('milk.edit',$row->id)}}">Edit</a>
-        <a  class="btn btn-danger" href="{{route('milk.delete',$row->id)}}">Delete</a>
+        <a  class="btn btn-warning" href="{{route('milk.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

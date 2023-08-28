@@ -27,8 +27,8 @@
       <td>{{$row->weight}}</td>
       
     <td>
-        <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-success" href="{{route('holsteinMilkWeight.delete',$row->id)}}>Delete</a>
+        <a class="btn btn-info"  href="{{route('holsteinMilkWeight.edit',$row->id)}}">Edit</a>
+        <a class="btn btn-warning"  href="{{route('holsteinMilkWeight.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

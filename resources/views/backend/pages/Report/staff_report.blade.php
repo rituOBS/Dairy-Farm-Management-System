@@ -48,7 +48,6 @@
       <th scope="col">Name</th>
       <th scope="col">Designation</th>
       <th scope="col">Email</th>
-      <th scope="col">Image</th>
 
     </tr>
         </thead>

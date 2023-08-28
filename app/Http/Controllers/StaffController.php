@@ -63,7 +63,7 @@ class StaffController extends Controller
      
             $staff->delete();
      
-            return redirect()->back()->with('msg','StaffList Deleted Successfully');
+            return redirect()->back()->with('msg','Staff Deleted Successfully');
          }
 
 

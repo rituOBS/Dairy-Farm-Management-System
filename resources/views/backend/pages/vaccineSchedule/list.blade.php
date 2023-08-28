@@ -33,8 +33,8 @@
       <td>{{$row->remark}}</td>
       <td>
       
-        <a class="btn btn-info"  href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
+        <a class="btn btn-info"  href="{{route('vaccineSchedule.edit',$row->id)}}">Edit</a>
+        <a class="btn btn-warning" href="{{route('vaccineSchedule.delete',$row->id)}}">Delete</a>
       </td>
     </tr>
     @endforeach

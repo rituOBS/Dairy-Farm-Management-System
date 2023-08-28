@@ -54,7 +54,6 @@
       <th scope="col">Paddy Straw</th>
       <th scope="col">Concentrate Mixture</th>
       <th scope="col">Wheat Bran</th>
-      <th scope="col">Action</th>
      
     </tr>
         </thead>

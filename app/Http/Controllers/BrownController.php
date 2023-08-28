@@ -29,9 +29,9 @@ class BrownController extends Controller
     public function edit($id)
     {
         $brown=BrownCow::find($id);
-        $browns=BrownCow::all();
 
-       return view('backend.pages.brownCows.edit',compact('brown','browns'));
+
+       return view('backend.pages.brownCows.edit',compact('brown'));
 
 
     }
@@ -55,16 +55,16 @@ class BrownController extends Controller
     public function update(Request $request,$id)
     {
                $request->validate([
-                 'brown_name'=>'required',
-                 'brown_number'=>'required',
+                 'cow_name'=>'required',
+                 'cow_number'=>'required',
              ]);
 
              
         $brownCow=BrownCow::find($id);
 
         $brownCow->update([
-            'name'=>$request->name,
-            'number'=>$request->number,
+            'name'=>$request->cow_name,
+            'number'=>$request->cow_number,
          
             
         ]);

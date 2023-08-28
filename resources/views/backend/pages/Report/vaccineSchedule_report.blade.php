@@ -52,7 +52,6 @@
       <th scope="col">Immunity</th>
       <th scope="col">Vaccine Dose (ml)</th>
       <th scope="col">Remark</th>
-      <th scope="col">Action</th>
       </tr>
         </thead>
         <tbody>

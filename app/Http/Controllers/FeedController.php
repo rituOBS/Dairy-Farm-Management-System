@@ -65,12 +65,12 @@ class FeedController extends Controller
             $request->validate([
                 'feed_name'=>'required',
                 'feed_item'=>'required',
-                'daily_consumption'=>'required|gt:100',
+                'feed_daily_consumption'=>'required',
                 //'employee_designation'=>'required|gt:10'
             ]);
 
             $feed=FeedList::find($id);
-            $feed::update([
+            $feed->update([
                 'name'=>$request->feed_name,
                 'item'=>$request->feed_item,
                 'daily_consumption'=>$request->feed_daily_consumption,

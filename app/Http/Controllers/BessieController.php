@@ -18,6 +18,27 @@ class BessieController extends Controller
     return view('backend.pages.bessieCow.create');
     }
 
+    
+    public function delete($id)
+    {
+       $bessieCow=BessieCow::find($id);
+
+       $bessieCow->delete();
+
+       return redirect()->back()->with('msg','BessieCowDeleted Successfully');
+    }
+
+    public function edit($id)
+    {
+        $bessie=BessieCow::find($id);
+
+
+       return view('backend.pages.bessieCow.edit',compact('bessie'));
+
+
+    }
+
+
 
 
 
@@ -35,5 +56,24 @@ class BessieController extends Controller
         return redirect()->back()->with('msg','BessieCow Created successfully.');
 
     }
+    public function update(Request $request,$id)
+    {
+               $request->validate([
+                 'cow_name'=>'required',
+                 'cow_number'=>'required',
+             ]);
+
+             
+             $bessieCow=BessieCow::find($id);
+
+             $bessieCow->update([
+            'name'=>$request->cow_name,
+            'number'=>$request->cow_number,
+         
+            
+        ]);
+        return redirect()->back()->with('msg','BessieCow Updated successfully.');
+
+  }
 }
 

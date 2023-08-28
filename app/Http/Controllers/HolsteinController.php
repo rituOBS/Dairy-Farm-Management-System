@@ -26,6 +26,15 @@ class HolsteinController extends Controller
 
        return redirect()->back()->with('msg','HolsteinCow Deleted Successfully');
     }
+    public function edit($id)
+    {
+        $holstein=HolsteinCow::find($id);
+
+
+       return view('backend.pages.holsteinCow.edit',compact('holstein'));
+    }
+
+    
 
     public function store(Request $request)
     {
@@ -40,4 +49,25 @@ class HolsteinController extends Controller
 
         return redirect()->back()->with('msg',' HolsteinCow Created successfully.');
     }
+
+    public function update(Request $request,$id)
+    {
+               $request->validate([
+                 'cow_name'=>'required',
+                 'cow_number'=>'required',
+             ]);
+
+             
+             $holsteinCow=HolsteinCow::find($id);
+
+             $holsteinCow->update([
+            'name'=>$request->cow_name,
+            'number'=>$request->cow_number,
+         
+            
+        ]);
+        return redirect()->back()->with('msg','HolsteinCow Updated successfully.');
+
+  }
 }
+

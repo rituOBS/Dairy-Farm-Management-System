@@ -9,7 +9,7 @@ class VaccineMonitorController extends Controller
 {
     public function list()
     {
-       $vaccineMonitor=VaccineMonitor::all();
+       //$vaccineMonitor=VaccineMonitor::all();
        $vaccineMonitor=VaccineMonitor::paginate(4);
         return view('backend.pages.vaccineMonitor.list',compact('vaccineMonitor'));
     }
@@ -27,6 +27,16 @@ class VaccineMonitorController extends Controller
              return redirect()->back()->with('msg','VaccineMonitor Deleted Successfully.');
           }
 
+          public function edit($id)
+          {
+            $vaccineMonitor=VaccineMonitor::find($id);
+           // $vaccineMonitors=VaccineMonitor::all();
+      
+              return view('backend.pages.vaccineMonitor.edit',compact('vaccineMonitor'));
+      
+      
+           }
+
     
     public function store(Request $request)
     {
@@ -42,6 +52,29 @@ class VaccineMonitorController extends Controller
         return redirect()->back()->with('msg','Employee Created successfully.');
 
    }
+
+   public function update(Request $request,$id)
+   {
+              $request->validate([
+                'cow_name'=>'required',
+                'vaccine_date'=>'required',
+                'vaccine_remark'=>'required',
+            ]);
+
+            
+     $vaccineMonitor=VaccineMonitor::find($id);
+
+     $vaccineMonitor->update([
+        'name'=>$request->cow_name,
+        'date'=>$request->vaccine_date,
+        'remark'=>$request->vaccine_remark,
+        
+           
+       ]);
+       return redirect()->back()->with('msg','VaccineMonitor Updated successfully.');
+
+   }
+
         public function vaccineMonitor_report(){
          return view('backend.pages.report.vaccineMonitor_report');
          }

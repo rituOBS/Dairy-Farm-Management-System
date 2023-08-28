@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,8 +58,8 @@ class UserController extends Controller
          'password'=>$request->change_pass
      ]);
 
-    //  Toastr::success('Update successfully');
-    //  return redirect()->route('profile.show');
+     Toastr::success('Update successfully');
+     return redirect()->route('profile.show');
 }
  }
 

@@ -17,16 +17,16 @@
         @endforeach
         @endif
 
-        <form action="{{route('feed.update',$feed->id)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('feeding.update',$feeding->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
   <div class="form-group">
            <label for="">Enter Feed Name </label>
-           <input value="{{$feeding->name}} type="text" class="form-control" required name="feed_name" placeholder="Enter Feed Name">
+           <input value="{{$feeding->name}}" type="text" class="form-control" required name="feed_name" placeholder="Enter Feed Name">
        </div>
         <div class="form-group">
            <label for="">Enter Feed Quantity </label>
-           <input value="{{$feeding->quality}} type="number" class="form-control" required name="feed_quantity" placeholder="Enter Feed Quantity">
+           <input value="{{$feeding->quantity}}" type="number" class="form-control" required name="feed_quantity" placeholder="Enter Feed Quantity">
        </div> 
       <br>
        <button type="submit" class="btn btn-dark">Submit</button>

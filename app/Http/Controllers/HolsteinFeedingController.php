@@ -9,7 +9,7 @@ class HolsteinFeedingController extends Controller
 {
     public function index()
     {
-        $holsteinFeeding=HolsteinFeeding::all();
+       // $holsteinFeeding=HolsteinFeeding::all();
         $holsteinFeeding=HolsteinFeeding::paginate(4);
         return view('backend.pages.holsteinFeeding.index',compact('holsteinFeeding'));
     }
@@ -20,12 +20,13 @@ class HolsteinFeedingController extends Controller
 
     public function delete($id)
     {
-       $holsteinFeeding=HolsteinFeeding::find($id);
+        $holsteinFeeding=HolsteinFeeding::find($id);
 
-       $holsteinFeeding->delete();
+        $holsteinFeeding->delete();
 
        return redirect()->back()->with('msg','HolsteinFeeding Deleted Successfully');
     }
+
 
     public function edit($id)
     {

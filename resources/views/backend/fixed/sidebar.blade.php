@@ -63,10 +63,7 @@
                                     <a class="text-white" href="{{route('milkWeight.index')}}">Milk weight</a>
                                     
                                 </div>
-                                <div class="accordion-body  bg-dark ">
-                                    <a class="text-white" href="{{route('brownCowGender.index')}}">Cow Gender</a>
-                                    
-                                </div>
+                             
                                 </div>
                             </div>
 
@@ -88,37 +85,10 @@
                                     <a  class="text-white" href="{{route('bessieFeeding.index')}}">Feeding-Item</a>
                                     
                                 </div>
-                                <div class="accordion-body bg-dark">
-                                    <a  class="text-white" href="{{route('bessieCowGender.index')}}">Cow Gender</a>     
-                                </div>
+                              
                                 </div>
                             </div>
 
-
-
-                            <div class="accordion" id="myAccordion">
-                            <!-- Collapsible Item 1 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                    Indian-Cow Details
-                                </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#myAccordion">
-                                <div class="accordion-body  bg-dark">
-                                    <a class="text-white" href="{{route('indianCow.index')}}">Total-Cow</a>
-                                    
-                                </div>
-                                <div class="accordion-body  bg-dark">
-                                    <a class="text-white" href="{{route('indianFeeding.index')}}">Feeding-Item</a>
-                                    
-                                </div>
-                                <div class="accordion-body  bg-dark">
-                                    <a class="text-white" href="{{route('indianCowGender.index')}}">Cow Gender</a>
-                                    
-                                </div>
-                                </div>
-                           </div>
 
 
                             
@@ -143,10 +113,7 @@
                                     <a class="text-white" href="{{route('holsteinmilkWeight.index')}}">Milk weight</a>
                                     
                                 </div>
-                                <div class="accordion-body bg-dark">
-                                    <a class="text-white"  href="{{route('holsteinCowGender.index')}}">Cow Gender</a>
-                                    
-                                </div>
+                              
                                 </div>
                             </div>
 
